@@ -1,6 +1,6 @@
 ﻿namespace Grafico
 {
-    partial class Form1
+    partial class Recepcion
     {
         /// <summary>
         ///  Required designer variable.
@@ -53,7 +53,7 @@
             button1.Name = "button1";
             button1.Size = new Size(215, 185);
             button1.TabIndex = 1;
-            button1.Text = "Alta clientes";
+            button1.Text = "Clientes";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -89,7 +89,7 @@
             button4.Text = "Estados";
             button4.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Recepcion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -99,7 +99,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "Recepcion";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);

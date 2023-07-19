@@ -1,6 +1,6 @@
 ﻿namespace Grafico
 {
-    partial class Form2
+    partial class ControlClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -35,34 +35,34 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(46, 79);
+            button1.Location = new Point(45, 48);
             button1.Name = "button1";
             button1.Size = new Size(215, 185);
             button1.TabIndex = 2;
-            button1.Text = "Alta usuarios";
+            button1.Text = "Alta clientes";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(368, 79);
+            button2.Location = new Point(361, 48);
             button2.Name = "button2";
             button2.Size = new Size(215, 185);
             button2.TabIndex = 3;
-            button2.Text = "Baja usuarios";
+            button2.Text = "Baja clientes";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // Form2
+            // ControlClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(626, 541);
+            ClientSize = new Size(626, 280);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "Form2";
-            Text = "Form2";
+            Name = "ControlClientes";
+            Text = "Control clientes";
             ResumeLayout(false);
         }
 

@@ -1,8 +1,8 @@
 namespace Grafico
 {
-    public partial class Form1 : Form
+    public partial class Recepcion : Form
     {//tatatat
-        public Form1()
+        public Recepcion()
         {
             InitializeComponent();
         }

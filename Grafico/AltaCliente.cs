@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grafico
 {
-    public partial class Form3 : Form
+    public partial class AltaCliente : Form
     {
-        public Form3()
+        public AltaCliente()
         {
             InitializeComponent();
         }
@@ -60,6 +60,11 @@ namespace Grafico
         }
 
         private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
         {
 
         }
