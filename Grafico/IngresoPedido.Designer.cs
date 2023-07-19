@@ -1,6 +1,6 @@
 ﻿namespace Grafico
 {
-    partial class Form4
+    partial class IngresoPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -35,16 +35,6 @@
             label1 = new Label();
             comboBox1 = new ComboBox();
             label6 = new Label();
-            menuStrip1 = new MenuStrip();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            semanalToolStripMenuItem = new ToolStripMenuItem();
-            vegetarianaToolStripMenuItem = new ToolStripMenuItem();
-            normalToolStripMenuItem = new ToolStripMenuItem();
-            celiacoToolStripMenuItem = new ToolStripMenuItem();
-            veganoToolStripMenuItem = new ToolStripMenuItem();
-            cArnivoroToolStripMenuItem = new ToolStripMenuItem();
-            mensualToolStripMenuItem = new ToolStripMenuItem();
-            quincenalToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             comboBox2 = new ComboBox();
             label3 = new Label();
@@ -61,7 +51,7 @@
             radioButton4 = new RadioButton();
             radioButton5 = new RadioButton();
             label7 = new Label();
-            menuStrip1.SuspendLayout();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label2
@@ -76,11 +66,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(87, 291);
+            button4.Location = new Point(12, 12);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 33;
-            button4.Text = "Inicio";
+            button4.Text = "Volver";
             button4.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -116,71 +106,6 @@
             label6.Size = new Size(46, 15);
             label6.TabIndex = 36;
             label6.Text = "Menú *";
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 38;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { semanalToolStripMenuItem, mensualToolStripMenuItem, quincenalToolStripMenuItem });
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(50, 20);
-            menuToolStripMenuItem.Text = "Menu";
-            // 
-            // semanalToolStripMenuItem
-            // 
-            semanalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { vegetarianaToolStripMenuItem, normalToolStripMenuItem, celiacoToolStripMenuItem, veganoToolStripMenuItem, cArnivoroToolStripMenuItem });
-            semanalToolStripMenuItem.Name = "semanalToolStripMenuItem";
-            semanalToolStripMenuItem.Size = new Size(128, 22);
-            semanalToolStripMenuItem.Text = "Semanal";
-            // 
-            // vegetarianaToolStripMenuItem
-            // 
-            vegetarianaToolStripMenuItem.Name = "vegetarianaToolStripMenuItem";
-            vegetarianaToolStripMenuItem.Size = new Size(135, 22);
-            vegetarianaToolStripMenuItem.Text = "Vegetariana";
-            // 
-            // normalToolStripMenuItem
-            // 
-            normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            normalToolStripMenuItem.Size = new Size(135, 22);
-            normalToolStripMenuItem.Text = "Normal";
-            // 
-            // celiacoToolStripMenuItem
-            // 
-            celiacoToolStripMenuItem.Name = "celiacoToolStripMenuItem";
-            celiacoToolStripMenuItem.Size = new Size(135, 22);
-            celiacoToolStripMenuItem.Text = "Celiaco";
-            // 
-            // veganoToolStripMenuItem
-            // 
-            veganoToolStripMenuItem.Name = "veganoToolStripMenuItem";
-            veganoToolStripMenuItem.Size = new Size(135, 22);
-            veganoToolStripMenuItem.Text = "Vegano";
-            // 
-            // cArnivoroToolStripMenuItem
-            // 
-            cArnivoroToolStripMenuItem.Name = "cArnivoroToolStripMenuItem";
-            cArnivoroToolStripMenuItem.Size = new Size(135, 22);
-            cArnivoroToolStripMenuItem.Text = "CArnivoro";
-            // 
-            // mensualToolStripMenuItem
-            // 
-            mensualToolStripMenuItem.Name = "mensualToolStripMenuItem";
-            mensualToolStripMenuItem.Size = new Size(128, 22);
-            mensualToolStripMenuItem.Text = "Mensual";
-            // 
-            // quincenalToolStripMenuItem
-            // 
-            quincenalToolStripMenuItem.Name = "quincenalToolStripMenuItem";
-            quincenalToolStripMenuItem.Size = new Size(128, 22);
-            quincenalToolStripMenuItem.Text = "Quincenal";
             // 
             // contextMenuStrip1
             // 
@@ -335,11 +260,21 @@
             label7.Size = new Size(0, 15);
             label7.TabIndex = 52;
             // 
-            // Form4
+            // button2
+            // 
+            button2.Location = new Point(109, 270);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 68);
+            button2.TabIndex = 55;
+            button2.Text = "INGRESAR";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // IngresoPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(radioButton4);
             Controls.Add(radioButton5);
             Controls.Add(label7);
@@ -361,12 +296,8 @@
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(label2);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "Form4";
-            Text = "Form4";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Name = "IngresoPedido";
+            Text = "Ingreso pedido";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -379,17 +310,7 @@
         private Label label1;
         private ComboBox comboBox1;
         private Label label6;
-        private MenuStrip menuStrip1;
         private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem semanalToolStripMenuItem;
-        private ToolStripMenuItem mensualToolStripMenuItem;
-        private ToolStripMenuItem vegetarianaToolStripMenuItem;
-        private ToolStripMenuItem normalToolStripMenuItem;
-        private ToolStripMenuItem celiacoToolStripMenuItem;
-        private ToolStripMenuItem veganoToolStripMenuItem;
-        private ToolStripMenuItem cArnivoroToolStripMenuItem;
-        private ToolStripMenuItem quincenalToolStripMenuItem;
         private ComboBox comboBox2;
         private Label label3;
         private Button button1;
@@ -405,5 +326,6 @@
         private RadioButton radioButton4;
         private RadioButton radioButton5;
         private Label label7;
+        private Button button2;
     }
 }

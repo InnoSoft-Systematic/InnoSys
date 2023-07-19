@@ -1,6 +1,6 @@
 ﻿namespace Grafico
 {
-    partial class Form3
+    partial class AltaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 19);
+            label1.Location = new Point(2, 29);
             label1.Name = "label1";
             label1.Size = new Size(266, 54);
             label1.TabIndex = 0;
@@ -308,7 +308,7 @@
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 32;
-            button4.Text = "Inicio";
+            button4.Text = "Volver";
             button4.UseVisualStyleBackColor = true;
             // 
             // label14
@@ -327,11 +327,12 @@
             label15.ForeColor = Color.Red;
             label15.Location = new Point(317, 167);
             label15.Name = "label15";
-            label15.Size = new Size(165, 15);
+            label15.Size = new Size(127, 15);
             label15.TabIndex = 35;
-            label15.Text = "Esta CI ya se encuentra en uso";
+            label15.Text = "Esta CI ya se encuentra";
+            label15.Click += label15_Click;
             // 
-            // Form3
+            // AltaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -366,8 +367,8 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form3";
-            Text = "ALTA CLIENTE";
+            Name = "AltaCliente";
+            Text = "Alta cliente";
             Load += Form3_Load;
             ResumeLayout(false);
             PerformLayout();
