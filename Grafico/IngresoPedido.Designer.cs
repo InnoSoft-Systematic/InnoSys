@@ -72,6 +72,7 @@
             button4.TabIndex = 33;
             button4.Text = "Volver";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // textBox1
             // 
@@ -298,6 +299,7 @@
             Controls.Add(label2);
             Name = "IngresoPedido";
             Text = "Ingreso pedido";
+            Load += IngresoPedido_Load;
             ResumeLayout(false);
             PerformLayout();
         }

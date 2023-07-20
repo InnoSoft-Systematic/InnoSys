@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            lblInfo = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtNombre = new TextBox();
+            txtApellido = new TextBox();
             label3 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -54,22 +54,22 @@
             label11 = new Label();
             textBox6 = new TextBox();
             label12 = new Label();
-            button3 = new Button();
-            button4 = new Button();
+            btmAceptar = new Button();
+            btmVolver = new Button();
             label14 = new Label();
             label15 = new Label();
             SuspendLayout();
             // 
-            // label1
+            // lblInfo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(2, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(266, 54);
-            label1.TabIndex = 0;
-            label1.Text = "ALTA CLIENTE";
-            label1.Click += label1_Click;
+            lblInfo.AutoSize = true;
+            lblInfo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblInfo.Location = new Point(2, 29);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(266, 54);
+            lblInfo.TabIndex = 0;
+            lblInfo.Text = "ALTA CLIENTE";
+            lblInfo.Click += label1_Click;
             // 
             // label2
             // 
@@ -81,21 +81,21 @@
             label2.Text = "Nombre *";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Location = new Point(92, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 2;
+            txtNombre.Cursor = Cursors.IBeam;
+            txtNombre.Location = new Point(92, 84);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 2;
             // 
-            // textBox2
+            // txtApellido
             // 
-            textBox2.Location = new Point(92, 124);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtApellido.Location = new Point(92, 124);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(100, 23);
+            txtApellido.TabIndex = 4;
+            txtApellido.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -293,23 +293,24 @@
             label12.TabIndex = 29;
             label12.Text = "Nombre *";
             // 
-            // button3
+            // btmAceptar
             // 
-            button3.Location = new Point(175, 430);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 31;
-            button3.Text = "ACEPTAR";
-            button3.UseVisualStyleBackColor = true;
+            btmAceptar.Location = new Point(175, 430);
+            btmAceptar.Name = "btmAceptar";
+            btmAceptar.Size = new Size(75, 23);
+            btmAceptar.TabIndex = 31;
+            btmAceptar.Text = "ACEPTAR";
+            btmAceptar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btmVolver
             // 
-            button4.Location = new Point(6, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 32;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
+            btmVolver.Location = new Point(6, 3);
+            btmVolver.Name = "btmVolver";
+            btmVolver.Size = new Size(75, 23);
+            btmVolver.TabIndex = 32;
+            btmVolver.Text = "Volver";
+            btmVolver.UseVisualStyleBackColor = true;
+            btmVolver.Click += btmVolver_Click;
             // 
             // label14
             // 
@@ -339,8 +340,8 @@
             ClientSize = new Size(651, 616);
             Controls.Add(label15);
             Controls.Add(label14);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(btmVolver);
+            Controls.Add(btmAceptar);
             Controls.Add(textBox6);
             Controls.Add(label12);
             Controls.Add(textBox5);
@@ -362,11 +363,11 @@
             Controls.Add(label4);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
-            Controls.Add(textBox2);
+            Controls.Add(txtApellido);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtNombre);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblInfo);
             Name = "AltaCliente";
             Text = "Alta cliente";
             Load += Form3_Load;
@@ -376,10 +377,10 @@
 
         #endregion
 
-        private Label label1;
+        private Label lblInfo;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtNombre;
+        private TextBox txtApellido;
         private Label label3;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
@@ -402,8 +403,8 @@
         private Label label11;
         private TextBox textBox6;
         private Label label12;
-        private Button button3;
-        private Button button4;
+        private Button btmAceptar;
+        private Button btmVolver;
         private Label label14;
         private Label label15;
     }

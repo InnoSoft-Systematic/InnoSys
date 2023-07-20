@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grafico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,14 @@ namespace InnoSys
 
         private void label5_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.frmLogin.Hide();
+            Program.frmRecepcion.Show();
+
 
         }
     }

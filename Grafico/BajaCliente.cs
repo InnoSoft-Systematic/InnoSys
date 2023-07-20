@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grafico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace InnoSys
         public BajaCliente()
         {
             InitializeComponent();
+        }
+
+        private void btmVolver_Click(object sender, EventArgs e)
+        {
+            ControlClientes.frmBajaCliente.Hide();
         }
     }
 }

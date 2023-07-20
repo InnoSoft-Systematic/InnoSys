@@ -67,6 +67,7 @@
             button1.TabIndex = 41;
             button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label5
             // 

@@ -68,5 +68,11 @@ namespace Grafico
         {
 
         }
+
+        private void btmVolver_Click(object sender, EventArgs e)
+        {
+            ControlClientes.frmAltaCliente.Hide();
+
+    }
     }
 }
