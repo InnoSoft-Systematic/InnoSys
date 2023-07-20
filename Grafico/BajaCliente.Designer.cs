@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button4 = new Button();
+            btmVolver = new Button();
             label14 = new Label();
             button2 = new Button();
             textBox7 = new TextBox();
@@ -39,7 +39,7 @@
             label5 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button3 = new Button();
+            btmSolBaja = new Button();
             SuspendLayout();
             // 
             // label1
@@ -52,14 +52,15 @@
             label1.TabIndex = 1;
             label1.Text = "BAJA CLIENTE";
             // 
-            // button4
+            // btmVolver
             // 
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 33;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
+            btmVolver.Location = new Point(12, 12);
+            btmVolver.Name = "btmVolver";
+            btmVolver.Size = new Size(75, 23);
+            btmVolver.TabIndex = 33;
+            btmVolver.Text = "Volver";
+            btmVolver.UseVisualStyleBackColor = true;
+            btmVolver.Click += btmVolver_Click;
             // 
             // label14
             // 
@@ -138,21 +139,21 @@
             label3.TabIndex = 44;
             label3.Text = "Puedes buscar por CI o por RUT";
             // 
-            // button3
+            // btmSolBaja
             // 
-            button3.Location = new Point(125, 276);
-            button3.Name = "button3";
-            button3.Size = new Size(172, 34);
-            button3.TabIndex = 45;
-            button3.Text = "SOLICITAR BAJA";
-            button3.UseVisualStyleBackColor = true;
+            btmSolBaja.Location = new Point(125, 276);
+            btmSolBaja.Name = "btmSolBaja";
+            btmSolBaja.Size = new Size(172, 34);
+            btmSolBaja.TabIndex = 45;
+            btmSolBaja.Text = "SOLICITAR BAJA";
+            btmSolBaja.UseVisualStyleBackColor = true;
             // 
             // BajaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(423, 334);
-            Controls.Add(button3);
+            Controls.Add(btmSolBaja);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button2);
@@ -162,7 +163,7 @@
             Controls.Add(textBox3);
             Controls.Add(label5);
             Controls.Add(label14);
-            Controls.Add(button4);
+            Controls.Add(btmVolver);
             Controls.Add(label1);
             Name = "BajaCliente";
             Text = "Baja de cliente";
@@ -173,7 +174,7 @@
         #endregion
 
         private Label label1;
-        private Button button4;
+        private Button btmVolver;
         private Label label14;
         private Button button2;
         private TextBox textBox7;
@@ -183,6 +184,6 @@
         private Label label5;
         private Label label2;
         private Label label3;
-        private Button button3;
+        private Button btmSolBaja;
     }
 }

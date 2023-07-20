@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btmAltaCliente = new Button();
+            btmBajaCliente = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btmAltaCliente
             // 
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(45, 48);
-            button1.Name = "button1";
-            button1.Size = new Size(215, 185);
-            button1.TabIndex = 2;
-            button1.Text = "Alta clientes";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btmAltaCliente.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmAltaCliente.Location = new Point(45, 48);
+            btmAltaCliente.Name = "btmAltaCliente";
+            btmAltaCliente.Size = new Size(215, 185);
+            btmAltaCliente.TabIndex = 2;
+            btmAltaCliente.Text = "Alta clientes";
+            btmAltaCliente.UseVisualStyleBackColor = true;
+            btmAltaCliente.Click += button1_Click;
             // 
-            // button2
+            // btmBajaCliente
             // 
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(361, 48);
-            button2.Name = "button2";
-            button2.Size = new Size(215, 185);
-            button2.TabIndex = 3;
-            button2.Text = "Baja clientes";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btmBajaCliente.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmBajaCliente.Location = new Point(361, 48);
+            btmBajaCliente.Name = "btmBajaCliente";
+            btmBajaCliente.Size = new Size(215, 185);
+            btmBajaCliente.TabIndex = 3;
+            btmBajaCliente.Text = "Baja clientes";
+            btmBajaCliente.UseVisualStyleBackColor = true;
+            btmBajaCliente.Click += button2_Click;
             // 
             // ControlClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(626, 280);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btmBajaCliente);
+            Controls.Add(btmAltaCliente);
             Name = "ControlClientes";
             Text = "Control clientes";
             ResumeLayout(false);
@@ -68,7 +68,7 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btmAltaCliente;
+        private Button btmBajaCliente;
     }
 }

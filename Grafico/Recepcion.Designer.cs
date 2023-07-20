@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btmClientes = new Button();
+            btmMenu = new Button();
+            btmIngresoPedido = new Button();
+            btmEstado = new Button();
             SuspendLayout();
             // 
             // label1
@@ -46,58 +46,59 @@
             label1.Text = "Receptor";
             label1.Click += label1_Click;
             // 
-            // button1
+            // btmClientes
             // 
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(215, 185);
-            button1.TabIndex = 1;
-            button1.Text = "Clientes";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btmClientes.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmClientes.Location = new Point(12, 62);
+            btmClientes.Name = "btmClientes";
+            btmClientes.Size = new Size(215, 185);
+            btmClientes.TabIndex = 1;
+            btmClientes.Text = "Clientes";
+            btmClientes.UseVisualStyleBackColor = true;
+            btmClientes.Click += button1_Click;
             // 
-            // button2
+            // btmMenu
             // 
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(288, 302);
-            button2.Name = "button2";
-            button2.Size = new Size(215, 185);
-            button2.TabIndex = 2;
-            button2.Text = "Menú";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btmMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmMenu.Location = new Point(288, 302);
+            btmMenu.Name = "btmMenu";
+            btmMenu.Size = new Size(215, 185);
+            btmMenu.TabIndex = 2;
+            btmMenu.Text = "Menú";
+            btmMenu.UseVisualStyleBackColor = true;
+            btmMenu.Click += button2_Click;
             // 
-            // button3
+            // btmIngresoPedido
             // 
-            button3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(288, 62);
-            button3.Name = "button3";
-            button3.Size = new Size(215, 185);
-            button3.TabIndex = 3;
-            button3.Text = "Ingresar pedido";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btmIngresoPedido.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmIngresoPedido.Location = new Point(288, 62);
+            btmIngresoPedido.Name = "btmIngresoPedido";
+            btmIngresoPedido.Size = new Size(215, 185);
+            btmIngresoPedido.TabIndex = 3;
+            btmIngresoPedido.Text = "Ingresar pedido";
+            btmIngresoPedido.UseVisualStyleBackColor = true;
+            btmIngresoPedido.Click += button3_Click;
             // 
-            // button4
+            // btmEstado
             // 
-            button4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(12, 302);
-            button4.Name = "button4";
-            button4.Size = new Size(215, 185);
-            button4.TabIndex = 4;
-            button4.Text = "Estados";
-            button4.UseVisualStyleBackColor = true;
+            btmEstado.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btmEstado.Location = new Point(12, 302);
+            btmEstado.Name = "btmEstado";
+            btmEstado.Size = new Size(215, 185);
+            btmEstado.TabIndex = 4;
+            btmEstado.Text = "Estados";
+            btmEstado.UseVisualStyleBackColor = true;
+            btmEstado.Click += btmEstado_Click;
             // 
             // Recepcion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(523, 507);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btmEstado);
+            Controls.Add(btmIngresoPedido);
+            Controls.Add(btmMenu);
+            Controls.Add(btmClientes);
             Controls.Add(label1);
             Name = "Recepcion";
             Text = "Form1";
@@ -109,9 +110,9 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btmClientes;
+        private Button btmMenu;
+        private Button btmIngresoPedido;
+        private Button btmEstado;
     }
 }

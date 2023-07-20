@@ -31,5 +31,15 @@ namespace Grafico
         {
 
         }
+
+        private void IngresoPedido_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Recepcion.frmIngresoPedido.Hide();
+        }
     }
 }
