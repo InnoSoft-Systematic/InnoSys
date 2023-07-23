@@ -23,6 +23,7 @@ namespace Grafico
 
         public static ControlClientes frmControlClientes = new ControlClientes();
         public static IngresoPedido frmIngresoPedido = new IngresoPedido();
+        public static PUIngresoCorrecto PopIngresoPedido = new PUIngresoCorrecto();
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -301,6 +301,7 @@
             btmAceptar.TabIndex = 31;
             btmAceptar.Text = "ACEPTAR";
             btmAceptar.UseVisualStyleBackColor = true;
+            btmAceptar.Click += btmAceptar_Click;
             // 
             // btmVolver
             // 
