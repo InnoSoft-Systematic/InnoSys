@@ -32,7 +32,6 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button5 = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
@@ -47,6 +46,7 @@
             button4.TabIndex = 7;
             button4.Text = "Stock";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button1
             // 
@@ -78,17 +78,6 @@
             button3.Text = "Zonas";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.Coral;
-            button5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(630, 315);
-            button5.Name = "button5";
-            button5.Size = new Size(290, 123);
-            button5.TabIndex = 11;
-            button5.Text = "Autorización cuentas clientes";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             button6.BackColor = Color.Coral;
@@ -119,6 +108,7 @@
             button8.TabIndex = 14;
             button8.Text = "Menú";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // Gerente
             // 
@@ -128,7 +118,6 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button5);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -144,7 +133,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button5;
         private Button button6;
         private Button button7;
         private Button button8;

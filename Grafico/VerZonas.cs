@@ -10,23 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InnoSys.Gerente
+namespace InnoSys
 {
-    public partial class Gerente : Form
+    public partial class VerZonas : Form
     {
-        public Gerente()
+        public VerZonas()
         {
             InitializeComponent();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Program.frmMenu.Show();
+            Program.frmVerZonas.Close();
         }
     }
 }

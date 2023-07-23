@@ -36,7 +36,6 @@
             comboBox1 = new ComboBox();
             label6 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            comboBox2 = new ComboBox();
             label3 = new Label();
             button1 = new Button();
             radioButton2 = new RadioButton();
@@ -52,6 +51,17 @@
             radioButton5 = new RadioButton();
             label7 = new Label();
             button2 = new Button();
+            label8 = new Label();
+            label9 = new Label();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            label10 = new Label();
+            label11 = new Label();
+            textBox2 = new TextBox();
+            label12 = new Label();
+            listBox1 = new ListBox();
+            label13 = new Label();
             SuspendLayout();
             // 
             // label2
@@ -94,7 +104,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(109, 195);
+            comboBox1.Location = new Point(57, 230);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 37;
@@ -102,7 +112,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(24, 198);
+            label6.Location = new Point(57, 212);
             label6.Name = "label6";
             label6.Size = new Size(46, 15);
             label6.TabIndex = 36;
@@ -113,14 +123,6 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             contextMenuStrip1.Opening += contextMenuStrip1_Opening;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(109, 152);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 40;
             // 
             // label3
             // 
@@ -185,7 +187,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(389, 230);
+            checkBox1.Location = new Point(228, 227);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(88, 19);
             checkBox1.TabIndex = 47;
@@ -195,7 +197,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(389, 270);
+            checkBox2.Location = new Point(228, 277);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(65, 19);
             checkBox2.TabIndex = 48;
@@ -205,18 +207,18 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(389, 309);
+            checkBox3.Location = new Point(228, 252);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(65, 19);
+            checkBox3.Size = new Size(91, 19);
             checkBox3.TabIndex = 49;
-            checkBox3.Text = "Vegano";
+            checkBox3.Text = "Baja calorías";
             checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Pure con milanesa", "Ensalada de verduras", "Pan sin harina" });
-            checkedListBox1.Location = new Point(563, 219);
+            checkedListBox1.Location = new Point(519, 212);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(138, 202);
             checkedListBox1.TabIndex = 50;
@@ -225,7 +227,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(494, 130);
+            label5.Location = new Point(336, 139);
             label5.Name = "label5";
             label5.Size = new Size(56, 30);
             label5.TabIndex = 51;
@@ -234,7 +236,7 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(519, 175);
+            radioButton4.Location = new Point(450, 175);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(98, 19);
             radioButton4.TabIndex = 54;
@@ -245,7 +247,7 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(428, 175);
+            radioButton5.Location = new Point(196, 175);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(44, 19);
             radioButton5.TabIndex = 53;
@@ -263,7 +265,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(109, 270);
+            button2.Location = new Point(528, 483);
             button2.Name = "button2";
             button2.Size = new Size(129, 68);
             button2.TabIndex = 55;
@@ -271,11 +273,123 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(405, 194);
+            label8.Name = "label8";
+            label8.Size = new Size(209, 15);
+            label8.TabIndex = 56;
+            label8.Text = "*Si elije personalizado, se muestra esto";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(57, 307);
+            label9.Name = "label9";
+            label9.Size = new Size(309, 15);
+            label9.TabIndex = 57;
+            label9.Text = "*Si marca estos parámetros, reduce la búsqueda de menú";
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(405, 254);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(93, 19);
+            checkBox4.TabIndex = 60;
+            checkBox4.Text = "Baja Calorías";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(405, 277);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(65, 19);
+            checkBox5.TabIndex = 59;
+            checkBox5.Text = "Celíaco";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(405, 229);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(88, 19);
+            checkBox6.TabIndex = 58;
+            checkBox6.Text = "Vegetariano";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(35, 130);
+            label10.Name = "label10";
+            label10.Size = new Size(134, 15);
+            label10.TabIndex = 61;
+            label10.Text = "*Información del cliente";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(110, 197);
+            label11.Name = "label11";
+            label11.Size = new Size(153, 15);
+            label11.TabIndex = 62;
+            label11.Text = "*Si elije fijo, se muestra esto";
+            // 
+            // textBox2
+            // 
+            textBox2.Cursor = Cursors.IBeam;
+            textBox2.Location = new Point(57, 273);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(46, 23);
+            textBox2.TabIndex = 64;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(57, 256);
+            label12.Name = "label12";
+            label12.Size = new Size(55, 15);
+            label12.TabIndex = 65;
+            label12.Text = "Cantidad";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(269, 397);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(152, 154);
+            listBox1.TabIndex = 66;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(269, 365);
+            label13.Name = "label13";
+            label13.Size = new Size(149, 15);
+            label13.TabIndex = 67;
+            label13.Text = "*Lista de pedido del cliente";
+            // 
             // IngresoPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 563);
+            Controls.Add(label13);
+            Controls.Add(listBox1);
+            Controls.Add(label12);
+            Controls.Add(textBox2);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(checkBox4);
+            Controls.Add(checkBox5);
+            Controls.Add(checkBox6);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(button2);
             Controls.Add(radioButton4);
             Controls.Add(radioButton5);
@@ -291,7 +405,6 @@
             Controls.Add(radioButton1);
             Controls.Add(button1);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label6);
             Controls.Add(textBox1);
@@ -299,7 +412,7 @@
             Controls.Add(button4);
             Controls.Add(label2);
             Name = "IngresoPedido";
-            Text = "Ingreso pedido";
+            Text = "         ";
             Load += IngresoPedido_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -314,7 +427,6 @@
         private ComboBox comboBox1;
         private Label label6;
         private ContextMenuStrip contextMenuStrip1;
-        private ComboBox comboBox2;
         private Label label3;
         private Button button1;
         private RadioButton radioButton2;
@@ -330,5 +442,16 @@
         private RadioButton radioButton5;
         private Label label7;
         private Button button2;
+        private Label label8;
+        private Label label9;
+        private CheckBox checkBox4;
+        private CheckBox checkBox5;
+        private CheckBox checkBox6;
+        private Label label10;
+        private Label label11;
+        private TextBox textBox2;
+        private Label label12;
+        private ListBox listBox1;
+        private Label label13;
     }
 }

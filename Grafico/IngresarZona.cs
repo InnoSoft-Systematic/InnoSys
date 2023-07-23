@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace InnoSys.Administrador
 {
-    public partial class Administrador : Form
+    public partial class IngresarZona : Form
     {
-        public Administrador()
+        public IngresarZona()
         {
             InitializeComponent();
+        }
+
+        private void IngresarZona_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

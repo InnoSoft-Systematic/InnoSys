@@ -1,6 +1,6 @@
 ﻿namespace InnoSys.Administrador
 {
-    partial class Administrador
+    partial class Informatico
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             button6 = new Button();
-            button1 = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
             button5 = new Button();
             button7 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button1 = new Button();
+            button8 = new Button();
             SuspendLayout();
             // 
             // button6
@@ -47,17 +50,6 @@
             button6.TabIndex = 13;
             button6.Text = "Clientes";
             button6.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Coral;
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 152);
-            button1.Name = "button1";
-            button1.Size = new Size(290, 123);
-            button1.TabIndex = 14;
-            button1.Text = "Autorización cuentas clientes";
-            button1.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -72,7 +64,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(647, 12);
+            button2.Location = new Point(633, 12);
             button2.Name = "button2";
             button2.Size = new Size(290, 123);
             button2.TabIndex = 16;
@@ -82,7 +74,7 @@
             // button4
             // 
             button4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(647, 152);
+            button4.Location = new Point(633, 141);
             button4.Name = "button4";
             button4.Size = new Size(290, 123);
             button4.TabIndex = 17;
@@ -92,7 +84,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(321, 152);
+            button5.Location = new Point(321, 276);
             button5.Name = "button5";
             button5.Size = new Size(290, 123);
             button5.TabIndex = 18;
@@ -103,39 +95,90 @@
             // 
             button7.BackColor = Color.Brown;
             button7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.Location = new Point(647, 334);
+            button7.Location = new Point(633, 488);
             button7.Name = "button7";
             button7.Size = new Size(290, 65);
             button7.TabIndex = 19;
-            button7.Text = "Cambiar de rol";
+            button7.Text = "CAMBIAR ROL";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
-            // Administrador
+            // button9
+            // 
+            button9.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button9.Location = new Point(12, 141);
+            button9.Name = "button9";
+            button9.Size = new Size(290, 123);
+            button9.TabIndex = 21;
+            button9.Text = "Vehículos";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button10.Location = new Point(633, 276);
+            button10.Name = "button10";
+            button10.Size = new Size(290, 123);
+            button10.TabIndex = 22;
+            button10.Text = "Stock";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(12, 276);
+            button1.Name = "button1";
+            button1.Size = new Size(290, 123);
+            button1.TabIndex = 23;
+            button1.Text = "Cuerpo directivo";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button8
+            // 
+            button8.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button8.Location = new Point(321, 141);
+            button8.Name = "button8";
+            button8.Size = new Size(290, 123);
+            button8.TabIndex = 20;
+            button8.Text = "Añadir zonas";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // Informatico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(957, 450);
+            ClientSize = new Size(957, 565);
+            Controls.Add(button1);
+            Controls.Add(button10);
+            Controls.Add(button9);
+            Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button3);
-            Controls.Add(button1);
             Controls.Add(button6);
-            Name = "Administrador";
-            Text = "Administrador";
+            Name = "Informatico";
+            Text = "Informático";
+            Load += Informatico_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button button6;
-        private Button button1;
         private Button button3;
         private Button button2;
         private Button button4;
         private Button button5;
         private Button button7;
+        private Button button9;
+        private Button button10;
+        private Button button1;
+        private Button button8;
     }
 }
