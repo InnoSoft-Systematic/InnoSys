@@ -269,6 +269,7 @@
             button2.TabIndex = 55;
             button2.Text = "INGRESAR";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // IngresoPedido
             // 

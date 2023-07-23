@@ -73,6 +73,11 @@ namespace Grafico
         {
             ControlClientes.frmAltaCliente.Hide();
 
-    }
+        }
+
+        private void btmAceptar_Click(object sender, EventArgs e)
+        {
+            Recepcion.PopIngresoPedido.Show();
+        }
     }
 }

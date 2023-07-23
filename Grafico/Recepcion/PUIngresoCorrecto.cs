@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace InnoSys
 {
-    public partial class Login : Form
+    public partial class PUIngresoCorrecto : Form
     {
-        public Login()
+        public PUIngresoCorrecto()
         {
             InitializeComponent();
         }
@@ -25,14 +25,9 @@ namespace InnoSys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.frmLogin.Hide();
-            Program.frmRecepcion.Show();
+            
+            Recepcion.PopIngresoPedido.Close();
 
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
 
         }
     }

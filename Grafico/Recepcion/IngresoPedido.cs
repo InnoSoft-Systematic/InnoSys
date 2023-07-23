@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnoSys;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Grafico
         public IngresoPedido()
         {
             InitializeComponent();
+            
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +41,12 @@ namespace Grafico
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Recepcion.frmIngresoPedido.Hide();
+        Recepcion.frmIngresoPedido.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Recepcion.PopIngresoPedido.Show();
         }
     }
 }
