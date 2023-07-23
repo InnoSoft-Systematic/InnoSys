@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grafico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace InnoSys
         public Cocina()
         {
             InitializeComponent();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Program.frmStock.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Program.frmMenu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Program.frmEstados.Show();
         }
     }
 }

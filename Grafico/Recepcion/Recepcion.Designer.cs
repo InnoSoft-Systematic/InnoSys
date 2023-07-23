@@ -41,9 +41,9 @@
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(122, 37);
+            label1.Size = new Size(138, 37);
             label1.TabIndex = 0;
-            label1.Text = "Receptor";
+            label1.Text = "Recepción";
             label1.Click += label1_Click;
             // 
             // btmClientes
@@ -60,7 +60,7 @@
             // btmMenu
             // 
             btmMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmMenu.Location = new Point(288, 302);
+            btmMenu.Location = new Point(258, 272);
             btmMenu.Name = "btmMenu";
             btmMenu.Size = new Size(215, 185);
             btmMenu.TabIndex = 2;
@@ -71,7 +71,7 @@
             // btmIngresoPedido
             // 
             btmIngresoPedido.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmIngresoPedido.Location = new Point(288, 62);
+            btmIngresoPedido.Location = new Point(258, 62);
             btmIngresoPedido.Name = "btmIngresoPedido";
             btmIngresoPedido.Size = new Size(215, 185);
             btmIngresoPedido.TabIndex = 3;
@@ -82,7 +82,7 @@
             // btmEstado
             // 
             btmEstado.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmEstado.Location = new Point(12, 302);
+            btmEstado.Location = new Point(12, 272);
             btmEstado.Name = "btmEstado";
             btmEstado.Size = new Size(215, 185);
             btmEstado.TabIndex = 4;
@@ -94,14 +94,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(523, 507);
+            ClientSize = new Size(492, 479);
             Controls.Add(btmEstado);
             Controls.Add(btmIngresoPedido);
             Controls.Add(btmMenu);
             Controls.Add(btmClientes);
             Controls.Add(label1);
             Name = "Recepcion";
-            Text = "Form1";
+            Text = "Recepción";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

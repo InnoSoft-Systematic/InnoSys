@@ -9,23 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InnoSys.Transporte
+namespace InnoSys
 {
-    public partial class Transporte : Form
+    public partial class Stock : Form
     {
-        public Transporte()
+        public Stock()
         {
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            Program.frmVehículos.Show();
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmVerZonas.Show();
+            Program.frmStock.Close();
         }
     }
 }

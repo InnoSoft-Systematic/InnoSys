@@ -5,28 +5,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InnoSys.Gerente
+namespace InnoSys
 {
-    public partial class Gerente : Form
+    public partial class Vehículos : Form
     {
-        public Gerente()
+        public Vehículos()
         {
             InitializeComponent();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Program.frmMenu.Show();
+            Program.frmVehículos.Close();
         }
     }
 }

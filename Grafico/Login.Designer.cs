@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
+            txtNombre = new TextBox();
             button4 = new Button();
             button1 = new Button();
             label5 = new Label();
             label1 = new Label();
             SuspendLayout();
             // 
-            // textBox3
+            // txtContraseña
             // 
-            textBox3.Location = new Point(137, 75);
-            textBox3.Name = "textBox3";
-            textBox3.PasswordChar = 'X';
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 38;
+            txtContraseña.Location = new Point(137, 75);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = 'X';
+            txtContraseña.Size = new Size(100, 23);
+            txtContraseña.TabIndex = 38;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(137, 39);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 39;
+            txtNombre.Location = new Point(137, 39);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 39;
+            txtNombre.TextChanged += textBox1_TextChanged;
             // 
             // button4
             // 
@@ -99,8 +100,8 @@
             Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(button4);
-            Controls.Add(textBox1);
-            Controls.Add(textBox3);
+            Controls.Add(txtNombre);
+            Controls.Add(txtContraseña);
             Name = "Login";
             Text = "Ingreso";
             Load += Login_Load;
@@ -110,8 +111,8 @@
 
         #endregion
 
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private TextBox txtContraseña;
+        private TextBox txtNombre;
         private Button button4;
         private Button button1;
         private Label label5;
