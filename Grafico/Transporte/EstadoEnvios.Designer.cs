@@ -1,6 +1,6 @@
 ﻿namespace InnoSys
 {
-    partial class VerZonas
+    partial class EstadoEnvios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
+            btmVolver = new Button();
+            lblInfo = new Label();
             listBox1 = new ListBox();
-            button4 = new Button();
             SuspendLayout();
             // 
-            // label2
+            // btmVolver
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(153, 54);
-            label2.TabIndex = 35;
-            label2.Text = "ZONAS";
+            btmVolver.Location = new Point(16, 6);
+            btmVolver.Name = "btmVolver";
+            btmVolver.Size = new Size(75, 23);
+            btmVolver.TabIndex = 34;
+            btmVolver.Text = "Volver";
+            btmVolver.UseVisualStyleBackColor = true;
+            btmVolver.Click += btmVolver_Click;
+            // 
+            // lblInfo
+            // 
+            lblInfo.AutoSize = true;
+            lblInfo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblInfo.Location = new Point(12, 32);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(314, 54);
+            lblInfo.TabIndex = 33;
+            lblInfo.Text = "ESTADO ENVÍOS";
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 92);
+            listBox1.Location = new Point(16, 100);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 38;
+            listBox1.Size = new Size(743, 229);
+            listBox1.TabIndex = 35;
             // 
-            // button4
-            // 
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 39;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
-            // VerZonas
+            // EstadoEnvios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 403);
-            Controls.Add(button4);
+            ClientSize = new Size(783, 362);
             Controls.Add(listBox1);
-            Controls.Add(label2);
-            Name = "VerZonas";
-            Text = "VerZonas";
+            Controls.Add(btmVolver);
+            Controls.Add(lblInfo);
+            Name = "EstadoEnvios";
+            Text = "Estado Envios";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label2;
+        private Button btmVolver;
+        private Label lblInfo;
         private ListBox listBox1;
-        private Button button4;
     }
 }

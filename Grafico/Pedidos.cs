@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InnoSys.Administrador
+namespace InnoSys
 {
-    public partial class IngresoMenu : Form
+    public partial class Pedidos : Form
     {
-        public IngresoMenu()
+        public Pedidos()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,6 +51,7 @@
             btmVolver.TabIndex = 34;
             btmVolver.Text = "Volver";
             btmVolver.UseVisualStyleBackColor = true;
+            btmVolver.Click += btmVolver_Click;
             // 
             // lblInfo
             // 
@@ -173,6 +174,7 @@
             Controls.Add(lblInfo);
             Name = "AltaEmpleado";
             Text = "AltaEmpleado";
+            Load += AltaEmpleado_Load;
             ResumeLayout(false);
             PerformLayout();
         }

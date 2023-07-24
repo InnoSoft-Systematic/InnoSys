@@ -56,6 +56,7 @@
             button1.TabIndex = 17;
             button1.Text = "Ingreso de envíos";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -66,6 +67,7 @@
             button2.TabIndex = 18;
             button2.Text = "Estado de envíos";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -76,6 +78,7 @@
             button4.TabIndex = 19;
             button4.Text = "Sucursales";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -86,6 +89,7 @@
             button5.TabIndex = 20;
             button5.Text = "Modificar estado de envíos";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -112,6 +116,7 @@
             Controls.Add(button3);
             Name = "Transporte";
             Text = "Transporte";
+            Load += Transporte_Load;
             ResumeLayout(false);
         }
 

@@ -45,6 +45,7 @@
             button2.TabIndex = 17;
             button2.Text = "Pedidos";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button10
             // 
@@ -77,6 +78,7 @@
             button1.TabIndex = 25;
             button1.Text = "Ingreso menú";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -98,6 +100,7 @@
             button5.TabIndex = 27;
             button5.Text = "Modificar estados";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // Cocina
             // 
@@ -111,7 +114,8 @@
             Controls.Add(button10);
             Controls.Add(button2);
             Name = "Cocina";
-            Text = "Inicio";
+            Text = "Cocina";
+            Load += Cocina_Load;
             ResumeLayout(false);
         }
 

@@ -44,5 +44,30 @@ namespace InnoSys.Administrador
         {
             Program.frmStock.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Program.frmClientes.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Program.frmPedidos.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Program.frmMenu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Program.frmVerZonas.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Program.frmVehículos.Show();
+        }
     }
 }
