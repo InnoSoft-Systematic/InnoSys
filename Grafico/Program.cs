@@ -19,6 +19,10 @@ namespace Grafico
         public static Stock frmStock = new Stock();
         public static Vehículos frmVehículos = new Vehículos();
         public static VerZonas frmVerZonas = new VerZonas();
+        public static Pedidos frmPedidos = new Pedidos();
+        public static Clientes frmClientes = new Clientes();
+        public static Sucursales frmSucursales = new Sucursales();
+
 
         //Formularios base
         public static Recepcion frmRecepcion = new Recepcion();

@@ -50,6 +50,7 @@
             button6.TabIndex = 13;
             button6.Text = "Clientes";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button3
             // 
@@ -60,6 +61,7 @@
             button3.TabIndex = 15;
             button3.Text = "Zonas";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -70,6 +72,7 @@
             button2.TabIndex = 16;
             button2.Text = "Pedidos";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -80,6 +83,7 @@
             button4.TabIndex = 17;
             button4.Text = "Menú";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -112,6 +116,7 @@
             button9.TabIndex = 21;
             button9.Text = "Vehículos";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button10
             // 

@@ -1,6 +1,6 @@
 ﻿namespace InnoSys
 {
-    partial class VerZonas
+    partial class Sucursales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            listBox1 = new ListBox();
             button4 = new Button();
+            listBox1 = new ListBox();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // label2
+            // button4
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(153, 54);
-            label2.TabIndex = 35;
-            label2.Text = "ZONAS";
+            button4.Location = new Point(12, 5);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 42;
+            button4.Text = "Volver";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 92);
+            listBox1.Location = new Point(12, 85);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 38;
+            listBox1.TabIndex = 41;
             // 
-            // button4
+            // label2
             // 
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 39;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(254, 54);
+            label2.TabIndex = 40;
+            label2.Text = "SUCURSALES";
             // 
-            // VerZonas
+            // Sucursales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 403);
+            ClientSize = new Size(327, 402);
             Controls.Add(button4);
             Controls.Add(listBox1);
             Controls.Add(label2);
-            Name = "VerZonas";
-            Text = "VerZonas";
+            Name = "Sucursales";
+            Text = "Sucursales";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label2;
-        private ListBox listBox1;
         private Button button4;
+        private ListBox listBox1;
+        private Label label2;
     }
 }

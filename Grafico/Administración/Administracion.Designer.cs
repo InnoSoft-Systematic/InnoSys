@@ -32,6 +32,8 @@
             button2 = new Button();
             button5 = new Button();
             button1 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button6
@@ -44,6 +46,7 @@
             button6.TabIndex = 16;
             button6.Text = "Clientes";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button2
             // 
@@ -54,6 +57,7 @@
             button2.TabIndex = 17;
             button2.Text = "Pedidos";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button5
             // 
@@ -64,6 +68,7 @@
             button5.TabIndex = 19;
             button5.Text = "Envíos";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button1
             // 
@@ -75,18 +80,45 @@
             button1.TabIndex = 20;
             button1.Text = "Autorización cuentas clientes";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.White;
+            button3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Location = new Point(614, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(290, 123);
+            button3.TabIndex = 21;
+            button3.Text = "Vehíuclos";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(614, 153);
+            button4.Name = "button4";
+            button4.Size = new Size(290, 123);
+            button4.TabIndex = 22;
+            button4.Text = "Ingresar Zona";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Administracion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 306);
+            ClientSize = new Size(919, 306);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(button6);
             Name = "Administracion";
             Text = "Administracion";
+            Load += Administracion_Load;
             ResumeLayout(false);
         }
 
@@ -95,5 +127,7 @@
         private Button button2;
         private Button button5;
         private Button button1;
+        private Button button3;
+        private Button button4;
     }
 }
