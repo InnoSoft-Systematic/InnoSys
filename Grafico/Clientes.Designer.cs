@@ -28,69 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            button4 = new Button();
-            listBox1 = new ListBox();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
+            lblTitulo = new Label();
+            btnVolver = new Button();
+            lstClientes = new ListBox();
+            lblTipoCliente = new Label();
+            cboTipoCliente = new ComboBox();
             SuspendLayout();
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(190, 54);
-            label2.TabIndex = 54;
-            label2.Text = "CLIENTES";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(12, 36);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(190, 54);
+            lblTitulo.TabIndex = 54;
+            lblTitulo.Text = "CLIENTES";
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 55;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 55;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // listBox1
+            // lstClientes
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 106);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 56;
+            lstClientes.FormattingEnabled = true;
+            lstClientes.ItemHeight = 15;
+            lstClientes.Location = new Point(12, 106);
+            lstClientes.Name = "lstClientes";
+            lstClientes.Size = new Size(308, 289);
+            lstClientes.TabIndex = 56;
             // 
-            // label3
+            // lblTipoCliente
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(341, 106);
-            label3.Name = "label3";
-            label3.Size = new Size(115, 15);
-            label3.TabIndex = 57;
-            label3.Text = "Filtrar tipo de cliente";
+            lblTipoCliente.AutoSize = true;
+            lblTipoCliente.Location = new Point(341, 106);
+            lblTipoCliente.Name = "lblTipoCliente";
+            lblTipoCliente.Size = new Size(115, 15);
+            lblTipoCliente.TabIndex = 57;
+            lblTipoCliente.Text = "Filtrar tipo de cliente";
             // 
-            // comboBox1
+            // cboTipoCliente
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(341, 133);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 58;
+            cboTipoCliente.FormattingEnabled = true;
+            cboTipoCliente.Location = new Point(341, 133);
+            cboTipoCliente.Name = "cboTipoCliente";
+            cboTipoCliente.Size = new Size(121, 23);
+            cboTipoCliente.TabIndex = 58;
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(482, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(label3);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(cboTipoCliente);
+            Controls.Add(lblTipoCliente);
+            Controls.Add(lstClientes);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "Clientes";
             Text = "Clientes";
             ResumeLayout(false);
@@ -99,10 +99,10 @@
 
         #endregion
 
-        private Label label2;
-        private Button button4;
-        private ListBox listBox1;
-        private Label label3;
-        private ComboBox comboBox1;
+        private Label lblTitulo;
+        private Button btnVolver;
+        private ListBox lstClientes;
+        private Label lblTipoCliente;
+        private ComboBox cboTipoCliente;
     }
 }

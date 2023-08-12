@@ -28,91 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
-            button10 = new Button();
-            button4 = new Button();
-            button1 = new Button();
-            button3 = new Button();
-            button5 = new Button();
+            btnPedidos = new Button();
+            btnStock = new Button();
+            btnMenu = new Button();
+            btnIngrMenu = new Button();
+            btnEstados = new Button();
+            btnModEstados = new Button();
             SuspendLayout();
             // 
-            // button2
+            // btnPedidos
             // 
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(12, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(290, 123);
-            button2.TabIndex = 17;
-            button2.Text = "Pedidos";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnPedidos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPedidos.Location = new Point(12, 12);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(290, 123);
+            btnPedidos.TabIndex = 17;
+            btnPedidos.Text = "Pedidos";
+            btnPedidos.UseVisualStyleBackColor = true;
+            btnPedidos.Click += button2_Click;
             // 
-            // button10
+            // btnStock
             // 
-            button10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button10.Location = new Point(324, 12);
-            button10.Name = "button10";
-            button10.Size = new Size(290, 123);
-            button10.TabIndex = 23;
-            button10.Text = "Stock";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
+            btnStock.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStock.Location = new Point(324, 12);
+            btnStock.Name = "btnStock";
+            btnStock.Size = new Size(290, 123);
+            btnStock.TabIndex = 23;
+            btnStock.Text = "Stock";
+            btnStock.UseVisualStyleBackColor = true;
+            btnStock.Click += button10_Click;
             // 
-            // button4
+            // btnMenu
             // 
-            button4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(324, 141);
-            button4.Name = "button4";
-            button4.Size = new Size(290, 123);
-            button4.TabIndex = 24;
-            button4.Text = "Menú";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMenu.Location = new Point(324, 141);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(290, 123);
+            btnMenu.TabIndex = 24;
+            btnMenu.Text = "Menú";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += button4_Click;
             // 
-            // button1
+            // btnIngrMenu
             // 
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(324, 279);
-            button1.Name = "button1";
-            button1.Size = new Size(290, 123);
-            button1.TabIndex = 25;
-            button1.Text = "Ingreso menú";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnIngrMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIngrMenu.Location = new Point(324, 279);
+            btnIngrMenu.Name = "btnIngrMenu";
+            btnIngrMenu.Size = new Size(290, 123);
+            btnIngrMenu.TabIndex = 25;
+            btnIngrMenu.Text = "Ingreso menú";
+            btnIngrMenu.UseVisualStyleBackColor = true;
+            btnIngrMenu.Click += button1_Click;
             // 
-            // button3
+            // btnEstados
             // 
-            button3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(12, 141);
-            button3.Name = "button3";
-            button3.Size = new Size(290, 123);
-            button3.TabIndex = 26;
-            button3.Text = "Estados";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnEstados.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEstados.Location = new Point(12, 141);
+            btnEstados.Name = "btnEstados";
+            btnEstados.Size = new Size(290, 123);
+            btnEstados.TabIndex = 26;
+            btnEstados.Text = "Estados";
+            btnEstados.UseVisualStyleBackColor = true;
+            btnEstados.Click += button3_Click;
             // 
-            // button5
+            // btnModEstados
             // 
-            button5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(12, 279);
-            button5.Name = "button5";
-            button5.Size = new Size(290, 123);
-            button5.TabIndex = 27;
-            button5.Text = "Modificar estados";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnModEstados.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModEstados.Location = new Point(12, 279);
+            btnModEstados.Name = "btnModEstados";
+            btnModEstados.Size = new Size(290, 123);
+            btnModEstados.TabIndex = 27;
+            btnModEstados.Text = "Modificar estados";
+            btnModEstados.UseVisualStyleBackColor = true;
+            btnModEstados.Click += button5_Click;
             // 
             // Cocina
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(637, 419);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(button4);
-            Controls.Add(button10);
-            Controls.Add(button2);
+            Controls.Add(btnModEstados);
+            Controls.Add(btnEstados);
+            Controls.Add(btnIngrMenu);
+            Controls.Add(btnMenu);
+            Controls.Add(btnStock);
+            Controls.Add(btnPedidos);
             Name = "Cocina";
             Text = "Cocina";
             Load += Cocina_Load;
@@ -121,11 +121,11 @@
 
         #endregion
 
-        private Button button2;
-        private Button button10;
-        private Button button4;
-        private Button button1;
-        private Button button3;
-        private Button button5;
+        private Button btnPedidos;
+        private Button btnStock;
+        private Button btnMenu;
+        private Button btnIngrMenu;
+        private Button btnEstados;
+        private Button btnModEstados;
     }
 }

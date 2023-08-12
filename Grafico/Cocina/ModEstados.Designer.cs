@@ -28,91 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            listBox1 = new ListBox();
-            label2 = new Label();
-            button4 = new Button();
-            label3 = new Label();
+            btnAlterarEstado = new Button();
+            lblDescripcion = new Label();
+            cboEstado = new ComboBox();
+            lstEnvios = new ListBox();
+            lblTitulo = new Label();
+            btnVolver = new Button();
+            lblEstado = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnAlterarEstado
             // 
-            button1.Location = new Point(195, 211);
-            button1.Name = "button1";
-            button1.Size = new Size(173, 55);
-            button1.TabIndex = 75;
-            button1.Text = "ALTERAR ESTADO";
-            button1.UseVisualStyleBackColor = true;
+            btnAlterarEstado.Location = new Point(195, 211);
+            btnAlterarEstado.Name = "btnAlterarEstado";
+            btnAlterarEstado.Size = new Size(173, 55);
+            btnAlterarEstado.TabIndex = 75;
+            btnAlterarEstado.Text = "ALTERAR ESTADO";
+            btnAlterarEstado.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblDescripcion
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(222, 15);
-            label1.TabIndex = 74;
-            label1.Text = "Selecciona el estado DE ENVÍO a cambiar";
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.Location = new Point(12, 102);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(222, 15);
+            lblDescripcion.TabIndex = 74;
+            lblDescripcion.Text = "Selecciona el estado DE ENVÍO a cambiar";
             // 
-            // comboBox1
+            // cboEstado
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(217, 160);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 73;
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Location = new Point(217, 160);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(121, 23);
+            cboEstado.TabIndex = 73;
             // 
-            // listBox1
+            // lstEnvios
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 132);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(168, 259);
-            listBox1.TabIndex = 72;
+            lstEnvios.FormattingEnabled = true;
+            lstEnvios.ItemHeight = 15;
+            lstEnvios.Location = new Point(12, 132);
+            lstEnvios.Name = "lstEnvios";
+            lstEnvios.Size = new Size(168, 259);
+            lstEnvios.TabIndex = 72;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(0, 37);
-            label2.Name = "label2";
-            label2.Size = new Size(361, 54);
-            label2.TabIndex = 71;
-            label2.Text = "MODIFICAR ENVÍO";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(0, 37);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(361, 54);
+            lblTitulo.TabIndex = 71;
+            lblTitulo.Text = "MODIFICAR ENVÍO";
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 11);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 76;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 11);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 76;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // label3
+            // lblEstado
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(238, 132);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 15);
-            label3.TabIndex = 77;
-            label3.Text = "Elige el estado";
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(238, 132);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(82, 15);
+            lblEstado.TabIndex = 77;
+            lblEstado.Text = "Elige el estado";
             // 
             // ModEstados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(430, 450);
-            Controls.Add(label3);
-            Controls.Add(button4);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
-            Controls.Add(listBox1);
-            Controls.Add(label2);
+            Controls.Add(lblEstado);
+            Controls.Add(btnVolver);
+            Controls.Add(btnAlterarEstado);
+            Controls.Add(lblDescripcion);
+            Controls.Add(cboEstado);
+            Controls.Add(lstEnvios);
+            Controls.Add(lblTitulo);
             Name = "ModEstados";
             Text = "Modificación de envíos";
             ResumeLayout(false);
@@ -121,12 +121,12 @@
 
         #endregion
 
-        private Button button1;
-        private Label label1;
-        private ComboBox comboBox1;
-        private ListBox listBox1;
-        private Label label2;
-        private Button button4;
-        private Label label3;
+        private Button btnAlterarEstado;
+        private Label lblDescripcion;
+        private ComboBox cboEstado;
+        private ListBox lstEnvios;
+        private Label lblTitulo;
+        private Button btnVolver;
+        private Label lblEstado;
     }
 }

@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            button4 = new Button();
-            listBox1 = new ListBox();
+            lblTitulo = new Label();
+            btnVolver = new Button();
+            lstPedidos = new ListBox();
             SuspendLayout();
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 33);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 54);
-            label2.TabIndex = 35;
-            label2.Text = "PEDIDOS";
-            label2.Click += label2_Click;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(12, 33);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(183, 54);
+            lblTitulo.TabIndex = 35;
+            lblTitulo.Text = "PEDIDOS";
+            lblTitulo.Click += label2_Click;
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(21, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 36;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(21, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 36;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // listBox1
+            // lstPedidos
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 104);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 38;
+            lstPedidos.FormattingEnabled = true;
+            lstPedidos.ItemHeight = 15;
+            lstPedidos.Location = new Point(12, 104);
+            lstPedidos.Name = "lstPedidos";
+            lstPedidos.Size = new Size(308, 289);
+            lstPedidos.TabIndex = 38;
             // 
             // Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(338, 450);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(lstPedidos);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "Pedidos";
             Text = "Pedidos";
             ResumeLayout(false);
@@ -79,8 +79,8 @@
 
         #endregion
 
-        private Label label2;
-        private Button button4;
-        private ListBox listBox1;
+        private Label lblTitulo;
+        private Button btnVolver;
+        private ListBox lstPedidos;
     }
 }

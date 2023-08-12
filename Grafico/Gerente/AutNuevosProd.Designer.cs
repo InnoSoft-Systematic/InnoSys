@@ -28,70 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            label2 = new Label();
-            listBox1 = new ListBox();
-            button1 = new Button();
-            label5 = new Label();
+            btnVolver = new Button();
+            lblTitulo = new Label();
+            lstProductos = new ListBox();
+            btnAceptar = new Button();
+            lblDescripcion = new Label();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 37;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 37;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(3, 42);
-            label2.Name = "label2";
-            label2.Size = new Size(469, 54);
-            label2.TabIndex = 36;
-            label2.Text = "AUTORIZAR PRODUCTOS";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(3, 42);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(469, 54);
+            lblTitulo.TabIndex = 36;
+            lblTitulo.Text = "AUTORIZAR PRODUCTOS";
             // 
-            // listBox1
+            // lstProductos
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 129);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(262, 289);
-            listBox1.TabIndex = 38;
+            lstProductos.FormattingEnabled = true;
+            lstProductos.ItemHeight = 15;
+            lstProductos.Location = new Point(12, 129);
+            lstProductos.Name = "lstProductos";
+            lstProductos.Size = new Size(262, 289);
+            lstProductos.TabIndex = 38;
             // 
-            // button1
+            // btnAceptar
             // 
-            button1.Location = new Point(308, 150);
-            button1.Name = "button1";
-            button1.Size = new Size(148, 60);
-            button1.TabIndex = 39;
-            button1.Text = "AUTORIZAR";
-            button1.UseVisualStyleBackColor = true;
+            btnAceptar.Location = new Point(308, 150);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(148, 60);
+            btnAceptar.TabIndex = 39;
+            btnAceptar.Text = "AUTORIZAR";
+            btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lblDescripcion
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 96);
-            label5.Name = "label5";
-            label5.Size = new Size(244, 15);
-            label5.TabIndex = 43;
-            label5.Text = "Selecciona los productos de la lista y autoriza";
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.Location = new Point(12, 96);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(244, 15);
+            lblDescripcion.TabIndex = 43;
+            lblDescripcion.Text = "Selecciona los productos de la lista y autoriza";
             // 
             // AutNuevosProd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 450);
-            Controls.Add(label5);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(lblDescripcion);
+            Controls.Add(btnAceptar);
+            Controls.Add(lstProductos);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "AutNuevosProd";
             Text = "Autorizar nuevos productos";
             ResumeLayout(false);
@@ -100,10 +100,10 @@
 
         #endregion
 
-        private Button button4;
-        private Label label2;
-        private ListBox listBox1;
-        private Button button1;
-        private Label label5;
+        private Button btnVolver;
+        private Label lblTitulo;
+        private ListBox lstProductos;
+        private Button btnAceptar;
+        private Label lblDescripcion;
     }
 }

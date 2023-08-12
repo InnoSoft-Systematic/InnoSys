@@ -28,70 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            label2 = new Label();
-            listBox1 = new ListBox();
-            label3 = new Label();
-            button1 = new Button();
+            btnVolver = new Button();
+            lblIngresarEnvio = new Label();
+            lstEnvios = new ListBox();
+            lblInfo = new Label();
+            btnDespachar = new Button();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(21, 14);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 38;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(21, 14);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 38;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // label2
+            // lblIngresarEnvio
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 40);
-            label2.Name = "label2";
-            label2.Size = new Size(333, 54);
-            label2.TabIndex = 37;
-            label2.Text = "INGRESAR ENVÍO";
+            lblIngresarEnvio.AutoSize = true;
+            lblIngresarEnvio.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIngresarEnvio.Location = new Point(12, 40);
+            lblIngresarEnvio.Name = "lblIngresarEnvio";
+            lblIngresarEnvio.Size = new Size(333, 54);
+            lblIngresarEnvio.TabIndex = 37;
+            lblIngresarEnvio.Text = "INGRESAR ENVÍO";
             // 
-            // listBox1
+            // lstEnvios
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(21, 113);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 47;
+            lstEnvios.FormattingEnabled = true;
+            lstEnvios.ItemHeight = 15;
+            lstEnvios.Location = new Point(21, 113);
+            lstEnvios.Name = "lstEnvios";
+            lstEnvios.Size = new Size(308, 289);
+            lstEnvios.TabIndex = 47;
             // 
-            // label3
+            // lblInfo
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(21, 94);
-            label3.Name = "label3";
-            label3.Size = new Size(282, 15);
-            label3.TabIndex = 48;
-            label3.Text = "*Se mostrará la lista de estados listos para despachar";
+            lblInfo.AutoSize = true;
+            lblInfo.Location = new Point(21, 94);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(282, 15);
+            lblInfo.TabIndex = 48;
+            lblInfo.Text = "*Se mostrará la lista de estados listos para despachar";
             // 
-            // button1
+            // btnDespachar
             // 
-            button1.Location = new Point(357, 196);
-            button1.Name = "button1";
-            button1.Size = new Size(144, 66);
-            button1.TabIndex = 49;
-            button1.Text = "DESPACHAR";
-            button1.UseVisualStyleBackColor = true;
+            btnDespachar.Location = new Point(357, 196);
+            btnDespachar.Name = "btnDespachar";
+            btnDespachar.Size = new Size(144, 66);
+            btnDespachar.TabIndex = 49;
+            btnDespachar.Text = "DESPACHAR";
+            btnDespachar.UseVisualStyleBackColor = true;
             // 
             // IngresoEnvío
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(538, 450);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(btnDespachar);
+            Controls.Add(lblInfo);
+            Controls.Add(lstEnvios);
+            Controls.Add(btnVolver);
+            Controls.Add(lblIngresarEnvio);
             Name = "IngresoEnvío";
             Text = "IngresoEnvío";
             ResumeLayout(false);
@@ -100,10 +100,10 @@
 
         #endregion
 
-        private Button button4;
-        private Label label2;
-        private ListBox listBox1;
-        private Label label3;
-        private Button button1;
+        private Button btnVolver;
+        private Label lblIngresarEnvio;
+        private ListBox lstEnvios;
+        private Label lblInfo;
+        private Button btnDespachar;
     }
 }

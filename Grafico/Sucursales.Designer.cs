@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            listBox1 = new ListBox();
-            label2 = new Label();
+            btnVolver = new Button();
+            lstSucursarles = new ListBox();
+            lblTitulo = new Label();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 5);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 42;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 5);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 42;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // listBox1
+            // lstSucursarles
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 85);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 41;
+            lstSucursarles.FormattingEnabled = true;
+            lstSucursarles.ItemHeight = 15;
+            lstSucursarles.Location = new Point(12, 85);
+            lstSucursarles.Name = "lstSucursarles";
+            lstSucursarles.Size = new Size(308, 289);
+            lstSucursarles.TabIndex = 41;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 28);
-            label2.Name = "label2";
-            label2.Size = new Size(254, 54);
-            label2.TabIndex = 40;
-            label2.Text = "SUCURSALES";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(12, 28);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(254, 54);
+            lblTitulo.TabIndex = 40;
+            lblTitulo.Text = "SUCURSALES";
             // 
             // Sucursales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(327, 402);
-            Controls.Add(button4);
-            Controls.Add(listBox1);
-            Controls.Add(label2);
+            Controls.Add(btnVolver);
+            Controls.Add(lstSucursarles);
+            Controls.Add(lblTitulo);
             Name = "Sucursales";
             Text = "Sucursales";
             ResumeLayout(false);
@@ -78,8 +78,8 @@
 
         #endregion
 
-        private Button button4;
-        private ListBox listBox1;
-        private Label label2;
+        private Button btnVolver;
+        private ListBox lstSucursarles;
+        private Label lblTitulo;
     }
 }

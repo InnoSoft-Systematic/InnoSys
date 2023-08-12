@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btmVolver = new Button();
-            lblInfo = new Label();
-            listBox1 = new ListBox();
+            btnVolver = new Button();
+            lblTitulos = new Label();
+            lstEnvios = new ListBox();
             SuspendLayout();
             // 
-            // btmVolver
+            // btnVolver
             // 
-            btmVolver.Location = new Point(16, 6);
-            btmVolver.Name = "btmVolver";
-            btmVolver.Size = new Size(75, 23);
-            btmVolver.TabIndex = 34;
-            btmVolver.Text = "Volver";
-            btmVolver.UseVisualStyleBackColor = true;
-            btmVolver.Click += btmVolver_Click;
+            btnVolver.Location = new Point(16, 6);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 34;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btmVolver_Click;
             // 
-            // lblInfo
+            // lblTitulos
             // 
-            lblInfo.AutoSize = true;
-            lblInfo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInfo.Location = new Point(12, 32);
-            lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(314, 54);
-            lblInfo.TabIndex = 33;
-            lblInfo.Text = "ESTADO ENVÍOS";
+            lblTitulos.AutoSize = true;
+            lblTitulos.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulos.Location = new Point(12, 32);
+            lblTitulos.Name = "lblTitulos";
+            lblTitulos.Size = new Size(314, 54);
+            lblTitulos.TabIndex = 33;
+            lblTitulos.Text = "ESTADO ENVÍOS";
             // 
-            // listBox1
+            // lstEnvios
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(16, 100);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(743, 229);
-            listBox1.TabIndex = 35;
+            lstEnvios.FormattingEnabled = true;
+            lstEnvios.ItemHeight = 15;
+            lstEnvios.Location = new Point(16, 100);
+            lstEnvios.Name = "lstEnvios";
+            lstEnvios.Size = new Size(743, 229);
+            lstEnvios.TabIndex = 35;
             // 
             // EstadoEnvios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(783, 362);
-            Controls.Add(listBox1);
-            Controls.Add(btmVolver);
-            Controls.Add(lblInfo);
+            Controls.Add(lstEnvios);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulos);
             Name = "EstadoEnvios";
             Text = "Estado Envios";
             ResumeLayout(false);
@@ -78,8 +78,8 @@
 
         #endregion
 
-        private Button btmVolver;
-        private Label lblInfo;
-        private ListBox listBox1;
+        private Button btnVolver;
+        private Label lblTitulos;
+        private ListBox lstEnvios;
     }
 }

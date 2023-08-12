@@ -28,78 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            btmClientes = new Button();
-            btmMenu = new Button();
-            btmIngresoPedido = new Button();
-            btmEstado = new Button();
+            lblRecepcion = new Label();
+            btnClientes = new Button();
+            btnMenu = new Button();
+            btnIngresoPedido = new Button();
+            btnEstado = new Button();
             SuspendLayout();
             // 
-            // label1
+            // lblRecepcion
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Recepción";
-            label1.Click += label1_Click;
+            lblRecepcion.AutoSize = true;
+            lblRecepcion.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRecepcion.Location = new Point(12, 9);
+            lblRecepcion.Name = "lblRecepcion";
+            lblRecepcion.Size = new Size(138, 37);
+            lblRecepcion.TabIndex = 0;
+            lblRecepcion.Text = "Recepción";
+            lblRecepcion.Click += label1_Click;
             // 
-            // btmClientes
+            // btnClientes
             // 
-            btmClientes.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmClientes.Location = new Point(12, 62);
-            btmClientes.Name = "btmClientes";
-            btmClientes.Size = new Size(215, 185);
-            btmClientes.TabIndex = 1;
-            btmClientes.Text = "Clientes";
-            btmClientes.UseVisualStyleBackColor = true;
-            btmClientes.Click += button1_Click;
+            btnClientes.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.Location = new Point(12, 62);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(215, 185);
+            btnClientes.TabIndex = 1;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.Click += button1_Click;
             // 
-            // btmMenu
+            // btnMenu
             // 
-            btmMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmMenu.Location = new Point(258, 272);
-            btmMenu.Name = "btmMenu";
-            btmMenu.Size = new Size(215, 185);
-            btmMenu.TabIndex = 2;
-            btmMenu.Text = "Menú";
-            btmMenu.UseVisualStyleBackColor = true;
-            btmMenu.Click += button2_Click;
+            btnMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMenu.Location = new Point(258, 272);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(215, 185);
+            btnMenu.TabIndex = 2;
+            btnMenu.Text = "Menú";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += button2_Click;
             // 
-            // btmIngresoPedido
+            // btnIngresoPedido
             // 
-            btmIngresoPedido.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmIngresoPedido.Location = new Point(258, 62);
-            btmIngresoPedido.Name = "btmIngresoPedido";
-            btmIngresoPedido.Size = new Size(215, 185);
-            btmIngresoPedido.TabIndex = 3;
-            btmIngresoPedido.Text = "Ingresar pedido";
-            btmIngresoPedido.UseVisualStyleBackColor = true;
-            btmIngresoPedido.Click += button3_Click;
+            btnIngresoPedido.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIngresoPedido.Location = new Point(258, 62);
+            btnIngresoPedido.Name = "btnIngresoPedido";
+            btnIngresoPedido.Size = new Size(215, 185);
+            btnIngresoPedido.TabIndex = 3;
+            btnIngresoPedido.Text = "Ingresar pedido";
+            btnIngresoPedido.UseVisualStyleBackColor = true;
+            btnIngresoPedido.Click += button3_Click;
             // 
-            // btmEstado
+            // btnEstado
             // 
-            btmEstado.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btmEstado.Location = new Point(12, 272);
-            btmEstado.Name = "btmEstado";
-            btmEstado.Size = new Size(215, 185);
-            btmEstado.TabIndex = 4;
-            btmEstado.Text = "Estados";
-            btmEstado.UseVisualStyleBackColor = true;
-            btmEstado.Click += btmEstado_Click;
+            btnEstado.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEstado.Location = new Point(12, 272);
+            btnEstado.Name = "btnEstado";
+            btnEstado.Size = new Size(215, 185);
+            btnEstado.TabIndex = 4;
+            btnEstado.Text = "Estados";
+            btnEstado.UseVisualStyleBackColor = true;
+            btnEstado.Click += btmEstado_Click;
             // 
             // Recepcion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(492, 479);
-            Controls.Add(btmEstado);
-            Controls.Add(btmIngresoPedido);
-            Controls.Add(btmMenu);
-            Controls.Add(btmClientes);
-            Controls.Add(label1);
+            Controls.Add(btnEstado);
+            Controls.Add(btnIngresoPedido);
+            Controls.Add(btnMenu);
+            Controls.Add(btnClientes);
+            Controls.Add(lblRecepcion);
             Name = "Recepcion";
             Text = "Recepción";
             Load += Form1_Load;
@@ -109,10 +109,10 @@
 
         #endregion
 
-        private Label label1;
-        private Button btmClientes;
-        private Button btmMenu;
-        private Button btmIngresoPedido;
-        private Button btmEstado;
+        private Label lblRecepcion;
+        private Button btnClientes;
+        private Button btnMenu;
+        private Button btnIngresoPedido;
+        private Button btnEstado;
     }
 }
