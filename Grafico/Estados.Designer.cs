@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            label2 = new Label();
-            listBox1 = new ListBox();
+            btnVolver = new Button();
+            lblTitulo = new Label();
+            lstEstados = new ListBox();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 8);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 35;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 8);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 35;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(1, 34);
-            label2.Name = "label2";
-            label2.Size = new Size(187, 54);
-            label2.TabIndex = 34;
-            label2.Text = "ESTADOS";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(1, 34);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(187, 54);
+            lblTitulo.TabIndex = 34;
+            lblTitulo.Text = "ESTADOS";
             // 
-            // listBox1
+            // lstEstados
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 111);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 37;
+            lstEstados.FormattingEnabled = true;
+            lstEstados.ItemHeight = 15;
+            lstEstados.Location = new Point(12, 111);
+            lstEstados.Name = "lstEstados";
+            lstEstados.Size = new Size(308, 289);
+            lstEstados.TabIndex = 37;
             // 
             // Estados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(350, 412);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(lstEstados);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "Estados";
             Text = "Estados";
             ResumeLayout(false);
@@ -78,8 +78,8 @@
 
         #endregion
 
-        private Button button4;
-        private Label label2;
-        private ListBox listBox1;
+        private Button btnVolver;
+        private Label lblTitulo;
+        private ListBox lstEstados;
     }
 }

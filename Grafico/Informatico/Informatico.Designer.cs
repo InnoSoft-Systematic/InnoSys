@@ -28,128 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button6 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button7 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button1 = new Button();
-            button8 = new Button();
+            btnClientes = new Button();
+            btnZonas = new Button();
+            btnPedidos = new Button();
+            btnMenu = new Button();
+            btnEnvíos = new Button();
+            btnCambiarRol = new Button();
+            btnVehiculos = new Button();
+            btnStock = new Button();
+            btnCuerpoDir = new Button();
+            btnAñadirZonas = new Button();
             SuspendLayout();
             // 
-            // button6
+            // btnClientes
             // 
-            button6.BackColor = Color.White;
-            button6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.Location = new Point(12, 12);
-            button6.Name = "button6";
-            button6.Size = new Size(290, 123);
-            button6.TabIndex = 13;
-            button6.Text = "Clientes";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
+            btnClientes.BackColor = Color.White;
+            btnClientes.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.Location = new Point(12, 12);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(290, 123);
+            btnClientes.TabIndex = 13;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += button6_Click;
             // 
-            // button3
+            // btnZonas
             // 
-            button3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(321, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(290, 123);
-            button3.TabIndex = 15;
-            button3.Text = "Zonas";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnZonas.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnZonas.Location = new Point(321, 12);
+            btnZonas.Name = "btnZonas";
+            btnZonas.Size = new Size(290, 123);
+            btnZonas.TabIndex = 15;
+            btnZonas.Text = "Zonas";
+            btnZonas.UseVisualStyleBackColor = true;
+            btnZonas.Click += button3_Click;
             // 
-            // button2
+            // btnPedidos
             // 
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(633, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(290, 123);
-            button2.TabIndex = 16;
-            button2.Text = "Pedidos";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnPedidos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPedidos.Location = new Point(633, 12);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(290, 123);
+            btnPedidos.TabIndex = 16;
+            btnPedidos.Text = "Pedidos";
+            btnPedidos.UseVisualStyleBackColor = true;
+            btnPedidos.Click += button2_Click;
             // 
-            // button4
+            // btnMenu
             // 
-            button4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(633, 141);
-            button4.Name = "button4";
-            button4.Size = new Size(290, 123);
-            button4.TabIndex = 17;
-            button4.Text = "Menú";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMenu.Location = new Point(633, 141);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(290, 123);
+            btnMenu.TabIndex = 17;
+            btnMenu.Text = "Menú";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += button4_Click;
             // 
-            // button5
+            // btnEnvíos
             // 
-            button5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(321, 276);
-            button5.Name = "button5";
-            button5.Size = new Size(290, 123);
-            button5.TabIndex = 18;
-            button5.Text = "Envíos";
-            button5.UseVisualStyleBackColor = true;
+            btnEnvíos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEnvíos.Location = new Point(321, 276);
+            btnEnvíos.Name = "btnEnvíos";
+            btnEnvíos.Size = new Size(290, 123);
+            btnEnvíos.TabIndex = 18;
+            btnEnvíos.Text = "Envíos";
+            btnEnvíos.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnCambiarRol
             // 
-            button7.BackColor = Color.Brown;
-            button7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.Location = new Point(633, 488);
-            button7.Name = "button7";
-            button7.Size = new Size(290, 65);
-            button7.TabIndex = 19;
-            button7.Text = "CAMBIAR ROL";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
+            btnCambiarRol.BackColor = Color.Brown;
+            btnCambiarRol.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCambiarRol.Location = new Point(633, 488);
+            btnCambiarRol.Name = "btnCambiarRol";
+            btnCambiarRol.Size = new Size(290, 65);
+            btnCambiarRol.TabIndex = 19;
+            btnCambiarRol.Text = "CAMBIAR ROL";
+            btnCambiarRol.UseVisualStyleBackColor = false;
+            btnCambiarRol.Click += button7_Click;
             // 
-            // button9
+            // btnVehiculos
             // 
-            button9.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button9.Location = new Point(12, 141);
-            button9.Name = "button9";
-            button9.Size = new Size(290, 123);
-            button9.TabIndex = 21;
-            button9.Text = "Vehículos";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
+            btnVehiculos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVehiculos.Location = new Point(12, 141);
+            btnVehiculos.Name = "btnVehiculos";
+            btnVehiculos.Size = new Size(290, 123);
+            btnVehiculos.TabIndex = 21;
+            btnVehiculos.Text = "Vehículos";
+            btnVehiculos.UseVisualStyleBackColor = true;
+            btnVehiculos.Click += button9_Click;
             // 
-            // button10
+            // btnStock
             // 
-            button10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button10.Location = new Point(633, 276);
-            button10.Name = "button10";
-            button10.Size = new Size(290, 123);
-            button10.TabIndex = 22;
-            button10.Text = "Stock";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
+            btnStock.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStock.Location = new Point(633, 276);
+            btnStock.Name = "btnStock";
+            btnStock.Size = new Size(290, 123);
+            btnStock.TabIndex = 22;
+            btnStock.Text = "Stock";
+            btnStock.UseVisualStyleBackColor = true;
+            btnStock.Click += button10_Click;
             // 
-            // button1
+            // btnCuerpoDir
             // 
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 276);
-            button1.Name = "button1";
-            button1.Size = new Size(290, 123);
-            button1.TabIndex = 23;
-            button1.Text = "Cuerpo directivo";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCuerpoDir.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCuerpoDir.Location = new Point(12, 276);
+            btnCuerpoDir.Name = "btnCuerpoDir";
+            btnCuerpoDir.Size = new Size(290, 123);
+            btnCuerpoDir.TabIndex = 23;
+            btnCuerpoDir.Text = "Cuerpo directivo";
+            btnCuerpoDir.UseVisualStyleBackColor = true;
+            btnCuerpoDir.Click += button1_Click;
             // 
-            // button8
+            // btnAñadirZonas
             // 
-            button8.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.Location = new Point(321, 141);
-            button8.Name = "button8";
-            button8.Size = new Size(290, 123);
-            button8.TabIndex = 20;
-            button8.Text = "Añadir zonas";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            btnAñadirZonas.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAñadirZonas.Location = new Point(321, 141);
+            btnAñadirZonas.Name = "btnAñadirZonas";
+            btnAñadirZonas.Size = new Size(290, 123);
+            btnAñadirZonas.TabIndex = 20;
+            btnAñadirZonas.Text = "Añadir zonas";
+            btnAñadirZonas.UseVisualStyleBackColor = true;
+            btnAñadirZonas.Click += button8_Click;
             // 
             // Informatico
             // 
@@ -157,16 +157,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(957, 565);
-            Controls.Add(button1);
-            Controls.Add(button10);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button3);
-            Controls.Add(button6);
+            Controls.Add(btnCuerpoDir);
+            Controls.Add(btnStock);
+            Controls.Add(btnVehiculos);
+            Controls.Add(btnAñadirZonas);
+            Controls.Add(btnCambiarRol);
+            Controls.Add(btnEnvíos);
+            Controls.Add(btnMenu);
+            Controls.Add(btnPedidos);
+            Controls.Add(btnZonas);
+            Controls.Add(btnClientes);
             Name = "Informatico";
             Text = "Informático";
             Load += Informatico_Load;
@@ -175,15 +175,15 @@
 
         #endregion
 
-        private Button button6;
-        private Button button3;
-        private Button button2;
-        private Button button4;
-        private Button button5;
-        private Button button7;
-        private Button button9;
-        private Button button10;
-        private Button button1;
-        private Button button8;
+        private Button btnClientes;
+        private Button btnZonas;
+        private Button btnPedidos;
+        private Button btnMenu;
+        private Button btnEnvíos;
+        private Button btnCambiarRol;
+        private Button btnVehiculos;
+        private Button btnStock;
+        private Button btnCuerpoDir;
+        private Button btnAñadirZonas;
     }
 }

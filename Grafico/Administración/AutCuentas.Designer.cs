@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            label2 = new Label();
-            listBox1 = new ListBox();
-            button1 = new Button();
+            btnVolver = new Button();
+            lblTitulo = new Label();
+            lstAutAltasBajas = new ListBox();
+            btnAutorizar = new Button();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(12, 8);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 40;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVolver.Location = new Point(12, 8);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 40;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += button4_Click;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 38);
-            label2.Name = "label2";
-            label2.Size = new Size(477, 54);
-            label2.TabIndex = 39;
-            label2.Text = "AUTORIZAR ALTAS/BAJAS";
-            label2.Click += label2_Click;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(12, 38);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(477, 54);
+            lblTitulo.TabIndex = 39;
+            lblTitulo.Text = "AUTORIZAR ALTAS/BAJAS";
+            lblTitulo.Click += label2_Click;
             // 
-            // listBox1
+            // lstAutAltasBajas
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 109);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 48;
+            lstAutAltasBajas.FormattingEnabled = true;
+            lstAutAltasBajas.ItemHeight = 15;
+            lstAutAltasBajas.Location = new Point(12, 109);
+            lstAutAltasBajas.Name = "lstAutAltasBajas";
+            lstAutAltasBajas.Size = new Size(308, 289);
+            lstAutAltasBajas.TabIndex = 48;
             // 
-            // button1
+            // btnAutorizar
             // 
-            button1.Location = new Point(337, 109);
-            button1.Name = "button1";
-            button1.Size = new Size(136, 70);
-            button1.TabIndex = 54;
-            button1.Text = "AUTORIZAR";
-            button1.UseVisualStyleBackColor = true;
+            btnAutorizar.Location = new Point(337, 109);
+            btnAutorizar.Name = "btnAutorizar";
+            btnAutorizar.Size = new Size(136, 70);
+            btnAutorizar.TabIndex = 54;
+            btnAutorizar.Text = "AUTORIZAR";
+            btnAutorizar.UseVisualStyleBackColor = true;
             // 
             // AutCuentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(511, 450);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(btnAutorizar);
+            Controls.Add(lstAutAltasBajas);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "AutCuentas";
             Text = "Autorizar altas y bajas";
             ResumeLayout(false);
@@ -90,9 +90,9 @@
 
         #endregion
 
-        private Button button4;
-        private Label label2;
-        private ListBox listBox1;
-        private Button button1;
+        private Button btnVolver;
+        private Label lblTitulo;
+        private ListBox lstAutAltasBajas;
+        private Button btnAutorizar;
     }
 }

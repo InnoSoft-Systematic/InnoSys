@@ -25,7 +25,7 @@ namespace InnoSys.Informatico
 
         private void button8_Click(object sender, EventArgs e)
         {
-          Program.frmAdministracion.Show();
+            Program.frmAdministracion.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)

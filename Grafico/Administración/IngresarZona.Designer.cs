@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            label2 = new Label();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            listBox1 = new ListBox();
+            btnVolver = new Button();
+            lblTitulo = new Label();
+            lblDepartamento = new Label();
+            cboDepartamento = new ComboBox();
+            lstZonas = new ListBox();
             label1 = new Label();
-            button1 = new Button();
+            btnAceptar = new Button();
             SuspendLayout();
             // 
-            // button4
+            // btnVolver
             // 
-            button4.Location = new Point(21, 8);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 38;
-            button4.Text = "Volver";
-            button4.UseVisualStyleBackColor = true;
+            btnVolver.Location = new Point(21, 8);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 38;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 29);
-            label2.Name = "label2";
-            label2.Size = new Size(326, 54);
-            label2.TabIndex = 37;
-            label2.Text = "INGRESAR ZONA";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(12, 29);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(326, 54);
+            lblTitulo.TabIndex = 37;
+            lblTitulo.Text = "INGRESAR ZONA";
             // 
-            // label3
+            // lblDepartamento
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(21, 92);
-            label3.Name = "label3";
-            label3.Size = new Size(83, 15);
-            label3.TabIndex = 49;
-            label3.Text = "Departamento";
+            lblDepartamento.AutoSize = true;
+            lblDepartamento.Location = new Point(21, 92);
+            lblDepartamento.Name = "lblDepartamento";
+            lblDepartamento.Size = new Size(83, 15);
+            lblDepartamento.TabIndex = 49;
+            lblDepartamento.Text = "Departamento";
             // 
-            // comboBox1
+            // cboDepartamento
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(110, 89);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 50;
+            cboDepartamento.FormattingEnabled = true;
+            cboDepartamento.Location = new Point(110, 89);
+            cboDepartamento.Name = "cboDepartamento";
+            cboDepartamento.Size = new Size(121, 23);
+            cboDepartamento.TabIndex = 50;
             // 
-            // listBox1
+            // lstZonas
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(21, 149);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 289);
-            listBox1.TabIndex = 51;
+            lstZonas.FormattingEnabled = true;
+            lstZonas.ItemHeight = 15;
+            lstZonas.Location = new Point(21, 149);
+            lstZonas.Name = "lstZonas";
+            lstZonas.Size = new Size(308, 289);
+            lstZonas.TabIndex = 51;
             // 
             // label1
             // 
@@ -91,27 +91,27 @@
             label1.TabIndex = 52;
             label1.Text = "Aparecerán la lista de ciudades";
             // 
-            // button1
+            // btnAceptar
             // 
-            button1.Location = new Point(346, 149);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 76);
-            button1.TabIndex = 53;
-            button1.Text = "INCORPORAR";
-            button1.UseVisualStyleBackColor = true;
+            btnAceptar.Location = new Point(346, 149);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(129, 76);
+            btnAceptar.TabIndex = 53;
+            btnAceptar.Text = "INCORPORAR";
+            btnAceptar.UseVisualStyleBackColor = true;
             // 
             // IngresarZona
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(521, 450);
-            Controls.Add(button1);
+            Controls.Add(btnAceptar);
             Controls.Add(label1);
-            Controls.Add(listBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(label3);
-            Controls.Add(button4);
-            Controls.Add(label2);
+            Controls.Add(lstZonas);
+            Controls.Add(cboDepartamento);
+            Controls.Add(lblDepartamento);
+            Controls.Add(btnVolver);
+            Controls.Add(lblTitulo);
             Name = "IngresarZona";
             Text = "Zona";
             Load += IngresarZona_Load;
@@ -121,12 +121,12 @@
 
         #endregion
 
-        private Button button4;
-        private Label label2;
-        private Label label3;
-        private ComboBox comboBox1;
-        private ListBox listBox1;
+        private Button btnVolver;
+        private Label lblTitulo;
+        private Label lblDepartamento;
+        private ComboBox cboDepartamento;
+        private ListBox lstZonas;
         private Label label1;
-        private Button button1;
+        private Button btnAceptar;
     }
 }

@@ -28,80 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtContraseña = new TextBox();
-            txtNombre = new TextBox();
-            button4 = new Button();
-            button1 = new Button();
-            label5 = new Label();
-            label1 = new Label();
+            txtPass = new TextBox();
+            txtUsuario = new TextBox();
+            btnCancelar = new Button();
+            btnAceptar = new Button();
+            lblUsuario = new Label();
+            lblPass = new Label();
             SuspendLayout();
             // 
-            // txtContraseña
+            // txtPass
             // 
-            txtContraseña.Location = new Point(137, 75);
-            txtContraseña.Name = "txtContraseña";
-            txtContraseña.PasswordChar = 'X';
-            txtContraseña.Size = new Size(100, 23);
-            txtContraseña.TabIndex = 38;
+            txtPass.Location = new Point(263, 137);
+            txtPass.Name = "txtPass";
+            txtPass.PasswordChar = 'X';
+            txtPass.Size = new Size(100, 23);
+            txtPass.TabIndex = 38;
             // 
-            // txtNombre
+            // txtUsuario
             // 
-            txtNombre.Location = new Point(137, 39);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
-            txtNombre.TabIndex = 39;
-            txtNombre.TextChanged += textBox1_TextChanged;
+            txtUsuario.Location = new Point(263, 101);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(100, 23);
+            txtUsuario.TabIndex = 39;
+            txtUsuario.TextChanged += textBox1_TextChanged;
             // 
-            // button4
+            // btnCancelar
             // 
-            button4.Location = new Point(119, 136);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 40;
-            button4.Text = "Cancelar";
-            button4.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(245, 198);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 40;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAceptar
             // 
-            button1.BackColor = Color.Chocolate;
-            button1.Location = new Point(209, 136);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 41;
-            button1.Text = "Aceptar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnAceptar.BackColor = Color.Chocolate;
+            btnAceptar.Location = new Point(335, 198);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(75, 23);
+            btnAceptar.TabIndex = 41;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += button1_Click;
             // 
-            // label5
+            // lblUsuario
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(41, 42);
-            label5.Name = "label5";
-            label5.Size = new Size(56, 15);
-            label5.TabIndex = 42;
-            label5.Text = "USUARIO";
-            label5.Click += label5_Click;
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(167, 104);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(56, 15);
+            lblUsuario.TabIndex = 42;
+            lblUsuario.Text = "USUARIO";
+            lblUsuario.Click += label5_Click;
             // 
-            // label1
+            // lblPass
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(41, 83);
-            label1.Name = "label1";
-            label1.Size = new Size(83, 15);
-            label1.TabIndex = 43;
-            label1.Text = "CONTRASEÑA";
+            lblPass.AutoSize = true;
+            lblPass.Location = new Point(167, 145);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(83, 15);
+            lblPass.TabIndex = 43;
+            lblPass.Text = "CONTRASEÑA";
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(299, 173);
-            Controls.Add(label1);
-            Controls.Add(label5);
-            Controls.Add(button1);
-            Controls.Add(button4);
-            Controls.Add(txtNombre);
-            Controls.Add(txtContraseña);
+            ClientSize = new Size(477, 254);
+            Controls.Add(lblPass);
+            Controls.Add(lblUsuario);
+            Controls.Add(btnAceptar);
+            Controls.Add(btnCancelar);
+            Controls.Add(txtUsuario);
+            Controls.Add(txtPass);
             Name = "Login";
             Text = "Ingreso";
             Load += Login_Load;
@@ -111,11 +111,11 @@
 
         #endregion
 
-        private TextBox txtContraseña;
-        private TextBox txtNombre;
-        private Button button4;
-        private Button button1;
-        private Label label5;
-        private Label label1;
+        private TextBox txtPass;
+        private TextBox txtUsuario;
+        private Button btnCancelar;
+        private Button btnAceptar;
+        private Label lblUsuario;
+        private Label lblPass;
     }
 }

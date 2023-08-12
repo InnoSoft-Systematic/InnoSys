@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grafico
 {
-    public partial class AltaCliente : Form
+    public partial class Cliente : Form
     {
-        public AltaCliente()
+        public Cliente()
         {
             InitializeComponent();
         }

@@ -57,7 +57,7 @@ namespace InnoSys
         private void button5_Click(object sender, EventArgs e)
         {
             frmModEstados.Show();
-           
+
         }
     }
 }

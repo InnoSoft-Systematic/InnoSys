@@ -46,7 +46,7 @@ namespace Grafico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Recepcion.PopIngresoPedido.Show();
+
         }
 
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
