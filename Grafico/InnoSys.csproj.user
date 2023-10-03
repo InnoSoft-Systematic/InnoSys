@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\villa\source\repos\InnoSys\Grafico\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Administración\Administracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Administración\AutCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transporte\EstadoEnvios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gerente\AutNuevosProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Informatico\AltaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Informatico\CambioRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Informatico\Informatico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cocina\IngresoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Administración\IngresarZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gerente\Gerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cocina\ModEstados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transporte\IngresoEnvío.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transporte\ModEnvio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Estados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cocina\Cocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Recepcion\Recepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Recepcion\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Recepcion\IngresoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Sucursales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transporte\Transporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vehículos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VerZonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

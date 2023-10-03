@@ -20,7 +20,7 @@ namespace InnoSys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmVehículos.Close();
+            Program.frmVehículos.Hide();
         }
     }
 }

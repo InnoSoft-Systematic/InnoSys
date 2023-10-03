@@ -1,4 +1,6 @@
-﻿namespace InnoSys
+﻿using Grafico;
+
+namespace InnoSys
 {
     partial class Login
     {
@@ -107,6 +109,8 @@
             Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
+            
+
         }
 
         #endregion
