@@ -100,6 +100,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(310, 330);
+            ControlBox = false;
             Controls.Add(btnTransporte);
             Controls.Add(btnCocina);
             Controls.Add(btnAdministracion);
@@ -107,6 +108,7 @@
             Controls.Add(btnRecepcion);
             Name = "CambioRol";
             Text = "CambioRol";
+            Load += CambioRol_Load;
             ResumeLayout(false);
         }
 

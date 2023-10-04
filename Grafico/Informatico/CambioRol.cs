@@ -1,4 +1,5 @@
 ﻿using Grafico;
+using InnoSys.Administrador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +42,11 @@ namespace InnoSys.Informatico
         private void button6_Click(object sender, EventArgs e)
         {
             Program.frmRecepcion.Show();
+        }
+
+        private void CambioRol_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
