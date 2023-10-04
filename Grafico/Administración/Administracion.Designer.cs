@@ -120,6 +120,8 @@
             Text = "Administracion";
             Load += Administracion_Load;
             ResumeLayout(false);
+            this.Disposed += Login_Disposed;
+            
         }
 
         #endregion

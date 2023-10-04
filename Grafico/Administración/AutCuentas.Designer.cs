@@ -78,12 +78,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(511, 450);
+            ControlBox = false;
             Controls.Add(btnAutorizar);
             Controls.Add(lstAutAltasBajas);
             Controls.Add(btnVolver);
             Controls.Add(lblTitulo);
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "AutCuentas";
             Text = "Autorizar altas y bajas";
+            Load += AutCuentas_Load;
             ResumeLayout(false);
             PerformLayout();
         }
