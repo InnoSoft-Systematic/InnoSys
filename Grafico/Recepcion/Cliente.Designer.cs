@@ -362,6 +362,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 616);
+            ControlBox = false;
             Controls.Add(btmSolBaja);
             Controls.Add(lblInfo2);
             Controls.Add(lblInfoBaja);

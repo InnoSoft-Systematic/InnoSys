@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,13 +72,13 @@ namespace Grafico
 
         private void btmVolver_Click(object sender, EventArgs e)
         {
-            ControlClientes.frmAltaCliente.Hide();
+            this.Hide();
 
         }
 
         private void btmAceptar_Click(object sender, EventArgs e)
         {
-            Recepcion.PopIngresoPedido.Show();
+            //
         }
     }
 }

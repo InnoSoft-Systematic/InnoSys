@@ -105,6 +105,7 @@
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
+            this.Disposed += Login_Disposed;
         }
 
         #endregion

@@ -16,6 +16,11 @@ namespace Grafico
 
         }
 
+        private void Login_Disposed(object sender, EventArgs e)
+        {
+            Program.frmLogin.Close();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -26,25 +31,25 @@ namespace Grafico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAltaBajaCliente.Show();
+            frmAltaBajaCliente.ShowDialog();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmIngresoPedido.Show();
+            frmIngresoPedido.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //Llamo a formulario Menu desde Program, porque está instanciada ahí y es pública
-            Program.frmMenu.Show();
+            Program.frmMenu.ShowDialog();
         }
 
         private void btmEstado_Click(object sender, EventArgs e)
         {
             //Llamo a formulario Estados desde Program, porque está instanciada ahí y es pública
-            Program.frmEstados.Show();
+            Program.frmEstados.ShowDialog();
         }
     }
 }
