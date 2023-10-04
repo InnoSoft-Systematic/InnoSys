@@ -21,6 +21,13 @@ namespace InnoSys.Transporte
         public static ModEnvio frmModEnvio = new ModEnvio();
         public static IngresoEnvío frmIngresoEnvio = new IngresoEnvío();
         public static EstadoEnvios frmEstadoEnvios = new EstadoEnvios();
+
+        
+        private void Login_Disposed(object sender, EventArgs e)
+        {   //Cuando el programa cierra, cierra login también que estaba oculto
+            Program.frmLogin.Close();
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             Program.frmVehículos.Show();
