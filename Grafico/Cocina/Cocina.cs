@@ -23,20 +23,24 @@ namespace InnoSys
         public static IngresoMenu frmIngresoMenu = new IngresoMenu();
         public static ModEstados frmModEstados = new ModEstados();
 
+        private void Login_Disposed(object sender, EventArgs e)
+        {
+            Program.frmLogin.Close();
+        }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Show();
+            Program.frmStock.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmMenu.Show();
+            Program.frmMenu.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Program.frmEstados.Show();
+            Program.frmEstados.ShowDialog();
         }
 
         private void Cocina_Load(object sender, EventArgs e)
@@ -46,17 +50,17 @@ namespace InnoSys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmIngresoMenu.Show();
+            frmIngresoMenu.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.Show();
+            Program.frmPedidos.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmModEstados.Show();
+            frmModEstados.ShowDialog();
 
         }
     }

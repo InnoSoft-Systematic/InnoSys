@@ -21,7 +21,7 @@ namespace InnoSys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmVerZonas.Close();
+            this.Hide();
         }
     }
 }

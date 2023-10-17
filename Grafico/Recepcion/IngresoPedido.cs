@@ -41,7 +41,7 @@ namespace Grafico
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Recepcion.frmIngresoPedido.Hide();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

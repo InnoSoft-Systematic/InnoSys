@@ -45,6 +45,7 @@
             btnVolver.TabIndex = 38;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblTitulo
             // 
@@ -105,6 +106,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(521, 450);
+            ControlBox = false;
             Controls.Add(btnAceptar);
             Controls.Add(label1);
             Controls.Add(lstZonas);

@@ -25,7 +25,7 @@ namespace InnoSys.Administrador
         private void button4_Click(object sender, EventArgs e)
         {
             //Al presionar Volver, se cierre la ventana
-            this.Close();
+            this.Hide();
         }
     }
 }

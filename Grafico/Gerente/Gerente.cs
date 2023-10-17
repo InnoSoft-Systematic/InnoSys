@@ -21,19 +21,24 @@ namespace InnoSys.Gerente
 
         public static AutNuevosProd frmAutorizarProd = new AutNuevosProd();
 
+        private void Login_Disposed(object sender, EventArgs e)
+        {
+            Program.frmLogin.Close();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Show();
+            Program.frmStock.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Program.frmMenu.Show();
+            Program.frmMenu.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.Show();
+            Program.frmPedidos.ShowDialog();
         }
 
         private void Gerente_Load(object sender, EventArgs e)
@@ -43,12 +48,12 @@ namespace InnoSys.Gerente
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmAutorizarProd.Show();
+            frmAutorizarProd.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Program.frmVerZonas.Show();
+            Program.frmVerZonas.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

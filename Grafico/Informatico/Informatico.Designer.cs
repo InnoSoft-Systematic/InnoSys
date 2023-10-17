@@ -1,4 +1,6 @@
-﻿namespace InnoSys.Administrador
+﻿using Grafico;
+
+namespace InnoSys.Administrador
 {
     partial class Informatico
     {
@@ -171,6 +173,7 @@
             Text = "Informático";
             Load += Informatico_Load;
             ResumeLayout(false);
+            this.Disposed += Login_Disposed;
         }
 
         #endregion

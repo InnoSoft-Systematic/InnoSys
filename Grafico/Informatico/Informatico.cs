@@ -25,9 +25,14 @@ namespace InnoSys.Administrador
 
         }
 
+        private void Login_Disposed(object sender, EventArgs e)
+        {
+            Program.frmLogin.Close();
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
-            frmCambioRol.Show();
+            frmCambioRol.ShowDialog();
         }
 
         private void Informatico_Load(object sender, EventArgs e)
@@ -37,37 +42,37 @@ namespace InnoSys.Administrador
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAltaEmpleado.Show();
+            frmAltaEmpleado.ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Show();
+            Program.frmStock.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.frmClientes.Show();
+            Program.frmClientes.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.Show();
+            Program.frmPedidos.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmMenu.Show();
+            Program.frmMenu.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Program.frmVerZonas.Show();
+            Program.frmVerZonas.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Program.frmVehículos.Show();
+            Program.frmVehículos.ShowDialog();
         }
     }
 }

@@ -67,6 +67,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(343, 403);
+            ControlBox = false;
             Controls.Add(btnVolver);
             Controls.Add(lstZonas);
             Controls.Add(lblTitulo);

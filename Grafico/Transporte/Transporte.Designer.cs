@@ -118,6 +118,7 @@
             Text = "Transporte";
             Load += Transporte_Load;
             ResumeLayout(false);
+            this.Disposed += Login_Disposed;
         }
 
         #endregion

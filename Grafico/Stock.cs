@@ -25,7 +25,7 @@ namespace InnoSys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmStock.Close();
+            Program.frmStock.Hide();
         }
     }
 }

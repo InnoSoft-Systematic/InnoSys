@@ -169,6 +169,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1004, 374);
+            ControlBox = false;
             Controls.Add(lblTemp);
             Controls.Add(lstViandasPreparadas);
             Controls.Add(lblInfo);

@@ -6,7 +6,66 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>1</VersionMinor>
+      <VersionMajor>6</VersionMajor>
+      <Guid>b691e011-1797-432e-907a-4d8c69339129</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="{00000200-0000-0010-8000-00aa006d2ea4}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>00000200-0000-0010-8000-00aa006d2ea4</Guid>
+    </COMReference>
+    <COMReference Include="{00000201-0000-0010-8000-00aa006d2ea4}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>1</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>00000201-0000-0010-8000-00aa006d2ea4</Guid>
+    </COMReference>
+    <COMReference Include="{00000205-0000-0010-8000-00aa006d2ea4}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>5</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>00000205-0000-0010-8000-00aa006d2ea4</Guid>
+    </COMReference>
+    <COMReference Include="{00000206-0000-0010-8000-00aa006d2ea4}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>6</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>00000206-0000-0010-8000-00aa006d2ea4</Guid>
+    </COMReference>
+    <COMReference Include="{2a75196c-d9eb-4129-b803-931327f72d5c}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>8</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>2a75196c-d9eb-4129-b803-931327f72d5c</Guid>
+    </COMReference>
+    <COMReference Include="{ef53050b-882e-4776-b643-eda472e8e3f2}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>7</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>ef53050b-882e-4776-b643-eda472e8e3f2</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\MySql.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
