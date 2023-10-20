@@ -107,6 +107,7 @@
             Controls.Add(lblTitulo);
             Name = "Clientes";
             Text = "Clientes";
+            Load += Clientes_Load;
             ResumeLayout(false);
             PerformLayout();
         }

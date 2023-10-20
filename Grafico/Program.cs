@@ -52,6 +52,7 @@ namespace Grafico
             rs.Close();
             rs = null;
         }
+
        
 
         //Declaro formularios de uso en varios roles

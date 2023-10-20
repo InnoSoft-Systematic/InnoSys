@@ -11,6 +11,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace InnoSys
 {
@@ -19,8 +20,8 @@ namespace InnoSys
 
         protected int _CI;
         protected string _nombre;
-       //protected ADODB.Connection _conexion;
-        
+        //protected ADODB.Connection _conexion;
+
 
 
         public Clientes()
@@ -28,7 +29,7 @@ namespace InnoSys
             InitializeComponent();
             _CI = 0;
             _nombre = "";
-           // _conexion = new ADODB.Connection();
+            // _conexion = new ADODB.Connection();
         }
 
         public Clientes(int CI, string nombre, ADODB.Connection cn)
@@ -47,40 +48,34 @@ namespace InnoSys
             get { return (_nombre); }
             set { _nombre = value; }
         }
-      //  public ADODB.Connection conexion
-        //{
-           // get { return (_conexion); }
-           // set { _conexion = value; }
-       // }
+        //Lista de ususarios
+        List<string> listaUsuarios = new List<string>();
+        //Lista para enteros
+        //List<int> algunint = new List<int>();
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();//Se oculta ventana
         }
-       
+
         private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            }
-            
-            
-            
-            
-            
+        }
 
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
-        string sql;
-        object filasAfectadas;
-        ADODB.Recordset rs = new ADODB.Recordset();
+            string sql;
+            object filasAfectadas;
+            ADODB.Recordset rs = new ADODB.Recordset();
+           
             try
             {
 
                 if (Program.cn.State != 0)
                 {
 
-                    sql = "SELECT nombre FROM roles;"; //Defino la sentencia SQL
+                    sql = "SELECT nombre, apellido FROM roles;"; //Defino la sentencia SQL
                     try
                     {
                         rs = Program.cn.Execute(sql, out filasAfectadas);
@@ -101,7 +96,12 @@ namespace InnoSys
                         while (!rs.EOF)
                         {
                             string user = rs.Fields[0].Value.ToString();
-                            lstClientes.Items.Add(user);
+                            string ape = rs.Fields[1].Value.ToString();
+                            //Creamos un string para juntar los datos nombre "cadena"
+                            string cadena = user+" "+ape;
+                            lstClientes.Items.Add("NOMBRE APELLIDO ");
+                            lstClientes.Items.Add(cadena);
+                            
                             rs.MoveNext(); //nos movemos al siguiente registro
                         }
 
@@ -112,6 +112,11 @@ namespace InnoSys
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
