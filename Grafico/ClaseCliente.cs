@@ -12,6 +12,9 @@ namespace InnoSys
     {
         protected int _CI;
         protected string _nombre;
+        protected string _apellido1;
+        protected string _apellido2;
+        protected string _mail;
         protected List<string> _telefonos;
         protected ADODB.Connection _conexion;
 
@@ -19,16 +22,22 @@ namespace InnoSys
         {
             _CI = 0;
             _nombre = "";
+            _apellido1 = "";
+            _apellido2 = "";
+            _mail = "";
             _telefonos = new List<string>();
-            // _conexion = new ADODB.Connection();
+             _conexion = new ADODB.Connection();
         }
 
-        public ClaseCliente(int CI, string nombre, List<string> telefonos, ADODB.Connection cn)
+        public ClaseCliente(int CI, string nombre, string apellido1, string apellido2, string mail, List<string> telefonos, ADODB.Connection cn)
         {
             _CI = CI;
             _nombre = nombre;
+            _apellido1 = apellido1;
+            _apellido2 = apellido2;
+            _mail = mail;
             _telefonos = telefonos;
-            // _conexion = cn;
+            _conexion = cn;
         }
 
         public int CI
@@ -43,25 +52,43 @@ namespace InnoSys
             set { _nombre = value; }
         }
 
+        public string apellido1
+        {
+            get { return _apellido1; }
+            set { _apellido1 = value;}
+        }
+
+        public string apellido2
+        {
+            get { return _apellido2; }
+            set { _apellido2 = value;}
+        }
+
+        public string mail
+        {
+            get { return _mail;}
+            set { _mail = value; }
+        }
+
         public List<string> telefonos
         {
             get { return _telefonos; }
             set { _telefonos = value; }
         }
 
-     /*   public ADODB.Connection conexion
+        public ADODB.Connection conexion
         {
             get { return _conexion; }
             set { _conexion = value; }
-        }*/
+        }
 
 
-        public int guardar(bool alta)
+        public byte guardar(bool alta)
         {
-            int retorno = 0;
+            byte retorno = 0;
             object cantFilas;
             string sql;
-            if (Program.cn.State == 0)
+            if (_conexion.State == 0)
             {
                 retorno = 1; //conexión cerrada.
             }
@@ -69,8 +96,8 @@ namespace InnoSys
             {
                 if (alta)
                 {
-                    sql = "insert into clientes(ci,nombre)";
-                    sql = sql + "values(" + _CI + ",'" + _nombre + "')";
+                    sql = "insert into clientes(`Primer Nombre`,`Primer Apellido`,`Segundo Apellido`,`Mail`)";
+                    sql = sql + " values('" + _nombre + "', '" + _apellido1 + "', '" + _apellido2 + "', '" + _mail + "')";
                 }
                 else
                 {
