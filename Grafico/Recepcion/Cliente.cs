@@ -22,6 +22,17 @@ namespace Grafico
         {
             InitializeComponent();
 
+            gbAlta.Hide();
+            gbBaja.Hide();
+            lblCIb.Hide();
+            lblRUTb.Hide();
+            txtCIb.Hide();
+            txtRUTb.Hide();
+            btnBCI.Hide();
+            btnBRUT.Hide();
+            lblSiCI.Hide();
+            lblNoCI.Hide();
+
 
         }
         //???
@@ -100,8 +111,8 @@ namespace Grafico
             ClaseCliente c = new ClaseCliente();
 
             //Declaro CI desde ClaseCliente (c) y la convierto en String
-            c.CI = numero(txtCialta.Text);
-            txtCialta.Text = Convert.ToString(c.CI);
+            c.CI = numero(txtCIb.Text);
+            txtCIb.Text = Convert.ToString(c.CI);
             //Declaro nombre desde ClaseCliente (c)
             c.nombre = txtNombre.Text;
             c.apellido1 = txtPrimerApe.Text;
@@ -114,19 +125,17 @@ namespace Grafico
             //cboTelefonos.SelectedIndex = -1;
 
             //Si los campos están vacíos, sale mensaje de error
-            if (txtNombre.Text == "" || txtPrimerApe.Text == "" || txtEmail.Text == "" || txtTel.Text == "")
+            if (txtNombre.Text == "" || txtPrimerApe.Text == "" || txtTel.Text == "")
             {
                 MessageBox.Show("Existen campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
 
-                //QUEDA HACER EL INSERT INTO
-
-                string cadena = c.nombre + " " + c.apellido1 + " " + c.apellido2 + " " + " " + c.mail + " ";
+                string cadena = c.CI + " " + c.nombre + " " + c.apellido1 + " " + c.apellido2 + " " + c.direccion + " " + c.mail + " ";
                 listaUsuarios.Add(cadena);
 
-
+                //INVOCO AL MÉTODO GUARDAR
                 byte resultado = c.guardar(true);
 
                 switch (resultado)
@@ -140,41 +149,20 @@ namespace Grafico
 
 
 
-                //Para que se vaya agregando
+                //Para que se vaya agregando en la list box
                 lstCliente.DataSource = null;
                 lstCliente.DataSource = listaUsuarios;
                 //Se limpian los campos luego de haber ingresado
                 txtPrimerApe.Clear();
                 txtNombre.Clear();
+                txtEmail.Clear();
+                txtTel.Clear();
+                txtDireccion.Clear();
+                txtSegApe.Clear();
 
 
 
             }
-            //Guardar datos
-            List<String> telefonos = new List<String>();
-
-            /*  foreach (string t in cboTelefonos.Items)
-              {
-                  telefonos.Add(t);
-              }
-              //c.telefonos = telefonos;*/
-            /*  switch (c.guardar(!btnEliminar.Enabled)) //Si btnEliminar está inhabilitado, es un alta
-              {
-                  case 0:  //Se pudo efectuar el alta o modificación sin problemas.
-                    //  gbBuscar.Enabled = true;
-                     // gbDatos.Visible = false;
-                      break;
-                  case 1: //La conexión está cerrada.
-                      MessageBox.Show("Se perdió la sesión. Debe loguearse nuevamente.");
-                      break;
-                  case 2:
-                  case 3:
-                  case 4:
-                  default:
-                      MessageBox.Show("Hubo errores al efectuar operación");
-                      break;
-              };
-              c = null;*/
 
         }
 
@@ -200,12 +188,107 @@ namespace Grafico
 
         private void rboPersona_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rboPersona.Checked)
+            {
+                txtCIb.Show();
+                lblCIb.Show();
+                btnBCI.Show();
+            }
+            if (!rboPersona.Checked)
+            {
+                txtCIb.Hide();
+                lblCIb.Hide();
+                btnBCI.Hide();
+            }
         }
 
         private void txtTel_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void txtCialta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblInfoBaja_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNoCI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbTipo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rboEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rboEmpresa.Checked)
+            {
+                txtRUTb.Show();
+                lblRUTb.Show();
+                btnBRUT.Show();
+            }
+            if (!rboEmpresa.Checked)
+            {
+                txtRUTb.Hide();
+                lblRUTb.Hide();
+                btnBRUT.Hide();
+            }
+        }
+
+        private void txtRUTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBCI_Click(object sender, EventArgs e)
+        {
+            ClaseCliente c = new ClaseCliente();
+            DialogResult respuesta;
+
+            c.CI = numero(txtCIb.Text);
+            txtCIb.Text = Convert.ToString(c.CI);
+
+            c.conexion = Program.cn;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            //cboTelefonos.SelectedIndex = -1;
+
+            switch (c.buscar())
+            {
+                case 0:  //Encontré
+                    MessageBox.Show("La cédula ingresada ya se encuentra en el sistema");
+                    lblSiCI.Show();
+                    // _CI = Convert.ToString(rs.Fields[0].Value);
+                    break;
+                case 1: //La conexión está cerrada.
+                    MessageBox.Show("Se perdió la sesión. Debe loguearse nuevamente.");
+                    break;
+                case 2:
+                case 4:
+                    MessageBox.Show("Hubo errores al efectuar operación");
+                    break;
+                case 3: //No encontré
+                    respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        gbAlta.Visible = true;
+                    }
+                    break;
+            };
+            c = null;
+        } //btnBuscar_Click
+
+
+
+
+
     }
 }
+
