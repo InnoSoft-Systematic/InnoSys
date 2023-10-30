@@ -27,31 +27,8 @@ namespace InnoSys
         public Clientes()
         {
             InitializeComponent();
-            _CI = 0;
-            _nombre = "";
             // _conexion = new ADODB.Connection();
         }
-
-        public Clientes(int CI, string nombre, ADODB.Connection cn)
-        {
-            _CI = CI;
-            _nombre = nombre;
-            //_conexion = cn;
-        }
-        public int CI
-        {
-            get { return (_CI); }
-            set { _CI = value; }
-        }
-        public string nombre
-        {
-            get { return (_nombre); }
-            set { _nombre = value; }
-        }
-        //Lista de ususarios
-        List<string> listaUsuarios = new List<string>();
-        //Lista para enteros
-        //List<int> algunint = new List<int>();
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -75,7 +52,7 @@ namespace InnoSys
                 if (Program.cn.State != 0)
                 {
 
-                    sql = "SELECT nombre, apellido FROM roles;"; //Defino la sentencia SQL
+                    sql = "SELECT CI, `Primer_nombre`, `Primer_apellido`, `Segundo_apellido`, `Direccion` FROM persona;"; //Defino la sentencia SQL
                     try
                     {
                         rs = Program.cn.Execute(sql, out filasAfectadas);
@@ -95,11 +72,14 @@ namespace InnoSys
                         lstClientes.Items.Clear();
                         while (!rs.EOF)
                         {
-                            string user = rs.Fields[0].Value.ToString();
-                            string ape = rs.Fields[1].Value.ToString();
+                            string ci = rs.Fields[0].Value.ToString();
+                            string nombre = rs.Fields[1].Value.ToString();
+                            string papellido = rs.Fields[2].Value.ToString();
+                            string sapellido = rs.Fields[3].Value.ToString();
+                            string direccion = rs.Fields[4].Value.ToString();
                             //Creamos un string para juntar los datos nombre "cadena"
-                            string cadena = user+" "+ape;
-                            lstClientes.Items.Add("NOMBRE APELLIDO ");
+                            string cadena = ci+"  "+nombre+"     "+papellido+"     "+sapellido+"     "+direccion;
+                          //  lstClientes.Items.Add("CI              NOMBRE            APELLIDOS                  DIRECCION");
                             lstClientes.Items.Add(cadena);
                             
                             rs.MoveNext(); //nos movemos al siguiente registro
