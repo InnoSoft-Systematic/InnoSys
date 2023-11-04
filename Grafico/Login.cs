@@ -18,10 +18,10 @@ namespace InnoSys
         public Login()
         {
             InitializeComponent();
-          
+
         }
 
-       
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -37,8 +37,9 @@ namespace InnoSys
                 if (Program.cn.State == 1)
                 {
                     MessageBox.Show("Conexión abierta");
-                    
-                }else
+
+                }
+                else
                 {
                     MessageBox.Show("Conexión cerrada");
                 }
@@ -49,7 +50,7 @@ namespace InnoSys
                 return;
             }
             Program.cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
-           
+
 
             //SWITCH PARA ELEGIR LOS USUARIOS QUE VAN A INGRESAR
             string nombre = txtUsuario.Text;
@@ -83,13 +84,18 @@ namespace InnoSys
             }
 
         }
-        
+
 
         private void Login_Load(object sender, EventArgs e)
-        {}
+        { }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {}
+        { }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

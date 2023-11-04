@@ -52,7 +52,7 @@ namespace InnoSys
                 if (Program.cn.State != 0)
                 {
 
-                    sql = "SELECT CI, `Primer_nombre`, `Primer_apellido`, `Segundo_apellido`, `Direccion` FROM persona;"; //Defino la sentencia SQL
+                    sql = "SELECT CI, `Primer_nombre`, `Primer_apellido`, `Segundo_apellido` FROM persona"; //Defino la sentencia SQL
                     try
                     {
                         rs = Program.cn.Execute(sql, out filasAfectadas);
@@ -92,7 +92,7 @@ namespace InnoSys
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-        }
+        }//TRY
 
         private void Clientes_Load(object sender, EventArgs e)
         {
