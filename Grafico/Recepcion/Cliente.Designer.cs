@@ -36,25 +36,18 @@
             rboPersona = new RadioButton();
             rboEmpresa = new RadioButton();
             lblTipoCliente = new Label();
-            txtCIbaja = new TextBox();
-            lblCI = new Label();
-            btnBuscar = new Button();
-            btnBuscar2 = new Button();
-            txtRUTbaja = new TextBox();
-            lblRUT = new Label();
             cboCiudad = new ComboBox();
             lblCiudad = new Label();
             txtDireccion = new TextBox();
             lblDireccion = new Label();
-            btmAceptar = new Button();
+            btnAceptar = new Button();
             btnVolver = new Button();
             lblNoCI = new Label();
             lblSiCI = new Label();
-            btmSolBaja = new Button();
-            lblInfo2 = new Label();
-            lblInfoBaja = new Label();
-            lblTituloBaja = new Label();
             gbAlta = new GroupBox();
+            btnActualizar = new Button();
+            lblEmpresa = new Label();
+            txtEmpresa = new TextBox();
             txtTel = new TextBox();
             lblTel = new Label();
             txtEmail = new TextBox();
@@ -67,12 +60,13 @@
             btnBCI = new Button();
             txtCIb = new TextBox();
             lblCIb = new Label();
-            gbBaja = new GroupBox();
-            listBox1 = new ListBox();
             lstCliente = new ListBox();
             gpTipo = new GroupBox();
+            btnModificar = new Button();
+            btnBaja = new Button();
+            lblNoRUT = new Label();
+            lblSiRUT = new Label();
             gbAlta.SuspendLayout();
-            gbBaja.SuspendLayout();
             gpTipo.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,60 +152,6 @@
             lblTipoCliente.TabIndex = 7;
             lblTipoCliente.Text = "Tipo de cliente";
             // 
-            // txtCIbaja
-            // 
-            txtCIbaja.Location = new Point(151, 162);
-            txtCIbaja.Name = "txtCIbaja";
-            txtCIbaja.Size = new Size(100, 23);
-            txtCIbaja.TabIndex = 9;
-            // 
-            // lblCI
-            // 
-            lblCI.AutoSize = true;
-            lblCI.Location = new Point(96, 165);
-            lblCI.Name = "lblCI";
-            lblCI.Size = new Size(26, 15);
-            lblCI.TabIndex = 8;
-            lblCI.Text = "CI *";
-            lblCI.Click += label5_Click;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(257, 162);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(52, 23);
-            btnBuscar.TabIndex = 10;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar2
-            // 
-            btnBuscar2.Location = new Point(257, 201);
-            btnBuscar2.Name = "btnBuscar2";
-            btnBuscar2.Size = new Size(52, 23);
-            btnBuscar2.TabIndex = 20;
-            btnBuscar2.Text = "Buscar";
-            btnBuscar2.UseVisualStyleBackColor = true;
-            btnBuscar2.Click += button2_Click;
-            // 
-            // txtRUTbaja
-            // 
-            txtRUTbaja.Location = new Point(151, 201);
-            txtRUTbaja.Name = "txtRUTbaja";
-            txtRUTbaja.Size = new Size(100, 23);
-            txtRUTbaja.TabIndex = 19;
-            txtRUTbaja.TextChanged += textBox7_TextChanged;
-            // 
-            // lblRUT
-            // 
-            lblRUT.AutoSize = true;
-            lblRUT.Location = new Point(96, 204);
-            lblRUT.Name = "lblRUT";
-            lblRUT.Size = new Size(36, 15);
-            lblRUT.TabIndex = 18;
-            lblRUT.Text = "RUT *";
-            lblRUT.Click += label9_Click;
-            // 
             // cboCiudad
             // 
             cboCiudad.FormattingEnabled = true;
@@ -219,6 +159,7 @@
             cboCiudad.Name = "cboCiudad";
             cboCiudad.Size = new Size(121, 23);
             cboCiudad.TabIndex = 22;
+            cboCiudad.SelectedIndexChanged += cboCiudad_SelectedIndexChanged;
             // 
             // lblCiudad
             // 
@@ -245,15 +186,15 @@
             lblDireccion.TabIndex = 25;
             lblDireccion.Text = "Dirección *";
             // 
-            // btmAceptar
+            // btnAceptar
             // 
-            btmAceptar.Location = new Point(201, 349);
-            btmAceptar.Name = "btmAceptar";
-            btmAceptar.Size = new Size(92, 35);
-            btmAceptar.TabIndex = 31;
-            btmAceptar.Text = "INGRESAR";
-            btmAceptar.UseVisualStyleBackColor = true;
-            btmAceptar.Click += btmAceptar_Click;
+            btnAceptar.Location = new Point(129, 354);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(92, 35);
+            btnAceptar.TabIndex = 31;
+            btnAceptar.Text = "INGRESAR";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btmAceptar_Click;
             // 
             // btnVolver
             // 
@@ -270,7 +211,7 @@
             lblNoCI.AutoSize = true;
             lblNoCI.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblNoCI.ForeColor = Color.Red;
-            lblNoCI.Location = new Point(417, 275);
+            lblNoCI.Location = new Point(417, 289);
             lblNoCI.Name = "lblNoCI";
             lblNoCI.Size = new Size(243, 25);
             lblNoCI.TabIndex = 34;
@@ -283,60 +224,25 @@
             lblSiCI.BackColor = Color.Transparent;
             lblSiCI.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblSiCI.ForeColor = Color.LimeGreen;
-            lblSiCI.Location = new Point(444, 275);
+            lblSiCI.Location = new Point(444, 289);
             lblSiCI.Name = "lblSiCI";
             lblSiCI.Size = new Size(192, 25);
             lblSiCI.TabIndex = 35;
             lblSiCI.Text = "Esta CI ya se encuentra";
             lblSiCI.Click += label15_Click;
             // 
-            // btmSolBaja
-            // 
-            btmSolBaja.Location = new Point(137, 305);
-            btmSolBaja.Name = "btmSolBaja";
-            btmSolBaja.Size = new Size(172, 34);
-            btmSolBaja.TabIndex = 57;
-            btmSolBaja.Text = "SOLICITAR BAJA";
-            btmSolBaja.UseVisualStyleBackColor = true;
-            // 
-            // lblInfo2
-            // 
-            lblInfo2.AutoSize = true;
-            lblInfo2.Location = new Point(9, 131);
-            lblInfo2.Name = "lblInfo2";
-            lblInfo2.Size = new Size(173, 15);
-            lblInfo2.TabIndex = 56;
-            lblInfo2.Text = "Puedes buscar por CI o por RUT";
-            // 
-            // lblInfoBaja
-            // 
-            lblInfoBaja.AutoSize = true;
-            lblInfoBaja.Location = new Point(9, 116);
-            lblInfoBaja.Name = "lblInfoBaja";
-            lblInfoBaja.Size = new Size(405, 15);
-            lblInfoBaja.TabIndex = 48;
-            lblInfoBaja.Text = "El cliente ingresado quedará sujeto a aprobación de organismo competente";
-            lblInfoBaja.Click += lblInfoBaja_Click;
-            // 
-            // lblTituloBaja
-            // 
-            lblTituloBaja.AutoSize = true;
-            lblTituloBaja.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTituloBaja.Location = new Point(86, 42);
-            lblTituloBaja.Name = "lblTituloBaja";
-            lblTituloBaja.Size = new Size(270, 54);
-            lblTituloBaja.TabIndex = 46;
-            lblTituloBaja.Text = "BAJA CLIENTE";
-            // 
             // gbAlta
             // 
+            gbAlta.Controls.Add(btnActualizar);
+            gbAlta.Controls.Add(lblEmpresa);
+            gbAlta.Controls.Add(txtEmpresa);
             gbAlta.Controls.Add(txtTel);
             gbAlta.Controls.Add(lblTel);
             gbAlta.Controls.Add(txtEmail);
             gbAlta.Controls.Add(lblEmail);
             gbAlta.Controls.Add(txtSegApe);
             gbAlta.Controls.Add(lblSegApe);
-            gbAlta.Controls.Add(btmAceptar);
+            gbAlta.Controls.Add(btnAceptar);
             gbAlta.Controls.Add(lblCiudad);
             gbAlta.Controls.Add(cboCiudad);
             gbAlta.Controls.Add(lblDireccion);
@@ -348,11 +254,38 @@
             gbAlta.Controls.Add(txtNombre);
             gbAlta.Location = new Point(30, 91);
             gbAlta.Name = "gbAlta";
-            gbAlta.Size = new Size(346, 395);
+            gbAlta.Size = new Size(356, 395);
             gbAlta.TabIndex = 58;
             gbAlta.TabStop = false;
             gbAlta.Text = "ALTA";
             gbAlta.Enter += groupBox1_Enter;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(236, 354);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(103, 35);
+            btnActualizar.TabIndex = 63;
+            btnActualizar.Text = "ACTUALIZAR";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // lblEmpresa
+            // 
+            lblEmpresa.AutoSize = true;
+            lblEmpresa.Location = new Point(62, 190);
+            lblEmpresa.Name = "lblEmpresa";
+            lblEmpresa.Size = new Size(60, 15);
+            lblEmpresa.TabIndex = 71;
+            lblEmpresa.Text = "Empresa *";
+            // 
+            // txtEmpresa
+            // 
+            txtEmpresa.Cursor = Cursors.IBeam;
+            txtEmpresa.Location = new Point(121, 187);
+            txtEmpresa.Name = "txtEmpresa";
+            txtEmpresa.Size = new Size(100, 23);
+            txtEmpresa.TabIndex = 72;
             // 
             // txtTel
             // 
@@ -412,10 +345,12 @@
             btnBRUT.TabIndex = 66;
             btnBRUT.Text = "Buscar";
             btnBRUT.UseVisualStyleBackColor = true;
+            btnBRUT.Click += btnBRUT_Click;
             // 
             // txtRUTb
             // 
             txtRUTb.Location = new Point(486, 223);
+            txtRUTb.MaxLength = 11;
             txtRUTb.Name = "txtRUTb";
             txtRUTb.Size = new Size(100, 23);
             txtRUTb.TabIndex = 65;
@@ -443,6 +378,7 @@
             // txtCIb
             // 
             txtCIb.Location = new Point(486, 189);
+            txtCIb.MaxLength = 8;
             txtCIb.Name = "txtCIb";
             txtCIb.Size = new Size(100, 23);
             txtCIb.TabIndex = 62;
@@ -457,61 +393,81 @@
             lblCIb.TabIndex = 61;
             lblCIb.Text = "CI *";
             // 
-            // gbBaja
-            // 
-            gbBaja.Controls.Add(listBox1);
-            gbBaja.Controls.Add(btmSolBaja);
-            gbBaja.Controls.Add(txtCIbaja);
-            gbBaja.Controls.Add(lblInfo2);
-            gbBaja.Controls.Add(lblTituloBaja);
-            gbBaja.Controls.Add(lblCI);
-            gbBaja.Controls.Add(lblInfoBaja);
-            gbBaja.Controls.Add(btnBuscar);
-            gbBaja.Controls.Add(lblRUT);
-            gbBaja.Controls.Add(txtRUTbaja);
-            gbBaja.Controls.Add(btnBuscar2);
-            gbBaja.Location = new Point(684, 91);
-            gbBaja.Name = "gbBaja";
-            gbBaja.Size = new Size(429, 384);
-            gbBaja.TabIndex = 59;
-            gbBaja.TabStop = false;
-            gbBaja.Text = "BAJA";
-            gbBaja.Enter += groupBox2_Enter;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(9, 245);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(405, 34);
-            listBox1.TabIndex = 61;
-            // 
             // lstCliente
             // 
             lstCliente.FormattingEnabled = true;
             lstCliente.ItemHeight = 15;
-            lstCliente.Location = new Point(279, 512);
+            lstCliente.Location = new Point(30, 511);
             lstCliente.Name = "lstCliente";
-            lstCliente.Size = new Size(510, 64);
+            lstCliente.Size = new Size(510, 79);
             lstCliente.TabIndex = 60;
             // 
             // gpTipo
             // 
+            gpTipo.Controls.Add(btnModificar);
             gpTipo.Controls.Add(rboEmpresa);
             gpTipo.Controls.Add(rboPersona);
             gpTipo.Location = new Point(409, 94);
             gpTipo.Name = "gpTipo";
-            gpTipo.Size = new Size(251, 169);
+            gpTipo.Size = new Size(251, 192);
             gpTipo.TabIndex = 67;
             gpTipo.TabStop = false;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(95, 163);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(73, 23);
+            btnModificar.TabIndex = 62;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnBaja
+            // 
+            btnBaja.BackColor = Color.Red;
+            btnBaja.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBaja.ForeColor = Color.White;
+            btnBaja.Location = new Point(546, 553);
+            btnBaja.Name = "btnBaja";
+            btnBaja.Size = new Size(128, 37);
+            btnBaja.TabIndex = 62;
+            btnBaja.Text = "BAJA";
+            btnBaja.UseVisualStyleBackColor = false;
+            btnBaja.Click += btnBaja_Click;
+            // 
+            // lblNoRUT
+            // 
+            lblNoRUT.AutoSize = true;
+            lblNoRUT.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNoRUT.ForeColor = Color.Red;
+            lblNoRUT.Location = new Point(409, 295);
+            lblNoRUT.Name = "lblNoRUT";
+            lblNoRUT.Size = new Size(261, 25);
+            lblNoRUT.TabIndex = 68;
+            lblNoRUT.Text = "No se encuentra RUT ingresado";
+            // 
+            // lblSiRUT
+            // 
+            lblSiRUT.AutoSize = true;
+            lblSiRUT.BackColor = Color.Transparent;
+            lblSiRUT.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSiRUT.ForeColor = Color.LimeGreen;
+            lblSiRUT.Location = new Point(436, 295);
+            lblSiRUT.Name = "lblSiRUT";
+            lblSiRUT.Size = new Size(208, 25);
+            lblSiRUT.TabIndex = 69;
+            lblSiRUT.Text = "Este RUT ya se encuentra";
             // 
             // Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1137, 616);
+            ClientSize = new Size(693, 616);
             ControlBox = false;
+            Controls.Add(btnBaja);
+            Controls.Add(lblSiRUT);
+            Controls.Add(lblNoRUT);
             Controls.Add(lstCliente);
             Controls.Add(btnBRUT);
             Controls.Add(lblRUTb);
@@ -524,15 +480,12 @@
             Controls.Add(btnBCI);
             Controls.Add(txtCIb);
             Controls.Add(gbAlta);
-            Controls.Add(gbBaja);
             Controls.Add(gpTipo);
             Name = "Cliente";
             Text = "Alta cliente";
             Load += Form3_Load;
             gbAlta.ResumeLayout(false);
             gbAlta.PerformLayout();
-            gbBaja.ResumeLayout(false);
-            gbBaja.PerformLayout();
             gpTipo.ResumeLayout(false);
             gpTipo.PerformLayout();
             ResumeLayout(false);
@@ -549,26 +502,15 @@
         private RadioButton rboPersona;
         private RadioButton rboEmpresa;
         private Label lblTipoCliente;
-        private TextBox txtCIbaja;
-        private Label lblCI;
-        private Button btnBuscar;
-        private Button btnBuscar2;
-        private TextBox txtRUTbaja;
-        private Label lblRUT;
         private ComboBox cboCiudad;
         private Label lblCiudad;
         private TextBox txtDireccion;
         private Label lblDireccion;
-        private Button btmAceptar;
+        private Button btnAceptar;
         private Button btnVolver;
         private Label lblNoCI;
         private Label lblSiCI;
-        private Button btmSolBaja;
-        private Label lblInfo2;
-        private Label lblInfoBaja;
-        private Label lblTituloBaja;
         private GroupBox gbAlta;
-        private GroupBox gbBaja;
         private ListBox lstCliente;
         private TextBox txtSegApe;
         private Label lblSegApe;
@@ -582,7 +524,13 @@
         private Label lblTel;
         private TextBox txtEmail;
         private Label lblEmail;
-        private ListBox listBox1;
         private GroupBox gpTipo;
+        private Label lblNoRUT;
+        private Label lblSiRUT;
+        private Button btnBaja;
+        private Button btnModificar;
+        private Label lblEmpresa;
+        private TextBox txtEmpresa;
+        private Button btnActualizar;
     }
 }

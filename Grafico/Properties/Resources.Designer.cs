@@ -59,5 +59,15 @@ namespace InnoSys.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Isologo_2_Transparente {
+            get {
+                object obj = ResourceManager.GetObject("Isologo 2 Transparente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
