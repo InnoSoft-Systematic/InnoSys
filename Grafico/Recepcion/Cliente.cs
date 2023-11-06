@@ -137,12 +137,16 @@ namespace Grafico
             txtCIb.Text = Convert.ToString(c.CI);
             c.telefonos = numero(txtTel.Text);
             txtTel.Text = Convert.ToString(c.telefonos);
+            c.RUT = numero(txtRUTb.Text);
+            txtRUTb.Text = Convert.ToString(c.RUT);
             //Declaro nombre desde ClaseCliente (c)
             c.nombre = txtNombre.Text;
             c.apellido1 = txtPrimerApe.Text;
             c.apellido2 = txtSegApe.Text;
             c.mail = txtEmail.Text;
             c.direccion = txtDireccion.Text;
+            c.empresa = txtEmpresa.Text;
+
             //// c.telefonos = numero (txtTel.Text);
             ////txtTel.Text = Convert.ToString (txtTel.Text);
             c.conexion = Program.cn;
@@ -181,7 +185,7 @@ namespace Grafico
             //cboTelefonos.SelectedIndex = -1;
 
             //Si los campos están vacíos, sale mensaje de error
-            if (txtNombre.Text == "" || txtPrimerApe.Text == "" || txtTel.Text == "" || txtDireccion.Text == "")
+            if (txtRUTb.Text == "" || txtCIb.Text == "")
             {
                 MessageBox.Show("Existen campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -192,17 +196,32 @@ namespace Grafico
                 listaUsuarios.Add(cadena);
 
                 //INVOCO AL MÉTODO GUARDAR
-                byte resultado = c.guardar(true);
-
-                switch (resultado)
+                if (btnBCI.Enabled == true)
                 {
-                    case 0: MessageBox.Show("Alta efectuada correctamente"); break;
-                    case 1: MessageBox.Show("Debe loguearse nuevamente"); break;
-                    case 2: MessageBox.Show("Error sentencia SQL"); break;
-                    case 3: MessageBox.Show("Error sentencia"); break;
-                    case 4: MessageBox.Show("Error 4"); break;
-                }
+                    byte resultado = c.guardar(true);
+                    switch (resultado)
+                    {
+                        case 0: MessageBox.Show("Alta efectuada correctamente"); break;
+                        case 1: MessageBox.Show("Debe loguearse nuevamente"); break;
+                        case 2: MessageBox.Show("Error sentencia SQL"); break;
+                        case 3: MessageBox.Show("Error sentencia"); break;
+                        case 4: MessageBox.Show("Error 4"); break;
+                    }
 
+                }
+                else
+                {
+                    byte resultado = c.guardarRUT(true);
+
+                    switch (resultado)
+                    {
+                        case 0: MessageBox.Show("Alta efectuada correctamente"); break;
+                        case 1: MessageBox.Show("Debe loguearse nuevamente"); break;
+                        case 2: MessageBox.Show("Error sentencia SQL"); break;
+                        case 3: MessageBox.Show("Error sentencia"); break;
+                        case 4: MessageBox.Show("Error 4"); break;
+                    }
+                }
 
 
 
@@ -210,13 +229,16 @@ namespace Grafico
                 //Para que se vaya agregando en la list box
                 lstCliente.DataSource = null;
                 lstCliente.DataSource = listaUsuarios;
-                //Se limpian los campos luego de haber ingresado
-                /*  txtPrimerApe.Clear();
+               //Se limpian los campos luego de haber ingresado
+                  txtPrimerApe.Clear();
                   txtNombre.Clear();
                   txtEmail.Clear();
                   txtTel.Clear();
                   txtDireccion.Clear();
-                  txtSegApe.Clear();   */
+                  txtSegApe.Clear();
+                  txtEmpresa.Clear();
+                  
+
 
 
 
@@ -328,6 +350,8 @@ namespace Grafico
 
             c.conexion = Program.cn;
             ADODB.Recordset rs = new ADODB.Recordset();
+            lblSiRUT.Hide();
+            lblNoRUT.Hide();
 
             switch (c.buscar())
             {
@@ -362,7 +386,7 @@ namespace Grafico
                     {
                         gbAlta.Enabled = true;
                         btnAceptar.Enabled = true;
-                    }
+                    }else { gbAlta.Enabled = false; }
                     lblNoCI.Show();
                     lblSiCI.Hide();
                     txtEmpresa.Hide();
@@ -440,6 +464,8 @@ namespace Grafico
                     btnAceptar.Enabled = false;
                     lblSiRUT.Show();
                     btnBaja.Show();
+                    lblNoCI.Hide();
+                    lblSiCI.Hide();
                     lblNoRUT.Hide();
                     btnModificar.Enabled = true;
                     btnBaja.Enabled = true;
@@ -463,9 +489,9 @@ namespace Grafico
                     respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
                     if (respuesta == DialogResult.Yes)
                     {
-                        gbAlta.Visible = true;
+                        gbAlta.Enabled = true;
                         btnAceptar.Enabled = true;
-                    }
+                    }else { gbAlta.Enabled = false;}
                     lblNoRUT.Show();
                     lblSiRUT.Hide();
                     txtNombre.Hide();
@@ -490,15 +516,78 @@ namespace Grafico
                     break;
             };
             c = null;
+
+            string sql;
+            object cantlineas;
+            sql = "select nombre from zona";
+
+
+            try
+            {
+
+                rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
+            }
+            catch
+            {
+                MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
+                return;
+            }
+            cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
+            while (!rs.EOF)
+            {
+                cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
+                rs.MoveNext();
+            }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            ClaseCliente c = new ClaseCliente();
+
+            c.CI = numero(txtCIb.Text);
+            txtCIb.Text = Convert.ToString(c.CI);
+
+            c.RUT = numero(txtRUTb.Text);
+            txtRUTb.Text = Convert.ToString(c.RUT);
+
+            ADODB.Recordset rs = new ADODB.Recordset();
+            c.conexion = Program.cn;
+
             DialogResult respuesta = MessageBox.Show("¿Seguro que quiere proceder a realizarle baja al dato ingresado?", "Baja", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.Yes)
             {
+                if (btnBRUT.Enabled == false)
+                {
+
+                 byte resultado = c.baja(true);
+                 
+                    switch (resultado)
+                    {
+                        case 0: MessageBox.Show("Solicitud de baja enviado correctamente"); break;
+                        case 1: MessageBox.Show("Debe loguearse nuevamente"); break;
+                        case 2: MessageBox.Show("Error sentencia SQL"); break;
+                        case 3: MessageBox.Show("Error sentencia"); break;
+                        case 4: MessageBox.Show("Error 4"); break;
+                    }
+
+                }
+                if (btnBRUT.Enabled == true)
+                {
+                    byte resultado = c.baja(!true);
+
+                    switch (resultado)
+                    {
+                        case 0: MessageBox.Show("Solicitud de baja enviado correctamente"); break;
+                        case 1: MessageBox.Show("Debe loguearse nuevamente"); break;
+                        case 2: MessageBox.Show("Error sentencia SQL"); break;
+                        case 3: MessageBox.Show("Error sentencia"); break;
+                        case 4: MessageBox.Show("Error 4"); break;
+                    }
+                }
+                btnBaja.Enabled = false;
+                
                 //Falta programar para enviarle una solicitud a administración
-                MessageBox.Show("Solicitud de baja enviado.");
+                
             }
         }
 
