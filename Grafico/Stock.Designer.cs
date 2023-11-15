@@ -36,18 +36,21 @@
             lblProduccionActual = new Label();
             lblProducido = new Label();
             lblCantidadProducida = new Label();
-            lblAviso = new Label();
+            lblAvisoStock = new Label();
             btnModParametros = new Button();
             lblInfo = new Label();
-            lstViandasPreparadas = new ListBox();
-            lblTemp = new Label();
+            button1 = new Button();
+            lstMenu = new ListBox();
+            btnVer = new Button();
+            gbModStock = new GroupBox();
+            gbModStock.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(12, 42);
+            lblTitulo.Location = new Point(27, 38);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(141, 54);
             lblTitulo.TabIndex = 35;
@@ -67,114 +70,146 @@
             // lblCanitad
             // 
             lblCanitad.AutoSize = true;
-            lblCanitad.Location = new Point(12, 107);
+            lblCanitad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCanitad.Location = new Point(200, 111);
             lblCanitad.Name = "lblCanitad";
-            lblCanitad.Size = new Size(112, 15);
+            lblCanitad.Size = new Size(116, 15);
             lblCanitad.TabIndex = 37;
             lblCanitad.Text = "CANTIDAD ACTUAL";
             // 
             // lblCantidadActual
             // 
             lblCantidadActual.AutoSize = true;
-            lblCantidadActual.Location = new Point(130, 107);
+            lblCantidadActual.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantidadActual.Location = new Point(322, 106);
             lblCantidadActual.Name = "lblCantidadActual";
-            lblCantidadActual.Size = new Size(209, 15);
+            lblCantidadActual.Size = new Size(130, 21);
             lblCantidadActual.TabIndex = 38;
-            lblCantidadActual.Text = "*Este label se modifica con la cantidad";
+            lblCantidadActual.Text = "Cantidad actual";
+            lblCantidadActual.Click += lblCantidadActual_Click;
             // 
             // lblProduccion
             // 
             lblProduccion.AutoSize = true;
-            lblProduccion.Location = new Point(12, 160);
+            lblProduccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProduccion.Location = new Point(200, 152);
             lblProduccion.Name = "lblProduccion";
-            lblProduccion.Size = new Size(101, 15);
+            lblProduccion.Size = new Size(103, 15);
             lblProduccion.TabIndex = 39;
             lblProduccion.Text = "EN PRODUCCIÓN";
             // 
             // lblProduccionActual
             // 
             lblProduccionActual.AutoSize = true;
-            lblProduccionActual.Location = new Point(130, 160);
+            lblProduccionActual.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProduccionActual.Location = new Point(322, 146);
             lblProduccionActual.Name = "lblProduccionActual";
-            lblProduccionActual.Size = new Size(352, 15);
+            lblProduccionActual.Size = new Size(148, 21);
             lblProduccionActual.TabIndex = 40;
-            lblProduccionActual.Text = "*Este label se modifica con la cantidad DE PRODUCCIÓN ACTUAL";
+            lblProduccionActual.Text = "Produccion actual";
             // 
             // lblProducido
             // 
             lblProducido.AutoSize = true;
-            lblProducido.Location = new Point(13, 191);
+            lblProducido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProducido.Location = new Point(201, 195);
             lblProducido.Name = "lblProducido";
-            lblProducido.Size = new Size(74, 15);
+            lblProducido.Size = new Size(78, 15);
             lblProducido.TabIndex = 41;
             lblProducido.Text = "PRODUCIDO";
             // 
             // lblCantidadProducida
             // 
             lblCantidadProducida.AutoSize = true;
-            lblCantidadProducida.Location = new Point(130, 191);
+            lblCantidadProducida.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantidadProducida.Location = new Point(322, 189);
             lblCantidadProducida.Name = "lblCantidadProducida";
-            lblCantidadProducida.Size = new Size(278, 15);
+            lblCantidadProducida.Size = new Size(89, 21);
             lblCantidadProducida.TabIndex = 42;
-            lblCantidadProducida.Text = "*Este label se modifica con la cantidad PRODUCIDA";
+            lblCantidadProducida.Text = "Producido";
+            lblCantidadProducida.Click += lblCantidadProducida_Click;
             // 
-            // lblAviso
+            // lblAvisoStock
             // 
-            lblAviso.AutoSize = true;
-            lblAviso.ForeColor = Color.FromArgb(0, 192, 0);
-            lblAviso.Location = new Point(363, 107);
-            lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(237, 15);
-            lblAviso.TabIndex = 43;
-            lblAviso.Text = "*Este lbl avisa si esta por debajo del mínimo";
+            lblAvisoStock.AutoSize = true;
+            lblAvisoStock.ForeColor = Color.FromArgb(0, 192, 0);
+            lblAvisoStock.Location = new Point(379, 111);
+            lblAvisoStock.Name = "lblAvisoStock";
+            lblAvisoStock.Size = new Size(12, 15);
+            lblAvisoStock.TabIndex = 43;
+            lblAvisoStock.Text = "*";
             // 
             // btnModParametros
             // 
-            btnModParametros.Location = new Point(12, 246);
+            btnModParametros.Location = new Point(36, 32);
             btnModParametros.Name = "btnModParametros";
             btnModParametros.Size = new Size(244, 32);
             btnModParametros.TabIndex = 44;
             btnModParametros.Text = "MODIFICAR PARÁMETROS DE STOCK";
             btnModParametros.UseVisualStyleBackColor = true;
+            btnModParametros.Click += btnModParametros_Click;
             // 
             // lblInfo
             // 
             lblInfo.AutoSize = true;
-            lblInfo.Location = new Point(262, 255);
+            lblInfo.Location = new Point(73, 67);
             lblInfo.Name = "lblInfo";
             lblInfo.Size = new Size(174, 15);
             lblInfo.TabIndex = 45;
             lblInfo.Text = "Establece un mínimo y máximo";
             // 
-            // lstViandasPreparadas
+            // button1
             // 
-            lstViandasPreparadas.FormattingEnabled = true;
-            lstViandasPreparadas.ItemHeight = 15;
-            lstViandasPreparadas.Location = new Point(633, 42);
-            lstViandasPreparadas.Name = "lstViandasPreparadas";
-            lstViandasPreparadas.Size = new Size(308, 289);
-            lstViandasPreparadas.TabIndex = 46;
+            button1.Location = new Point(525, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 49;
+            button1.Text = "Actualizar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // lblTemp
+            // lstMenu
             // 
-            lblTemp.AutoSize = true;
-            lblTemp.Location = new Point(623, 81);
-            lblTemp.Name = "lblTemp";
-            lblTemp.Size = new Size(318, 15);
-            lblTemp.TabIndex = 47;
-            lblTemp.Text = "*Viandas preparadas con fecha de creación y venciminento";
+            lstMenu.FormattingEnabled = true;
+            lstMenu.ItemHeight = 15;
+            lstMenu.Location = new Point(12, 95);
+            lstMenu.Name = "lstMenu";
+            lstMenu.Size = new Size(166, 214);
+            lstMenu.TabIndex = 51;
+            lstMenu.SelectedIndexChanged += lstMenu_SelectedIndexChanged;
+            // 
+            // btnVer
+            // 
+            btnVer.Location = new Point(52, 321);
+            btnVer.Name = "btnVer";
+            btnVer.Size = new Size(75, 41);
+            btnVer.TabIndex = 52;
+            btnVer.Text = "Ver";
+            btnVer.UseVisualStyleBackColor = true;
+            btnVer.Click += btnVer_Click;
+            // 
+            // gbModStock
+            // 
+            gbModStock.Controls.Add(btnModParametros);
+            gbModStock.Controls.Add(lblInfo);
+            gbModStock.Location = new Point(292, 262);
+            gbModStock.Name = "gbModStock";
+            gbModStock.Size = new Size(308, 100);
+            gbModStock.TabIndex = 53;
+            gbModStock.TabStop = false;
+            gbModStock.Text = "Parámetros";
             // 
             // Stock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1004, 374);
+            ClientSize = new Size(614, 374);
             ControlBox = false;
-            Controls.Add(lblTemp);
-            Controls.Add(lstViandasPreparadas);
-            Controls.Add(lblInfo);
-            Controls.Add(btnModParametros);
-            Controls.Add(lblAviso);
+            Controls.Add(gbModStock);
+            Controls.Add(btnVer);
+            Controls.Add(lstMenu);
+            Controls.Add(button1);
+            Controls.Add(lblAvisoStock);
             Controls.Add(lblCantidadProducida);
             Controls.Add(lblProducido);
             Controls.Add(lblProduccionActual);
@@ -185,6 +220,9 @@
             Controls.Add(lblTitulo);
             Name = "Stock";
             Text = "Stock";
+            Load += Stock_Load;
+            gbModStock.ResumeLayout(false);
+            gbModStock.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,10 +237,13 @@
         private Label lblProduccionActual;
         private Label lblProducido;
         private Label lblCantidadProducida;
-        private Label lblAviso;
+        private Label lblAvisoStock;
         private Button btnModParametros;
         private Label lblInfo;
-        private ListBox lstViandasPreparadas;
-        private Label lblTemp;
+        private Button button1;
+        private ListView listView1;
+        private ListBox lstMenu;
+        private Button btnVer;
+        private GroupBox gbModStock;
     }
 }

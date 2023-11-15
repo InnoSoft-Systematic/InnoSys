@@ -69,7 +69,6 @@ namespace InnoSys
                         }
                         else
                         {
-                            // lstClientes.Items.Clear();
                             while (!rs.EOF)
                             {
                                 string RUT = rs.Fields[0].Value.ToString();
@@ -79,8 +78,6 @@ namespace InnoSys
                                 string cadena = Id_Cliente + " " + RUT + " " + empresa;
                                 //  lstClientes.Items.Add("CI              NOMBRE            APELLIDOS                  DIRECCION");
                                 lstAutBajas.Items.Add(cadena);
-
-
                                 rs.MoveNext(); //nos movemos al siguiente registro
                             }
 
@@ -125,7 +122,6 @@ namespace InnoSys
                         }
                         else
                         {
-                            // lstClientes.Items.Clear();
                             while (!rs.EOF)
                             {
                                 string CI = rs.Fields[0].Value.ToString();
@@ -165,7 +161,7 @@ namespace InnoSys
             if (rboEmpresa.Checked)
             {
                 string rutEmpresa = lstAutBajas.Text.ToString();
-                MessageBox.Show(rutEmpresa);
+                //MessageBox.Show(rutEmpresa);
 
 
                 string[] palabras = rutEmpresa.Split(' '); // Dividir el texto en palabras usando un espacio en blanco como separador
@@ -185,7 +181,7 @@ namespace InnoSys
                     }
                     catch
                     {
-                        MessageBox.Show("Error a obtener datos del usuario");
+                        MessageBox.Show("Error a obtener datos del la empresa");
                         return;
 
                     }
@@ -197,12 +193,14 @@ namespace InnoSys
                     }
                     catch
                     {
-                        MessageBox.Show("Error a obtener datos del usuario");
+                        MessageBox.Show("Error a obtener datos de la tabla baja");
                         return;
 
                     }
                     //Como la tabla cliente tiene la Id_Cliente como CLAVE PRIMARIA, SE DEBE BORRAR DESPUÉS DE HABER ELIMINADO SUS RELACIONES
-                    sql = "DELETE FROM cliente where Id_Cliente=" + Id_Cliente;
+                    //14/11/23 Tiene mas de esta relación, no se pueden eliminar, dejo como comentario
+
+                  /*  sql = "DELETE FROM cliente where Id_Cliente=" + Id_Cliente;
                     try
                     {
                         rs = Program.cn.Execute(sql, out cantFilas);
@@ -212,7 +210,7 @@ namespace InnoSys
                         MessageBox.Show("Error a obtener datos del usuario");
                         return;
 
-                    }
+                    }*/
                     MessageBox.Show("BAJA EFECTUADA CORRECTAMENTE");
 
 
@@ -258,7 +256,8 @@ namespace InnoSys
 
                     }
                     //Como la tabla cliente tiene la Id_Cliente como CLAVE PRIMARIA, SE DEBE BORRAR DESPUÉS DE HABER ELIMINADO SUS RELACIONES
-                    sql = "DELETE FROM cliente where Id_Cliente=" + Id_Cliente;
+                    //14/11/23 Tiene mas de esta relación, no se pueden eliminar, dejo como comentario
+                   /* sql = "DELETE FROM cliente where Id_Cliente=" + Id_Cliente;
                     try
                     {
                         rs = Program.cn.Execute(sql, out cantFilas);
@@ -268,7 +267,7 @@ namespace InnoSys
                         MessageBox.Show("Error a obtener datos del usuario de la tabla cliente");
                         return;
 
-                    }
+                    }*/
                     MessageBox.Show("BAJA EFECTUADA CORRECTAMENTE");
 
 
@@ -301,19 +300,6 @@ namespace InnoSys
                     MessageBox.Show(RUT);
                     
 
-                    sql = "DELETE FROM empresa where Id_Cliente=" + Id_Cliente;
-
-                    try
-                    {
-                        rs = Program.cn.Execute(sql, out cantFilas);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error a obtener datos del usuario");
-                        return;
-
-                    }
-
                     sql = "DELETE FROM baja where Id_Cliente=" + Id_Cliente;
                     try
                     {
@@ -325,19 +311,7 @@ namespace InnoSys
                         return;
 
                     }
-                    //Como la tabla cliente tiene la Id_Cliente como CLAVE PRIMARIA, SE DEBE BORRAR DESPUÉS DE HABER ELIMINADO SUS RELACIONES
-                    sql = "DELETE FROM cliente where Id_Cliente=" + Id_Cliente;
-                    try
-                    {
-                        rs = Program.cn.Execute(sql, out cantFilas);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error a obtener datos del usuario");
-                        return;
-
-                    }
-                    MessageBox.Show("BAJA EFECTUADA CORRECTAMENTE");
+                    MessageBox.Show("Solicitud rechazada");
                     lstAutBajas.Update();
 
 

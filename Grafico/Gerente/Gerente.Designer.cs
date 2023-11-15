@@ -77,7 +77,7 @@
             btnAutProductos.Name = "btnAutProductos";
             btnAutProductos.Size = new Size(290, 123);
             btnAutProductos.TabIndex = 12;
-            btnAutProductos.Text = "Autorización nuevos productos";
+            btnAutProductos.Text = "Autorización nuevos menúes";
             btnAutProductos.UseVisualStyleBackColor = false;
             btnAutProductos.Click += button6_Click;
             // 
@@ -88,7 +88,7 @@
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(290, 123);
             btnPedidos.TabIndex = 13;
-            btnPedidos.Text = "Pedidos";
+            btnPedidos.Text = "Estado Pedidos";
             btnPedidos.UseVisualStyleBackColor = true;
             btnPedidos.Click += button7_Click;
             // 
@@ -107,6 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(629, 450);
             Controls.Add(btnMenu);
             Controls.Add(btnPedidos);
@@ -117,8 +118,8 @@
             Name = "Gerente";
             Text = "Gerente";
             Load += Gerente_Load;
+            Disposed += Login_Disposed;
             ResumeLayout(false);
-            this.Disposed += Login_Disposed;
         }
 
         #endregion

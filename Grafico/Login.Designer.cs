@@ -80,6 +80,7 @@ namespace InnoSys
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
+            lblUsuario.BackColor = Color.FromArgb(192, 64, 0);
             lblUsuario.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblUsuario.Location = new Point(215, 47);
             lblUsuario.Name = "lblUsuario";
@@ -91,6 +92,7 @@ namespace InnoSys
             // lblPass
             // 
             lblPass.AutoSize = true;
+            lblPass.BackColor = Color.FromArgb(192, 64, 0);
             lblPass.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPass.Location = new Point(209, 87);
             lblPass.Name = "lblPass";
@@ -101,7 +103,7 @@ namespace InnoSys
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Isologo_2_Transparente;
-            pictureBox1.Location = new Point(35, 32);
+            pictureBox1.Location = new Point(35, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(139, 127);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -112,7 +114,7 @@ namespace InnoSys
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(439, 184);
             Controls.Add(pictureBox1);
             Controls.Add(lblPass);

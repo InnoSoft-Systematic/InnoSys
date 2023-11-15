@@ -1,4 +1,5 @@
-﻿using Grafico;
+﻿using ADODB;
+using Grafico;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,51 @@ namespace InnoSys
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
+            {
 
+            }
+
+        }
+
+        public static string rol { get; set; }
+        public static string usuario { get; set; }
+        public static string contraseña { get; set; }
+
+        public static string connectionString { get; set; }
+
+        public static string consultaSQL { get; set; }
+
+
+        public static bool ValidarInicioSesion(string connectionString, string usuario, string contraseña)
+        {
+            Recordset rs = new Recordset();
+            //ClaseCliente c = new ClaseCliente();
+
+            try
+            {
+                Program.cn.Open(connectionString);
+
+                // Supongamos que tienes una tabla llamada 'usuarios' con columnas 'nombre_usuario' y 'contraseña'
+                consultaSQL = $"SELECT COUNT(*) FROM usuarios WHERE Usuario = '{Login.usuario}' AND Contraseña = '{Login.contraseña}'";
+
+                rs.Open(consultaSQL, Program.cn);
+
+                // Obtener el resultado de la consulta
+                int cantidadFilas = Convert.ToInt32(rs.Fields[0].Value);
+
+
+                return cantidadFilas != 0;
+
+            }
+            finally
+            {
+                rs.Close();
+                Program.cn.Close();
+            }
         }
 
 
@@ -29,62 +71,73 @@ namespace InnoSys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Program es la clase estática que tiene el procedimiento main
-            try
+
+            connectionString = "miodbc";
+            usuario = txtUsuario.Text;
+            contraseña = txtPass.Text;
+
+            bool inicioSesionExitoso = ValidarInicioSesion(connectionString, usuario, contraseña);
+
+            if (inicioSesionExitoso)
             {
-                //Trato de abrir conexión a la BASE DE DATOS (usuario root)
-                Program.cn.Open("miodbc", txtUsuario.Text, txtPass.Text, -1);
-                if (Program.cn.State == 1)
+
+                string sql;
+                object cantFilas;
+                ADODB.Recordset rs = new ADODB.Recordset();
+
+                MessageBox.Show("Inicio de sesión exitoso.");
+
+
+                Program.cn.Open(connectionString);
+                sql = "Select Rol from usuarios where Usuario='" + usuario + "' and Contraseña='" + contraseña + "'";
+
+                try
                 {
-                    MessageBox.Show("Conexión abierta");
+                    rs = Program.cn.Execute(sql, out cantFilas);
+                    rol = rs.Fields[0].Value.ToString();
 
+                    switch (rol)
+                    {
+                        case "Recepcion":
+                            Program.frmLogin.Hide();
+                            Program.frmRecepcion.Show();
+                            break;
+                        case "Administrativo":
+                            Program.frmLogin.Hide();
+                            Program.frmAdministracion.Show();
+                            break;
+                        case "Cocina":
+                            Program.frmLogin.Hide();
+                            Program.frmCocina.Show();
+                            break;
+                        case "Gerente":
+                            Program.frmLogin.Hide();
+                            Program.frmGerente.Show();
+                            break;
+                        case "Transporte":
+                            Program.frmLogin.Hide();
+                            Program.frmTransporte.Show();
+                            break;
+                        case "Informatico":
+                            Program.frmLogin.Hide();
+                            Program.frmInformatico.Show();
+                            break;
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Conexión cerrada");
+                    MessageBox.Show("Error a obtener datos de usuario" + sql);
+                    return;
                 }
+
             }
-            catch
+            else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
-                return;
-            }
-            Program.cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
-
-
-            //SWITCH PARA ELEGIR LOS USUARIOS QUE VAN A INGRESAR
-            string nombre = txtUsuario.Text;
-            switch (nombre)
-            {
-                case "recepcion":
-                    Program.frmLogin.Hide();
-                    Program.frmRecepcion.Show();
-                    break;
-                case "admin":
-                    Program.frmLogin.Hide();
-                    Program.frmAdministracion.Show();
-                    break;
-                case "Cocina":
-                    Program.frmLogin.Hide();
-                    Program.frmCocina.Show();
-                    break;
-                case "Gerente":
-                    Program.frmLogin.Hide();
-                    Program.frmGerente.Show();
-                    break;
-                case "Transporte":
-                    Program.frmLogin.Hide();
-                    Program.frmTransporte.Show();
-                    break;
-                case "root":
-                    Program.frmLogin.Hide();
-                    Program.frmInformatico.Show();
-                    break;
-
+                MessageBox.Show("Inicio de sesión fallido. Verifica tus credenciales.");
             }
 
         }
-
 
         private void Login_Load(object sender, EventArgs e)
         { }

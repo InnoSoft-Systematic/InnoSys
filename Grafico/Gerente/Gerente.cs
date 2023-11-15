@@ -21,6 +21,7 @@ namespace InnoSys.Gerente
 
         public static AutNuevosProd frmAutorizarProd = new AutNuevosProd();
 
+
         private void Login_Disposed(object sender, EventArgs e)
         {
             Program.frmLogin.Close();
@@ -38,7 +39,7 @@ namespace InnoSys.Gerente
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.ShowDialog();
+            Program.frmEstadoEnvios.ShowDialog();
         }
 
         private void Gerente_Load(object sender, EventArgs e)

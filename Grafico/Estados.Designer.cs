@@ -30,7 +30,9 @@
         {
             btnVolver = new Button();
             lblTitulo = new Label();
-            lstEstados = new ListBox();
+            btnActualizar = new Button();
+            dgEstados = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgEstados).BeginInit();
             SuspendLayout();
             // 
             // btnVolver
@@ -47,32 +49,46 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(1, 34);
+            lblTitulo.Location = new Point(30, 34);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(187, 54);
+            lblTitulo.Size = new Size(417, 54);
             lblTitulo.TabIndex = 34;
-            lblTitulo.Text = "ESTADOS";
+            lblTitulo.Text = "ESTADOS DE PEDIDOS";
             // 
-            // lstEstados
+            // btnActualizar
             // 
-            lstEstados.FormattingEnabled = true;
-            lstEstados.ItemHeight = 15;
-            lstEstados.Location = new Point(12, 111);
-            lstEstados.Name = "lstEstados";
-            lstEstados.Size = new Size(308, 289);
-            lstEstados.TabIndex = 37;
+            btnActualizar.Location = new Point(394, 8);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 36;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // dgEstados
+            // 
+            dgEstados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgEstados.Location = new Point(12, 91);
+            dgEstados.Name = "dgEstados";
+            dgEstados.RowTemplate.Height = 25;
+            dgEstados.Size = new Size(457, 376);
+            dgEstados.TabIndex = 37;
+            dgEstados.CellContentClick += dgEstados_CellContentClick;
             // 
             // Estados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(350, 412);
+            ClientSize = new Size(479, 488);
             ControlBox = false;
-            Controls.Add(lstEstados);
+            Controls.Add(dgEstados);
+            Controls.Add(btnActualizar);
             Controls.Add(btnVolver);
             Controls.Add(lblTitulo);
             Name = "Estados";
             Text = "Estados";
+            Load += Estados_Load;
+            ((System.ComponentModel.ISupportInitialize)dgEstados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,6 +97,7 @@
 
         private Button btnVolver;
         private Label lblTitulo;
-        private ListBox lstEstados;
+        private Button btnActualizar;
+        private DataGridView dgEstados;
     }
 }

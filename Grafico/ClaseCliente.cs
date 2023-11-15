@@ -23,6 +23,8 @@ namespace InnoSys
         protected string _empresa;
         protected int _telefonos;
         protected int _zona;
+        protected string _matricula;
+        protected int _capacidad;
         protected ADODB.Connection _conexion;
 
         public ClaseCliente()
@@ -37,10 +39,12 @@ namespace InnoSys
             _empresa = "";
             _telefonos = 0;
             _zona = 0;
+            _matricula = "";
+            _capacidad = 0;
             _conexion = new ADODB.Connection();
         }
 
-        public ClaseCliente(int CI, int RUT, string nombre, string apellido1, string apellido2, string mail, string direccion, string empresa, int telefonos, int zona, ADODB.Connection cn)
+        public ClaseCliente(int CI, int RUT, string nombre, string apellido1, string apellido2, string mail, string direccion, string empresa, int telefonos, int zona, string matricula, int capacidad, ADODB.Connection cn)
         {
             _CI = CI;
             _RUT = RUT;
@@ -53,6 +57,8 @@ namespace InnoSys
             _telefonos = telefonos;
             _conexion = cn;
             _zona=zona;
+            _matricula = matricula;
+            _capacidad= capacidad;
         }
 
         public int CI
@@ -119,14 +125,27 @@ namespace InnoSys
             set { _zona = value; }
         }
 
+        public string matricula
+        {
+            get { return _matricula;}
+            set { _matricula = value; }
+        }
+
+        public int capacidad
+        {
+            get { return _capacidad; }
+            set { _capacidad = value; }
+        }
+
         public int buscar()
         {
             int retorno = 0; //Por defecto asumo que no hubieron errores.
             //object cantFilas;
             ADODB.Recordset rs = new ADODB.Recordset();
             string sql;
+            object FilasAfectadas;
 
-            if (_conexion.State == 0)
+            if (Program.cn.State == 0)
             {
                 retorno = 1; //Conexión CERRADA.
             }
@@ -134,39 +153,21 @@ namespace InnoSys
             {
                 sql = "select CI from persona where CI=" + _CI;
                 try
-                {
-                   //RECORDSET   
+                { 
                     rs.Open(sql, _conexion, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockReadOnly, -1);
+
                 }
                 catch
                 {
                     return (2); //error al ejecutar la consulta.
                 }
-                if (rs.RecordCount == 0)
+                if (!rs.EOF)
                 {
-                    retorno = 3; //No se encontró registro alguno.
+                    retorno = 0;
                 }
                 else
                 {
-
-                    
-                    sql = "select CI from persona where CI=" + _CI;
-                    try
-                    {
-                        //rs = _conexion.Execute(sql, out cantFilas, -1);
-                        rs.Close();
-                        rs.Open(sql, _conexion, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockReadOnly, -1);
-                    }
-                    catch
-                    {
-                        return (4); //error al ejecutar la consulta de teléfonos.
-                    }
-                    
-                    while (!rs.EOF) //mientras no llegue al fin 
-                    {
-                        
-                       rs.MoveNext(); //nos movemos al siguiente registro
-                    }
+                    retorno = 3; //No se encontró registro alguno.
                 }
                 rs.Close();
                 rs = null; // destruyo el objeto.
@@ -181,7 +182,7 @@ namespace InnoSys
             ADODB.Recordset rs = new ADODB.Recordset();
             string sql;
 
-            if (_conexion.State == 0)
+            if (Program.cn.State == 0)
             {
                 retorno = 1; //Conexión CERRADA.
             }
@@ -197,32 +198,15 @@ namespace InnoSys
                 {
                     return (2); //error al ejecutar la consulta.
                 }
-                if (rs.RecordCount == 0)
+                if (!rs.EOF)
                 {
-                    retorno = 3; //No se encontró registro alguno.
+                    retorno = 0;
                 }
                 else
                 {
-
-
-                    sql = "select RUT from empresa where RUT=" + _RUT;
-                    try
-                    {
-                        //rs = _conexion.Execute(sql, out cantFilas, -1);
-                        rs.Close();
-                        rs.Open(sql, _conexion, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockReadOnly, -1);
-                    }
-                    catch
-                    {
-                        return (4); //error al ejecutar la consulta de teléfonos.
-                    }
-
-                    while (!rs.EOF) //mientras no llegue al fin 
-                    {
-
-                        rs.MoveNext(); //nos movemos al siguiente registro
-                    }
+                    retorno = 3; //No se encontró registro alguno.
                 }
+
                 rs.Close();
                 rs = null; // destruyo el objeto.
             }//if
@@ -239,7 +223,7 @@ namespace InnoSys
             
             ADODB.Recordset rs = new ADODB.Recordset();
 
-            if (_conexion.State == 0)
+            if (Program.cn.State == 0)
             {
                 retorno = 1; //conexión cerrada.
             }
@@ -253,8 +237,8 @@ namespace InnoSys
 
                     try
                     {
-                        MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -264,12 +248,11 @@ namespace InnoSys
                     //sql = "select LAST_INSERT_ID()"; TOMA EL ULTIMO VALOR ID
                     sql = "select MAX(Id_Cliente) from cliente";
                     
-                    
 
                     try
                     {
-                        MessageBox.Show(sql);
-                        rs = _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -282,27 +265,51 @@ namespace InnoSys
 
                     try
                     {
-                        MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
                         return 4; //error al ejecutar sentencia SQL.
                     }
+
+                    //sql = "select LAST_INSERT_ID()"; TOMA EL ULTIMO VALOR ID
+                    sql = "select MAX(Id_Cliente) from cliente";
+
+                    try
+                    {
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 3; //error al ejecutar sentencia SQL.
+                    }
+
+                    sql = "insert into forma_parte (Id_Cliente,Id_Zona)";
+                    sql = sql + " values(" + rs.Fields[0].Value + "," + _zona + ")";
+
+                    try
+                    {
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 3; //error al ejecutar sentencia SQL.
+                    }
                 }
                 else
-                {
-                   
+                { 
                     sql = "update cliente";
-                   //sql = sql + "set nombre='" + _nombre + "'";
-                    //sql = sql + "where ci=" + _CI;
+
                 }
                 if (!alta)
                 {
 
                     try
                     {
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -314,7 +321,7 @@ namespace InnoSys
             return retorno;
         }//guardar        
 
-        public byte guardarRUT(bool alta)
+        public byte guardarVehiculo(bool alta)
         {
             byte retorno = 0;
             object cantFilas;
@@ -324,7 +331,7 @@ namespace InnoSys
 
             ADODB.Recordset rs = new ADODB.Recordset();
 
-            if (_conexion.State == 0)
+            if (Program.cn.State == 0)
             {
                 retorno = 1; //conexión cerrada.
             }
@@ -333,14 +340,59 @@ namespace InnoSys
                 if (alta)
                 {
 
+                    sql = "insert into vehiculo (matricula,capacidad)";
+                    sql = sql + " values('" + _matricula + "', '" + _capacidad + "');";
 
+                    try
+                    {
+                        MessageBox.Show(sql);
+                        Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 2; //error al ejecutar sentencia SQL.
+                    }
+
+                    sql = "select MAX(Id_Vehiculo) from vehiculo";
+
+                    try
+                    {
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 3; //error al ejecutar sentencia SQL.
+                    }
+
+                }
+
+            }
+            return retorno;
+        }//guardar        
+        public byte guardarRUT(bool alta)
+        {
+            byte retorno = 0;
+            object cantFilas;
+            string sql;
+
+
+            ADODB.Recordset rs = new ADODB.Recordset();
+
+            if (Program.cn.State == 0)
+            {
+                retorno = 1; //conexión cerrada.
+            }
+            else
+            {
+                if (alta)
+                {
                     sql = "insert into cliente (Mail,Tel,Id_Zona,Direccion)";
                     sql = sql + " values('" + _mail + "', '" + _telefonos + "', '" + _zona + "', '" + _direccion + "');";
 
                     try
                     {
-                        MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -350,12 +402,10 @@ namespace InnoSys
                     //sql = "select LAST_INSERT_ID()"; TOMA EL ULTIMO VALOR ID
                     sql = "select MAX(Id_Cliente) from cliente";
 
-
-
                     try
                     {
-                        MessageBox.Show(sql);
-                        rs = _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -368,12 +418,39 @@ namespace InnoSys
 
                     try
                     {
-                        MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        //MessageBox.Show(sql);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
                         return 4; //error al ejecutar sentencia SQL.
+                    }
+
+                    //sql = "select LAST_INSERT_ID()"; TOMA EL ULTIMO VALOR ID
+                    sql = "select MAX(Id_Cliente) from cliente";
+
+
+                    try
+                    {
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 3; //error al ejecutar sentencia SQL.
+                    }
+
+                    sql = "insert into forma_parte (Id_Cliente,Id_Zona)";
+                    sql = sql + " values(" + rs.Fields[0].Value + "," + _zona + ")";
+
+                    try
+                    {
+                        //MessageBox.Show(sql);
+                        rs = Program.cn.Execute(sql, out cantFilas, -1);
+                    }
+                    catch
+                    {
+                        return 3; //error al ejecutar sentencia SQL.
                     }
                 }
                 else
@@ -387,7 +464,7 @@ namespace InnoSys
 
                     try
                     {
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -408,7 +485,7 @@ namespace InnoSys
 
             ADODB.Recordset rs = new ADODB.Recordset();
 
-            if (_conexion.State == 0)
+            if (Program.cn.State == 0)
             {
                 retorno = 1; //conexión cerrada.
             }
@@ -436,7 +513,7 @@ namespace InnoSys
                     try
                     {
                         MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -471,7 +548,7 @@ namespace InnoSys
                     try
                     {
                         MessageBox.Show(sql);
-                        _conexion.Execute(sql, out cantFilas, -1);
+                        Program.cn.Execute(sql, out cantFilas, -1);
                     }
                     catch
                     {
@@ -487,7 +564,48 @@ namespace InnoSys
             }
             return retorno;
         }
-        
+        public int buscarmat()
+        {
+            int retorno = 0; //Por defecto asumo que no hubieron errores.
+            //object cantFilas;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            string sql;
+            object cantFilas;
+
+            if (Program.cn.State == 0)
+            {
+                retorno = 1; //Conexión CERRADA.
+            }
+            else
+            {
+                sql = "select matricula from vehiculo where matricula='" + _matricula + "'";
+                try
+                {
+                    //RECORDSET   
+                    rs = Program.cn.Execute(sql, out cantFilas);
+
+
+                    //rs = Program.cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    retorno = 2; //error al ejecutar la consulta.
+                }
+                if (!rs.EOF)
+                {
+                    retorno = 0;
+                    
+                }
+                else
+                {
+                    retorno = 3; //No se encontró registro alguno.
+                }
+                rs.Close();
+                rs = null; // destruyo el objeto.
+            }//if
+            return (retorno);
+        }//buscar
+
 
     }//class ClaseCliente
 }//namespace

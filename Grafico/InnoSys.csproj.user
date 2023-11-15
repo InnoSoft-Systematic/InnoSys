@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>InnoSys</ActiveDebugProfile>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Update="Administración\Administracion.cs">
       <SubType>Form</SubType>
@@ -32,6 +37,9 @@
     <Compile Update="Gerente\Gerente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Gerente\Parametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Informatico\AltaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -45,9 +53,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Recepcion\Cliente.cs">
@@ -66,12 +71,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Transporte\EstadoEnvios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Transporte\IngresoEnvío.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Transporte\ModEnvio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Transporte\Transporte.cs">

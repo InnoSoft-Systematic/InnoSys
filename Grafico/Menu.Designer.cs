@@ -31,6 +31,7 @@
             btnVolver = new Button();
             lblTitulo = new Label();
             lstMenu = new ListBox();
+            btnActualizar = new Button();
             SuspendLayout();
             // 
             // btnVolver
@@ -47,7 +48,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(12, 23);
+            lblTitulo.Location = new Point(39, 32);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(136, 54);
             lblTitulo.TabIndex = 34;
@@ -57,17 +58,28 @@
             // 
             lstMenu.FormattingEnabled = true;
             lstMenu.ItemHeight = 15;
-            lstMenu.Location = new Point(12, 90);
+            lstMenu.Location = new Point(12, 89);
             lstMenu.Name = "lstMenu";
-            lstMenu.Size = new Size(308, 289);
+            lstMenu.Size = new Size(193, 289);
             lstMenu.TabIndex = 36;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(138, 6);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 57;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(332, 398);
+            ClientSize = new Size(225, 398);
             ControlBox = false;
+            Controls.Add(btnActualizar);
             Controls.Add(lstMenu);
             Controls.Add(btnVolver);
             Controls.Add(lblTitulo);
@@ -82,5 +94,6 @@
         private Button btnVolver;
         private Label lblTitulo;
         private ListBox lstMenu;
+        private Button btnActualizar;
     }
 }

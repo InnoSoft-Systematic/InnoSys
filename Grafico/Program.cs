@@ -17,7 +17,10 @@ namespace Grafico
         public static ADODB.Connection cn = new ADODB.Connection();
         public static ADODB.Recordset rs = new ADODB.Recordset(); //Recordset publico no es necesario
         //*__________________________________________________________________________________*
-        public static void doyPermisos(string user)
+       
+        
+        
+        /* public static void doyPermisos(string user)
         {
             string sql = null;
             
@@ -51,7 +54,7 @@ namespace Grafico
             }
             rs.Close();
             rs = null;
-        }
+        }*/
 
        
 
@@ -62,10 +65,11 @@ namespace Grafico
         public static Stock frmStock = new Stock();
         public static Vehículos frmVehículos = new Vehículos();
         public static VerZonas frmVerZonas = new VerZonas();
-        public static Pedidos frmPedidos = new Pedidos();
         public static Clientes frmClientes = new Clientes();
         public static Sucursales frmSucursales = new Sucursales();
-
+        public static EstadoEnvios frmEstadoEnvios = new EstadoEnvios();
+        public static ModEstados frmEstadosCaja = new ModEstados();
+        public static Parametros frmParametros = new Parametros();
 
         //Formularios base
         public static Recepcion frmRecepcion = new Recepcion();

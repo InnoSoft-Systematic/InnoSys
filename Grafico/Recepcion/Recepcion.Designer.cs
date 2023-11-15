@@ -94,6 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(492, 479);
             Controls.Add(btnEstado);
             Controls.Add(btnIngresoPedido);
@@ -103,9 +104,9 @@
             Name = "Recepcion";
             Text = "Recepción";
             Load += Form1_Load;
+            Disposed += Login_Disposed;
             ResumeLayout(false);
             PerformLayout();
-            this.Disposed += Login_Disposed;
         }
 
         #endregion
