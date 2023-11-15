@@ -43,12 +43,12 @@ namespace InnoSys.Administración
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.ShowDialog();
+            Cocina.frmModEstados.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Program.frmEstadoEnvios.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,6 +59,11 @@ namespace InnoSys.Administración
         private void button4_Click(object sender, EventArgs e)
         {
             frmIngresoZonas.ShowDialog();
+        }
+
+        private void btnIngreso_Click(object sender, EventArgs e)
+        {
+            Recepcion.frmAltaBajaCliente.ShowDialog();
         }
     }
 }

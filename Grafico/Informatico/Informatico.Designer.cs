@@ -32,7 +32,6 @@ namespace InnoSys.Administrador
         {
             btnClientes = new Button();
             btnZonas = new Button();
-            btnPedidos = new Button();
             btnMenu = new Button();
             btnEnvíos = new Button();
             btnCambiarRol = new Button();
@@ -65,17 +64,6 @@ namespace InnoSys.Administrador
             btnZonas.UseVisualStyleBackColor = true;
             btnZonas.Click += button3_Click;
             // 
-            // btnPedidos
-            // 
-            btnPedidos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnPedidos.Location = new Point(633, 12);
-            btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(290, 123);
-            btnPedidos.TabIndex = 16;
-            btnPedidos.Text = "Pedidos";
-            btnPedidos.UseVisualStyleBackColor = true;
-            btnPedidos.Click += button2_Click;
-            // 
             // btnMenu
             // 
             btnMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
@@ -90,18 +78,19 @@ namespace InnoSys.Administrador
             // btnEnvíos
             // 
             btnEnvíos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEnvíos.Location = new Point(321, 276);
+            btnEnvíos.Location = new Point(633, 12);
             btnEnvíos.Name = "btnEnvíos";
             btnEnvíos.Size = new Size(290, 123);
             btnEnvíos.TabIndex = 18;
             btnEnvíos.Text = "Envíos";
             btnEnvíos.UseVisualStyleBackColor = true;
+            btnEnvíos.Click += btnEnvíos_Click;
             // 
             // btnCambiarRol
             // 
             btnCambiarRol.BackColor = Color.Brown;
             btnCambiarRol.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCambiarRol.Location = new Point(633, 488);
+            btnCambiarRol.Location = new Point(646, 426);
             btnCambiarRol.Name = "btnCambiarRol";
             btnCambiarRol.Size = new Size(290, 65);
             btnCambiarRol.TabIndex = 19;
@@ -123,7 +112,7 @@ namespace InnoSys.Administrador
             // btnStock
             // 
             btnStock.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStock.Location = new Point(633, 276);
+            btnStock.Location = new Point(321, 141);
             btnStock.Name = "btnStock";
             btnStock.Size = new Size(290, 123);
             btnStock.TabIndex = 22;
@@ -133,32 +122,34 @@ namespace InnoSys.Administrador
             // 
             // btnCuerpoDir
             // 
+            btnCuerpoDir.BackColor = Color.FromArgb(255, 128, 0);
             btnCuerpoDir.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             btnCuerpoDir.Location = new Point(12, 276);
             btnCuerpoDir.Name = "btnCuerpoDir";
             btnCuerpoDir.Size = new Size(290, 123);
             btnCuerpoDir.TabIndex = 23;
             btnCuerpoDir.Text = "Cuerpo directivo";
-            btnCuerpoDir.UseVisualStyleBackColor = true;
+            btnCuerpoDir.UseVisualStyleBackColor = false;
             btnCuerpoDir.Click += button1_Click;
             // 
             // btnAñadirZonas
             // 
+            btnAñadirZonas.BackColor = Color.FromArgb(255, 255, 192);
             btnAñadirZonas.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAñadirZonas.Location = new Point(321, 141);
+            btnAñadirZonas.Location = new Point(12, 412);
             btnAñadirZonas.Name = "btnAñadirZonas";
-            btnAñadirZonas.Size = new Size(290, 123);
+            btnAñadirZonas.Size = new Size(290, 93);
             btnAñadirZonas.TabIndex = 20;
-            btnAñadirZonas.Text = "Añadir zonas";
-            btnAñadirZonas.UseVisualStyleBackColor = true;
+            btnAñadirZonas.Text = "Sucursal";
+            btnAñadirZonas.UseVisualStyleBackColor = false;
             btnAñadirZonas.Click += button8_Click;
             // 
             // Informatico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(957, 565);
+            BackColor = Color.FromArgb(255, 192, 128);
+            ClientSize = new Size(957, 516);
             Controls.Add(btnCuerpoDir);
             Controls.Add(btnStock);
             Controls.Add(btnVehiculos);
@@ -166,21 +157,19 @@ namespace InnoSys.Administrador
             Controls.Add(btnCambiarRol);
             Controls.Add(btnEnvíos);
             Controls.Add(btnMenu);
-            Controls.Add(btnPedidos);
             Controls.Add(btnZonas);
             Controls.Add(btnClientes);
             Name = "Informatico";
             Text = "Informático";
             Load += Informatico_Load;
+            Disposed += Login_Disposed;
             ResumeLayout(false);
-            this.Disposed += Login_Disposed;
         }
 
         #endregion
 
         private Button btnClientes;
         private Button btnZonas;
-        private Button btnPedidos;
         private Button btnMenu;
         private Button btnEnvíos;
         private Button btnCambiarRol;

@@ -22,7 +22,7 @@ namespace InnoSys.Administrador
         public static AltaEmpleado frmAltaEmpleado = new AltaEmpleado();
         private void button8_Click(object sender, EventArgs e)
         {
-
+            Program.frmSucursales.ShowDialog();
         }
 
         private void Login_Disposed(object sender, EventArgs e)
@@ -57,12 +57,12 @@ namespace InnoSys.Administrador
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.ShowDialog();
+            Program.frmEstadoEnvios.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.frmMenu.ShowDialog();
+            Program.frmEstadosCaja.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -73,6 +73,11 @@ namespace InnoSys.Administrador
         private void button9_Click(object sender, EventArgs e)
         {
             Program.frmVehículos.ShowDialog();
+        }
+
+        private void btnEnvíos_Click(object sender, EventArgs e)
+        {
+            Program.frmEstadoEnvios.ShowDialog();
         }
     }
 }

@@ -18,11 +18,10 @@ namespace InnoSys.Transporte
             InitializeComponent();
         }
         //Declaro formularios propios de este
-        public static ModEnvio frmModEnvio = new ModEnvio();
-        public static IngresoEnvío frmIngresoEnvio = new IngresoEnvío();
+
         public static EstadoEnvios frmEstadoEnvios = new EstadoEnvios();
 
-        
+
         private void Login_Disposed(object sender, EventArgs e)
         {   //Cuando el programa cierra, cierra login también que estaba oculto
             Program.frmLogin.Close();
@@ -55,12 +54,12 @@ namespace InnoSys.Transporte
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmModEnvio.Show();
+            // frmModEnvio.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmIngresoEnvio.Show();
+            
         }
     }
 }

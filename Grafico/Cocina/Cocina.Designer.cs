@@ -28,29 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnPedidos = new Button();
             btnStock = new Button();
             btnMenu = new Button();
             btnIngrMenu = new Button();
-            btnEstados = new Button();
             btnModEstados = new Button();
             SuspendLayout();
-            // 
-            // btnPedidos
-            // 
-            btnPedidos.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnPedidos.Location = new Point(12, 12);
-            btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(290, 123);
-            btnPedidos.TabIndex = 17;
-            btnPedidos.Text = "Pedidos";
-            btnPedidos.UseVisualStyleBackColor = true;
-            btnPedidos.Click += button2_Click;
             // 
             // btnStock
             // 
             btnStock.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStock.Location = new Point(324, 12);
+            btnStock.Location = new Point(324, 150);
             btnStock.Name = "btnStock";
             btnStock.Size = new Size(290, 123);
             btnStock.TabIndex = 23;
@@ -61,7 +48,7 @@
             // btnMenu
             // 
             btnMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMenu.Location = new Point(324, 141);
+            btnMenu.Location = new Point(12, 150);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(290, 123);
             btnMenu.TabIndex = 24;
@@ -72,7 +59,7 @@
             // btnIngrMenu
             // 
             btnIngrMenu.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnIngrMenu.Location = new Point(324, 279);
+            btnIngrMenu.Location = new Point(12, 12);
             btnIngrMenu.Name = "btnIngrMenu";
             btnIngrMenu.Size = new Size(290, 123);
             btnIngrMenu.TabIndex = 25;
@@ -80,21 +67,10 @@
             btnIngrMenu.UseVisualStyleBackColor = true;
             btnIngrMenu.Click += button1_Click;
             // 
-            // btnEstados
-            // 
-            btnEstados.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEstados.Location = new Point(12, 141);
-            btnEstados.Name = "btnEstados";
-            btnEstados.Size = new Size(290, 123);
-            btnEstados.TabIndex = 26;
-            btnEstados.Text = "Estados";
-            btnEstados.UseVisualStyleBackColor = true;
-            btnEstados.Click += button3_Click;
-            // 
             // btnModEstados
             // 
             btnModEstados.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            btnModEstados.Location = new Point(12, 279);
+            btnModEstados.Location = new Point(324, 12);
             btnModEstados.Name = "btnModEstados";
             btnModEstados.Size = new Size(290, 123);
             btnModEstados.TabIndex = 27;
@@ -106,27 +82,23 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(637, 419);
+            BackColor = Color.FromArgb(255, 192, 128);
+            ClientSize = new Size(637, 291);
             Controls.Add(btnModEstados);
-            Controls.Add(btnEstados);
             Controls.Add(btnIngrMenu);
             Controls.Add(btnMenu);
             Controls.Add(btnStock);
-            Controls.Add(btnPedidos);
             Name = "Cocina";
             Text = "Cocina";
             Load += Cocina_Load;
+            Disposed += Login_Disposed;
             ResumeLayout(false);
-            this.Disposed += Login_Disposed;
         }
 
         #endregion
-
-        private Button btnPedidos;
         private Button btnStock;
         private Button btnMenu;
         private Button btnIngrMenu;
-        private Button btnEstados;
         private Button btnModEstados;
     }
 }

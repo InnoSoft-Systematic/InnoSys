@@ -31,6 +31,7 @@
             lblTitulo = new Label();
             lstZonas = new ListBox();
             btnVolver = new Button();
+            btnActualizar = new Button();
             SuspendLayout();
             // 
             // lblTitulo
@@ -47,9 +48,9 @@
             // 
             lstZonas.FormattingEnabled = true;
             lstZonas.ItemHeight = 15;
-            lstZonas.Location = new Point(12, 92);
+            lstZonas.Location = new Point(23, 92);
             lstZonas.Name = "lstZonas";
-            lstZonas.Size = new Size(308, 289);
+            lstZonas.Size = new Size(142, 184);
             lstZonas.TabIndex = 38;
             // 
             // btnVolver
@@ -62,12 +63,23 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += button4_Click;
             // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(100, 12);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 40;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
             // VerZonas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 403);
+            ClientSize = new Size(182, 291);
             ControlBox = false;
+            Controls.Add(btnActualizar);
             Controls.Add(btnVolver);
             Controls.Add(lstZonas);
             Controls.Add(lblTitulo);
@@ -82,5 +94,6 @@
         private Label lblTitulo;
         private ListBox lstZonas;
         private Button btnVolver;
+        private Button btnActualizar;
     }
 }

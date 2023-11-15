@@ -30,10 +30,12 @@
         {
             lblTitulo = new Label();
             btnVolver = new Button();
-            lstClientes = new ListBox();
-            lblTipoCliente = new Label();
-            cboTipoCliente = new ComboBox();
-            button1 = new Button();
+            groupBox1 = new GroupBox();
+            rboEmpresa = new RadioButton();
+            rboPersona = new RadioButton();
+            dgClientes = new DataGridView();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgClientes).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -56,58 +58,66 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += button4_Click;
             // 
-            // lstClientes
+            // groupBox1
             // 
-            lstClientes.FormattingEnabled = true;
-            lstClientes.ItemHeight = 15;
-            lstClientes.Location = new Point(12, 106);
-            lstClientes.Name = "lstClientes";
-            lstClientes.Size = new Size(308, 289);
-            lstClientes.TabIndex = 56;
-            lstClientes.SelectedIndexChanged += lstClientes_SelectedIndexChanged;
+            groupBox1.Controls.Add(rboEmpresa);
+            groupBox1.Controls.Add(rboPersona);
+            groupBox1.Location = new Point(239, 15);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(111, 75);
+            groupBox1.TabIndex = 65;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Filtrar";
             // 
-            // lblTipoCliente
+            // rboEmpresa
             // 
-            lblTipoCliente.AutoSize = true;
-            lblTipoCliente.Location = new Point(341, 106);
-            lblTipoCliente.Name = "lblTipoCliente";
-            lblTipoCliente.Size = new Size(115, 15);
-            lblTipoCliente.TabIndex = 57;
-            lblTipoCliente.Text = "Filtrar tipo de cliente";
+            rboEmpresa.AutoSize = true;
+            rboEmpresa.Location = new Point(15, 20);
+            rboEmpresa.Name = "rboEmpresa";
+            rboEmpresa.Size = new Size(70, 19);
+            rboEmpresa.TabIndex = 61;
+            rboEmpresa.TabStop = true;
+            rboEmpresa.Text = "Empresa";
+            rboEmpresa.UseVisualStyleBackColor = true;
+            rboEmpresa.CheckedChanged += rboEmpresa_CheckedChanged;
             // 
-            // cboTipoCliente
+            // rboPersona
             // 
-            cboTipoCliente.FormattingEnabled = true;
-            cboTipoCliente.Location = new Point(341, 133);
-            cboTipoCliente.Name = "cboTipoCliente";
-            cboTipoCliente.Size = new Size(121, 23);
-            cboTipoCliente.TabIndex = 58;
+            rboPersona.AutoSize = true;
+            rboPersona.Location = new Point(15, 45);
+            rboPersona.Name = "rboPersona";
+            rboPersona.Size = new Size(67, 19);
+            rboPersona.TabIndex = 62;
+            rboPersona.TabStop = true;
+            rboPersona.Text = "Persona";
+            rboPersona.UseVisualStyleBackColor = true;
+            rboPersona.CheckedChanged += rboPersona_CheckedChanged;
             // 
-            // button1
+            // dgClientes
             // 
-            button1.Location = new Point(395, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 59;
-            button1.Text = "Cargar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            dgClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgClientes.Location = new Point(12, 106);
+            dgClientes.Name = "dgClientes";
+            dgClientes.RowTemplate.Height = 25;
+            dgClientes.Size = new Size(697, 332);
+            dgClientes.TabIndex = 66;
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 450);
+            ClientSize = new Size(734, 450);
             ControlBox = false;
-            Controls.Add(button1);
-            Controls.Add(cboTipoCliente);
-            Controls.Add(lblTipoCliente);
-            Controls.Add(lstClientes);
+            Controls.Add(dgClientes);
+            Controls.Add(groupBox1);
             Controls.Add(btnVolver);
             Controls.Add(lblTitulo);
             Name = "Clientes";
             Text = "Clientes";
             Load += Clientes_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,9 +126,9 @@
 
         private Label lblTitulo;
         private Button btnVolver;
-        private ListBox lstClientes;
-        private Label lblTipoCliente;
-        private ComboBox cboTipoCliente;
-        private Button button1;
+        private GroupBox groupBox1;
+        private RadioButton rboEmpresa;
+        private RadioButton rboPersona;
+        private DataGridView dgClientes;
     }
 }

@@ -42,6 +42,7 @@ namespace Grafico
 
 
 
+
         }
         //???
         private Int32 numero(String valor)
@@ -66,7 +67,43 @@ namespace Grafico
             return (retorno);
         }
 
+        public void CargarZonas()
+        {
+            ADODB.Recordset rs = new ADODB.Recordset();
 
+            string sql;
+            object cantFilas;
+
+            sql = "select nombre from zona";
+
+            try
+            {
+
+                rs = Program.cn.Execute(sql, out cantFilas, -1); //resultado RS
+            }
+            catch
+            {
+                MessageBox.Show("Error a ver Zonas"); //error al ejecutar sentencia SQL.
+                return;
+            }
+            cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
+            while (!rs.EOF)
+            {
+                cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
+                rs.MoveNext();
+            }
+        }
+
+        public void Limpiar()
+        {
+            txtEmpresa.Clear();
+            txtEmail.Clear();
+            txtDireccion.Clear();
+            txtTel.Clear();
+            txtNombre.Clear();
+            txtPrimerApe.Clear();
+            txtSegApe.Clear();
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -128,15 +165,16 @@ namespace Grafico
 
         private void btmAceptar_Click(object sender, EventArgs e)
         {
-            //Botón aceptar
             //Defino la clase cliente para darle uso
-            ClaseCliente c = new ClaseCliente();
+           ClaseCliente c = new ClaseCliente();
 
             //Declaro CI desde ClaseCliente (c) y la convierto en String
             c.CI = numero(txtCIb.Text);
             txtCIb.Text = Convert.ToString(c.CI);
+
             c.telefonos = numero(txtTel.Text);
             txtTel.Text = Convert.ToString(c.telefonos);
+
             c.RUT = numero(txtRUTb.Text);
             txtRUTb.Text = Convert.ToString(c.RUT);
             //Declaro nombre desde ClaseCliente (c)
@@ -147,8 +185,6 @@ namespace Grafico
             c.direccion = txtDireccion.Text;
             c.empresa = txtEmpresa.Text;
 
-            //// c.telefonos = numero (txtTel.Text);
-            ////txtTel.Text = Convert.ToString (txtTel.Text);
             c.conexion = Program.cn;
 
             string zonaseleccionada = cboCiudad.SelectedIndex.ToString(); //De seguro hay otra forma mas facil de hacerlo...
@@ -180,9 +216,6 @@ namespace Grafico
             {
                 c.zona = 7;
             }
-
-
-            //cboTelefonos.SelectedIndex = -1;
 
             //Si los campos están vacíos, sale mensaje de error
             if (txtRUTb.Text == "" || txtCIb.Text == "")
@@ -223,25 +256,12 @@ namespace Grafico
                     }
                 }
 
-
-
-
                 //Para que se vaya agregando en la list box
                 lstCliente.DataSource = null;
                 lstCliente.DataSource = listaUsuarios;
-               //Se limpian los campos luego de haber ingresado
-                  txtPrimerApe.Clear();
-                  txtNombre.Clear();
-                  txtEmail.Clear();
-                  txtTel.Clear();
-                  txtDireccion.Clear();
-                  txtSegApe.Clear();
-                  txtEmpresa.Clear();
-                  
-
-
-
-
+                //Se limpian los campos luego de haber ingresado
+                Limpiar();
+                 
             }
 
         }
@@ -342,20 +362,125 @@ namespace Grafico
 
         private void btnBCI_Click(object sender, EventArgs e)
         {
-            ClaseCliente c = new ClaseCliente();
-            DialogResult respuesta;
+            /* ClaseCliente c = new ClaseCliente();
+             DialogResult respuesta;
+             string sql;
 
-            c.CI = numero(txtCIb.Text);
-            txtCIb.Text = Convert.ToString(c.CI);
+                 c.CI = numero(txtCIb.Text);
+                 txtCIb.Text = Convert.ToString(c.CI);
 
-            c.conexion = Program.cn;
+                 c.conexion = Program.cn;
+                 ADODB.Recordset rs = new ADODB.Recordset();
+                 lblSiRUT.Hide();
+                 lblNoRUT.Hide();
+
+                 switch (c.buscar())
+                 {
+                     case 0:  //Encontré
+                         MessageBox.Show("La cédula ingresada ya se encuentra en el sistema");
+                         gbAlta.Enabled = false;
+                         btnAceptar.Enabled = false;
+                         lblSiCI.Show();
+                         btnModificar.Enabled = true;
+                         btnBaja.Enabled = true;
+                         btnBaja.Show();
+                         lblNoCI.Hide();
+                         //LIMPIAR
+                         txtEmpresa.Clear();
+                         txtEmail.Clear();
+                         txtDireccion.Clear();
+                         txtTel.Clear();
+                         txtNombre.Clear();
+                         txtPrimerApe.Clear();
+                         txtSegApe.Clear();
+                         break;
+                     case 1: //La conexión está cerrada.
+                         MessageBox.Show("Se perdió la sesión. Debe loguearse nuevamente.");
+                         break;
+                     case 2:
+                     case 4:
+                         MessageBox.Show("Hubo errores al efectuar operación");
+                         break;
+                     case 3: //No encontré
+                         respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
+                         if (respuesta == DialogResult.Yes)
+                         {
+                             gbAlta.Enabled = true;
+                             btnAceptar.Enabled = true;
+                         }else { gbAlta.Enabled = false; }
+                         lblNoCI.Show();
+                         lblSiCI.Hide();
+                         txtEmpresa.Hide();
+                         lblEmpresa.Hide();
+                         txtNombre.Show();
+                         lblNombre.Show();
+                         txtPrimerApe.Show();
+                         lblPrimerApe.Show();
+                         txtSegApe.Show();
+                         lblSegApe.Show();
+                         btnModificar.Enabled = false;
+                         btnBaja.Enabled = false;
+                         btnActualizar.Enabled = false;
+                         //LIMPIAR
+                         txtEmpresa.Clear();
+                         txtEmail.Clear();
+                         txtDireccion.Clear();
+                         txtTel.Clear();
+                         txtNombre.Clear();
+                         txtPrimerApe.Clear();
+                         txtSegApe.Clear();
+
+                         break;
+                 };
+                 c = null;
+
+                 object cantlineas;
+
+                 sql = "select nombre from zona";
+
+
+                 try
+                 {
+
+                     rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
+                 }
+                 catch
+                 {
+                     MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
+                     return;
+                 }
+                 cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
+                 while (!rs.EOF)
+                 {
+                     cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
+                     rs.MoveNext();
+                 }*/
+
+
             ADODB.Recordset rs = new ADODB.Recordset();
             lblSiRUT.Hide();
             lblNoRUT.Hide();
+            string nombre = txtNombre.Text;
+            string apellido1 = txtPrimerApe.Text;
+            string apellido2 = txtSegApe.Text;
+            string mail = txtEmail.Text;
+            string direccion = txtDireccion.Text;
+            string empresa = txtEmpresa.Text;
+            string CI = txtCIb.Text;
 
-            switch (c.buscar())
+            string cedula = "";
+            string sql;
+            object cantFilas;
+
+            CargarZonas();
+
+            sql = "Select CI from persona where CI=" + CI;
+            try
             {
-                case 0:  //Encontré
+                rs = Program.cn.Execute(sql, out cantFilas);
+                if (!rs.EOF)
+                {
+                    cedula = rs.Fields[0].Value.ToString();
                     MessageBox.Show("La cédula ingresada ya se encuentra en el sistema");
                     gbAlta.Enabled = false;
                     btnAceptar.Enabled = false;
@@ -365,28 +490,21 @@ namespace Grafico
                     btnBaja.Show();
                     lblNoCI.Hide();
                     //LIMPIAR
-                    txtEmpresa.Clear();
-                    txtEmail.Clear();
-                    txtDireccion.Clear();
-                    txtTel.Clear();
-                    txtNombre.Clear();
-                    txtPrimerApe.Clear();
-                    txtSegApe.Clear();
-                    break;
-                case 1: //La conexión está cerrada.
-                    MessageBox.Show("Se perdió la sesión. Debe loguearse nuevamente.");
-                    break;
-                case 2:
-                case 4:
-                    MessageBox.Show("Hubo errores al efectuar operación");
-                    break;
-                case 3: //No encontré
-                    respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
+                    Limpiar();
+                }
+                else
+                {
+                    
+                    DialogResult respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
                     if (respuesta == DialogResult.Yes)
                     {
                         gbAlta.Enabled = true;
                         btnAceptar.Enabled = true;
-                    }else { gbAlta.Enabled = false; }
+                    }
+                    else
+                    {
+                        gbAlta.Enabled = false;
+                    }
                     lblNoCI.Show();
                     lblSiCI.Hide();
                     txtEmpresa.Hide();
@@ -401,38 +519,20 @@ namespace Grafico
                     btnBaja.Enabled = false;
                     btnActualizar.Enabled = false;
                     //LIMPIAR
-                    txtEmpresa.Clear();
-                    txtEmail.Clear();
-                    txtDireccion.Clear();
-                    txtTel.Clear();
-                    txtNombre.Clear();
-                    txtPrimerApe.Clear();
-                    txtSegApe.Clear();
+                    Limpiar();
 
-                    break;
-            };
-            c = null;
-
-            string sql;
-            object cantlineas;
-            sql = "select nombre from zona";
-
-
-            try
-            {
-
-                rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
-                return;
+                MessageBox.Show("Error en consulta usuario: " + ex.Message);
             }
-            cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
-            while (!rs.EOF)
+
+
+        
+            finally
             {
-                cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
-                rs.MoveNext();
+                rs.Close();
             }
 
 
@@ -445,20 +545,27 @@ namespace Grafico
 
         private void btnBRUT_Click(object sender, EventArgs e)
         {
-            ClaseCliente c = new ClaseCliente();
             DialogResult respuesta;
 
-            c.RUT = numero(txtRUTb.Text);
-            txtRUTb.Text = Convert.ToString(c.RUT);
-            c.empresa = txtEmpresa.Text;
+            string RUT = "";
+            string empresa = txtEmpresa.Text;
 
-            c.conexion = Program.cn;
+
+
             ADODB.Recordset rs = new ADODB.Recordset();
-            //cboTelefonos.SelectedIndex = -1;
 
-            switch (c.buscarRUT())
+            string sql;
+            object cantFilas;
+
+            CargarZonas();
+
+            sql = "Select RUT from empresa where RUT=" + txtRUTb.Text;
+            try
             {
-                case 0:  //Encontré
+                rs = Program.cn.Execute(sql, out cantFilas);
+                if (!rs.EOF)
+                {
+                    RUT = rs.Fields[0].Value.ToString();
                     MessageBox.Show("El RUT ingresado ya se encuentra en el sistema");
                     gbAlta.Enabled = false;
                     btnAceptar.Enabled = false;
@@ -470,28 +577,18 @@ namespace Grafico
                     btnModificar.Enabled = true;
                     btnBaja.Enabled = true;
                     //LIMPIAR
-                    txtEmpresa.Clear();
-                    txtEmail.Clear();
-                    txtDireccion.Clear();
-                    txtTel.Clear();
-                    txtNombre.Clear();
-                    txtPrimerApe.Clear();
-                    txtSegApe.Clear();
-                    break;
-                case 1: //La conexión está cerrada.
-                    MessageBox.Show("Se perdió la sesión. Debe loguearse nuevamente.");
-                    break;
-                case 2:
-                case 4:
-                    MessageBox.Show("Hubo errores al efectuar operación");
-                    break;
-                case 3: //No encontré
+                    Limpiar();
+                }
+                else
+                {
+
                     respuesta = MessageBox.Show("Registro no encontrado ¿Desea efectuar el alta?", "¿Alta?", MessageBoxButtons.YesNo);
                     if (respuesta == DialogResult.Yes)
                     {
                         gbAlta.Enabled = true;
                         btnAceptar.Enabled = true;
-                    }else { gbAlta.Enabled = false;}
+                    }
+                    else { gbAlta.Enabled = false; }
                     lblNoRUT.Show();
                     lblSiRUT.Hide();
                     txtNombre.Hide();
@@ -506,42 +603,24 @@ namespace Grafico
                     btnBaja.Enabled = false;
                     btnActualizar.Enabled = false;
                     //LIMPIAR
-                    txtEmpresa.Clear();
-                    txtEmail.Clear();
-                    txtDireccion.Clear();
-                    txtTel.Clear();
-                    txtNombre.Clear();
-                    txtPrimerApe.Clear();
-                    txtSegApe.Clear();
-                    break;
-            };
-            c = null;
+                    Limpiar();
 
-            string sql;
-            object cantlineas;
-            sql = "select nombre from zona";
-
-
-            try
-            {
-
-                rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
-                return;
+                MessageBox.Show("Error en consulta usuario: " + ex.Message);
             }
-            cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
-            while (!rs.EOF)
+            finally
             {
-                cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
-                rs.MoveNext();
+                rs.Close();
             }
+
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            
             ClaseCliente c = new ClaseCliente();
 
             c.CI = numero(txtCIb.Text);
@@ -551,7 +630,6 @@ namespace Grafico
             txtRUTb.Text = Convert.ToString(c.RUT);
 
             ADODB.Recordset rs = new ADODB.Recordset();
-            c.conexion = Program.cn;
 
             DialogResult respuesta = MessageBox.Show("¿Seguro que quiere proceder a realizarle baja al dato ingresado?", "Baja", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.Yes)
@@ -698,6 +776,7 @@ namespace Grafico
                 gbAlta.Enabled = true;
                 btnActualizar.Enabled = true;
                 btnAceptar.Enabled = false;
+                btnBaja.Enabled = false;
 
                 ClaseCliente c = new ClaseCliente();
 
@@ -767,27 +846,7 @@ namespace Grafico
                                     rs.MoveNext(); //nos movemos al siguiente registro
                                 }
 
-                                sql = "select nombre from zona";
-
-
-                                try
-                                {
-
-                                    rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
-                                }
-                                catch
-                                {
-                                    MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
-                                    return;
-                                }
-                                cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
-                                while (!rs.EOF)
-                                {
-                                    cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
-                                    rs.MoveNext();
-                                }
-
-
+                                CargarZonas();
 
                             }
                         }
@@ -860,25 +919,7 @@ namespace Grafico
                                     rs.MoveNext(); //nos movemos al siguiente registro
                                 }
 
-                                sql = "select nombre from zona";
-
-
-                                try
-                                {
-
-                                    rs = Program.cn.Execute(sql, out cantlineas, -1); //resultado RS
-                                }
-                                catch
-                                {
-                                    MessageBox.Show("ERROR"); //error al ejecutar sentencia SQL.
-                                    return;
-                                }
-                                cboCiudad.Items.Clear(); //Por si tenia datos anteriormente
-                                while (!rs.EOF)
-                                {
-                                    cboCiudad.Items.Add(Convert.ToString(rs.Fields[0].Value)); //Va corriendo hasta el final
-                                    rs.MoveNext();
-                                }
+                                CargarZonas();
 
 
 

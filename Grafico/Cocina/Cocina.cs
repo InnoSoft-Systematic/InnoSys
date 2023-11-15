@@ -55,7 +55,7 @@ namespace InnoSys
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.frmPedidos.ShowDialog();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
